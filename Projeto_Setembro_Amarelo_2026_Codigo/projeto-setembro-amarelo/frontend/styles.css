@@ -120,7 +120,8 @@ h1 {
 h2 { margin: 0 0 var(--space-lg); font-size: 2rem; line-height: 1.15; letter-spacing: -.025em; }
 h3 { margin: var(--space-2xl) 0 var(--space-md); font-size: 1.5rem; line-height: 1.25; letter-spacing: -.015em; }
 p { margin: 0 0 var(--space-lg); }
-.intro-lead { font-size: 1.1875rem; line-height: 1.55; }
+.intro-message, .intro-lead { font-size: 1.1875rem; line-height: 1.55; }
+.intro-message { margin-bottom: var(--space-xl); font-weight: 700; }
 .support-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); margin-block: var(--space-sm); }
 .primary-link {
   display: inline-flex;
@@ -246,7 +247,7 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   .intro { grid-template-columns: 1fr; gap: var(--space-xl); padding: var(--space-lg); margin-top: var(--space-lg); }
   .intro-art { max-width: 22rem; padding: var(--space-md); }
   h1 { font-size: clamp(2.125rem, 1.5rem + 3.8vw, 3.5rem); }
-  .intro-lead { font-size: 1.125rem; }
+  .intro-message, .intro-lead { font-size: 1.125rem; }
   .support-actions { gap: var(--space-sm) var(--space-lg); }
   .layout, .privacy { grid-template-columns: 1fr; gap: var(--space-2xl); }
   .calendar { position: static; max-height: none; overflow: visible; padding-right: 0; min-width: 0; }
