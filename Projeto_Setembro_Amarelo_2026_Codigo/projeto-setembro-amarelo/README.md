@@ -20,7 +20,7 @@ Se a porta estiver ocupada: `python3 backend/server.py --port 8001`, abrindo o e
 
 ## Jornada demonstrável
 
-A página inicia em Setembro. O usuário lê a síntese, os marcos históricos e a análise das evidências, consulta os links das fontes e encontra os canais de ajuda. Pode selecionar outro mês para entender sua campanha. É uma única jornada de consulta, com diferentes conteúdos; não existe cadastro nem atendimento clínico.
+A página inicia em Setembro. O usuário lê a síntese e os marcos históricos, consulta os links das fontes e encontra os canais de ajuda. Pode selecionar outro mês para entender sua campanha. É uma única jornada de consulta, com diferentes conteúdos; não existe cadastro nem atendimento clínico.
 
 O botão de seleção de cada mês no calendário inicia a fumaça. Por clique, toque ou teclado, as cores indicadas entram pelas laterais, encontram-se no centro e se dissipam em 10 segundos. Meses com uma cor usam essa mesma cor dos dois lados; em Agosto, a terceira cor entra pelo rodapé.
 
