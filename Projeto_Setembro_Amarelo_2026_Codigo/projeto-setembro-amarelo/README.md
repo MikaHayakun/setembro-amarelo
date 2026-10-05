@@ -24,6 +24,8 @@ A página inicia em Setembro. O usuário lê a síntese, os marcos históricos e
 
 Ao acionar um botão de mês por clique, toque ou teclado, duas fumaças com as cores indicadas entram pelas laterais, encontram-se no centro e se dissipam em 10 segundos. Meses com uma cor usam essa mesma cor dos dois lados; em Agosto, a terceira cor entra pelo rodapé. A abertura da página não inicia a animação. Uma nova seleção substitui o efeito anterior sem bloquear a navegação. A preferência do dispositivo por movimento reduzido desativa o efeito decorativo, mantendo a seleção e o conteúdo. A fumaça é desenhada localmente em Canvas a partir do novo vídeo autorizado, com fundo branco removido e cores substituídas pelas cores da campanha. O vídeo só é carregado após acionar um mês, fica sem áudio e não exige bibliotecas externas.
 
+As dobras recebem iluminação direcional, sombras e realces para produzir relevo visual. A transparência varia com a densidade da fumaça e as imagens usam maior resolução para preservar os detalhes. Camadas adicionais aumentam a quantidade de fumaça; depois do encontro, a dispersão cresce até alcançar as bordas da área visível da página, perdendo opacidade até desaparecer.
+
 O botão “Ouvir texto” é complementar. Depende do suporte do navegador e da existência de uma voz em português. O conteúdo escrito permanece disponível quando a voz não funciona. O servidor não coleta relatos pessoais nem grava histórico de navegação. Links das fontes exigem conexão à internet; vozes podem depender de serviços do navegador.
 
 ## Estrutura

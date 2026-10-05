@@ -79,3 +79,14 @@ O responsável forneceu `pinterest-savepin-onl.mp4` e autorizou sua inclusão no
 - A captura em janela de 500 pixels foi inspecionada e não houve rolagem horizontal da página.
 
 As verificações de vídeo foram realizadas no Firefox deste computador. Reprodução e fluidez em outros navegadores e celulares físicos continuam pendentes. As imagens e os perfis de teste ficam somente na `.cache`, fora do Git.
+
+## Relevo, nitidez e dispersão ampliada — 5 de outubro de 2026
+
+A fumaça recebeu iluminação direcional calculada a partir das dobras, sombras, realces e transparência conforme a densidade. O processamento usa a resolução original do vídeo em janelas largas e até 640 pixels de altura nas menores. A iluminação usa tabelas pré-calculadas e normais suavizadas para destacar o volume sem amplificar o ruído do vídeo. Camadas translúcidas adicionais ampliam a quantidade; entre o encontro e o fim, a fumaça cresce para alcançar a área visível da página.
+
+- `node --check frontend/smoke.js` e a verificação do diff passaram.
+- Capturas no Firefox foram inspecionadas durante a entrada, o encontro e a dispersão, incluindo Janeiro, Fevereiro e Agosto. A presença de fumaça durante a expansão foi verificada nos quatro cantos do Canvas em janela larga e em janela de 500 pixels.
+- Os 12 botões mantiveram uma única camada decorativa por vez, sem bloquear os cliques. A troca durante o efeito iniciou seu próprio período e a camada foi removida ao final dos 10 segundos.
+- A entrada da terceira cor pelo rodapé, a seleção por Enter, a ausência de efeito ao abrir/recarregar e a ausência de rolagem horizontal foram conferidas. Movimento reduzido continuou desativando o efeito sem impedir a seleção.
+
+As verificações são visuais e funcionais no Firefox deste computador. Não foi aferida a taxa de quadros em celulares físicos; a maior resolução deve ser conferida no dispositivo de apresentação.
