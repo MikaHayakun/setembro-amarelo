@@ -160,6 +160,12 @@ const monthSmoke = (() => {
         context.restore();
       }
       if (corners) {
+        // Draw the three white plumes first so the four yellow corners stay in front.
+        const whiteOrigins = [[0, height * .5], [width, height * .5], [width * .5, height]];
+        for (const [x, y] of whiteOrigins) {
+          const distance = Math.hypot(width / 2 - x, height / 2 - y);
+          drawWhite(x, y, distance * (1.3 + expansion * .3));
+        }
         // The masked upper plume enters from each corner along its diagonal to the center.
         const travel = Math.hypot(width / 2, height / 2) * (1.12 + expansion * .24);
         const breadth = travel * frameWidth / (frameHeight * .54);
@@ -173,18 +179,14 @@ const monthSmoke = (() => {
             -breadth / 2, 0, breadth, travel);
           context.restore();
         }
-        // September keeps its four yellow corners and adds exactly three white plumes.
-        const whiteOrigins = [[0, height * .5], [width, height * .5], [width * .5, height]];
-        for (const [x, y] of whiteOrigins) {
-          const distance = Math.hypot(width / 2 - x, height / 2 - y);
-          drawWhite(x, y, distance * (1.3 + expansion * .3));
-        }
         state.frame = requestAnimationFrame(draw);
         return;
       }
       const length = width * (1.08 + expansion * .12);
       // Uniform scaling keeps every cloud's original proportions and avoids stretching.
       const breadth = length * frameWidth / frameHeight;
+      // Keep white behind each month's colors, including August's third bottom stream.
+      drawWhite(width * (palette[2] ? .22 : .5), height * 1.08, height * (.78 + expansion * .22));
       // Extra streams spread to the edges instead of magnifying a blurry copy.
       const positions = height > width * 1.2 ? [-.02, .28, .58, .88, 1.18] : [.08, 1.12];
       for (const position of positions) {
@@ -213,8 +215,6 @@ const monthSmoke = (() => {
           -bottomWidth / 2, 0, bottomWidth, travel);
         context.restore();
       }
-      // White accompanies every month; August's existing orange bottom stream remains distinct.
-      drawWhite(width * (palette[2] ? .22 : .5), height * 1.08, height * (.78 + expansion * .22));
       state.frame = requestAnimationFrame(draw);
     }
     state.timeout = setTimeout(stop, duration * 1000);
