@@ -57,7 +57,6 @@ async function showMonth(month, moveFocus = false) {
     const c = await json(`/api/campaigns/${month}`);
     if (sequence !== requestSequence) return;
     container.replaceChildren();
-    container.append(element('p', c.color, 'eyebrow'));
     const title = element('h2', `${c.name} ${c.color.toLowerCase()}`);
     title.tabIndex = -1; container.append(title);
     paragraph(c.theme, container, 'campaign-theme');
