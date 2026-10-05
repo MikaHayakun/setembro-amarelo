@@ -95,7 +95,7 @@ class Handler(BaseHTTPRequestHandler):
                     return self.respond([dict(row) for row in connection.execute('SELECT * FROM source ORDER BY id')])
             # Apenas arquivos públicos conhecidos são acessíveis.
             public = {'/': 'index.html', '/index.html': 'index.html',
-                      '/app.js': 'app.js', '/styles.css': 'styles.css',
+                      '/app.js': 'app.js', '/styles.css': 'styles.css', '/smoke.js': 'smoke.js',
                       '/assets/emblema-setembro-amarelo.png': 'assets/emblema-setembro-amarelo.png',
                       '/assets/fonts/bricolage-grotesque.woff2': 'assets/fonts/bricolage-grotesque.woff2',
                       '/assets/fonts/cuidado-sans.woff2': 'assets/fonts/cuidado-sans.woff2'}

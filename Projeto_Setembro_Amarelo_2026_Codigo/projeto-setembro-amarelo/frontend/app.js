@@ -104,7 +104,10 @@ async function init() {
       label.append(element('span', c.name), element('small', c.color));
       button.append(number, label);
       button.setAttribute('aria-pressed', 'false');
-      button.addEventListener('click', () => showMonth(c.month, true));
+      button.addEventListener('click', () => {
+        monthSmoke.play(c.color);
+        showMonth(c.month, true);
+      });
       document.getElementById('months').append(button);
     });
     await showMonth(9);

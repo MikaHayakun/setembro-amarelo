@@ -53,3 +53,16 @@ A direção visual foi confirmada pelo responsável: amarelo marcante e maior co
 - Os pares principais de texto e fundo tiveram contraste entre 4,78:1 e 12,24:1. Essa checagem não equivale a uma auditoria completa de acessibilidade.
 
 Continuam pendentes testes com usuários, leitor de tela, zoom de 200% e reprodução de voz no dispositivo da apresentação. As capturas e os perfis de verificação ficam apenas na `.cache` local, ignorada pelo Git.
+
+## Fumaças das campanhas — 5 de outubro de 2026
+
+O vídeo fornecido foi usado somente para observar o movimento. O efeito foi criado em Canvas com texturas procedurais, usando as cores já registradas para cada mês. Não foram incorporados vídeo, letras, imagens de fundo ou cores da referência.
+
+- Os oito testes HTTP passaram, incluindo a nova rota pública `/smoke.js`. Os dois arquivos JavaScript passaram na verificação de sintaxe do Node.
+- No Firefox, os 12 botões iniciaram uma única animação por vez e continuaram selecionando os conteúdos. A camada decorativa não intercepta cliques e fica oculta para leitores de tela.
+- A abertura e o recarregamento da página não iniciaram o efeito. Enter no botão também ativou a seleção e a fumaça.
+- Foram inspecionadas capturas de Janeiro, Fevereiro, Agosto e Setembro: entrada lateral, encontro central, repetição da mesma cor nos meses de uma cor e terceira fumaça entrando pelo rodapé em Agosto.
+- A camada foi removida após 10 segundos. Uma nova seleção durante a animação iniciou seu próprio período, sem ser interrompida pelo temporizador anterior. A opacidade final foi conferida durante a dissipação.
+- Em uma janela de 500 pixels, a animação não provocou rolagem horizontal da página. Em outro perfil do Firefox, com a preferência nativa por movimento reduzido ativada, a seleção continuou funcionando sem criar fumaça.
+
+Não foi medida a fluidez em celulares físicos. Capturas, perfis temporários e quadros extraídos para inspeção permanecem na `.cache` ignorada pelo Git. O vídeo original permanece fora do projeto; PDFs e emblema continuam fora dos commits.
