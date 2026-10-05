@@ -63,31 +63,20 @@ header, main, footer {
   margin-inline: auto;
 }
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-xl);
   padding-block: var(--space-xl);
   border-bottom: 1px solid var(--line);
 }
-.brand { max-width: 66ch; color: var(--ink); text-decoration: none; line-height: 1.35; }
-.brand strong { font-size: clamp(1.125rem, 1.1rem + .2vw, 1.375rem); font-weight: 700; }
-.help-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  flex-shrink: 0;
-  min-height: 48px;
-  padding: var(--space-sm) var(--space-lg);
-  border: 1px solid var(--green);
-  border-radius: 2rem;
-  font-size: 1rem;
-  font-weight: 650;
-  text-decoration: none;
-  transition: background-color .2s, color .2s;
+.brand { width: 100%; color: var(--ink); line-height: 1.2; }
+.brand strong {
+  display: block;
+  font-size: clamp(1.5rem, 1rem + 2.5vw, 3.25rem);
+  font-weight: 700;
+  text-wrap: balance;
 }
-.help-link:hover { color: var(--paper); background: var(--green); }
+.brand .september-trigger {
+  color: #a47700;
+  text-decoration-color: currentColor;
+}
 .intro {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) minmax(0, 1.3fr);
@@ -248,16 +237,12 @@ footer { display: flex; align-items: baseline; justify-content: space-between; g
 footer p { margin: 0; }
 footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
 @media (max-width: 960px) {
-  header { flex-wrap: wrap; gap: var(--space-md); }
-  .brand { max-width: 100%; }
   .intro { grid-template-columns: minmax(140px, .75fr) minmax(0, 1.25fr); gap: var(--space-xl); }
   .layout, .privacy { grid-template-columns: 13rem minmax(0, 1fr); gap: var(--space-xl); }
   .timeline li { grid-template-columns: 1fr; gap: var(--space-xs); }
 }
 @media (max-width: 700px) {
   header { padding-block: var(--space-lg); }
-  .brand { width: 100%; }
-  .help-link { padding-block: var(--space-xs); }
   .intro { grid-template-columns: 1fr; gap: var(--space-xl); padding: var(--space-lg); margin-top: var(--space-lg); }
   .intro-art { max-width: 22rem; padding: var(--space-md); }
   h1 { font-size: clamp(2.125rem, 1.5rem + 3.8vw, 3.5rem); }

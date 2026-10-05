@@ -125,3 +125,9 @@ Por solicitação do responsável, o botão “Acionar fumaça de [mês]” foi 
 As colunas da abertura foram reequilibradas para ampliar o emblema e aproveitar a área à direita. A imagem acompanha a largura de sua coluna, preservando a proporção original, e o parágrafo ocupa a coluna de texto. Em telas pequenas, a moldura cresce conforme o espaço disponível, até 22rem. As cores, fontes, bordas e o arquivo original da imagem foram mantidos; o rótulo “EDUCAÇÃO EM SAÚDE” continua removido.
 
 No Firefox, foram conferidas as larguras de 1920, 1440, 1024, 960, 768, 701, 700 e 500 pixels, sem distorção da imagem, cortes ou rolagem horizontal da página. O título manteve suas duas linhas. Em 1440 pixels, a imagem passou a ocupar aproximadamente 408 pixels de largura. Também foram inspecionadas capturas em 390 e 320 pixels. O diff passou na verificação; capturas e perfis permaneceram na `.cache` local, e o emblema continua fora do versionamento.
+
+## Frase ampliada no cabeçalho — 5 de outubro de 2026
+
+A frase aprovada passou a ocupar toda a largura do cabeçalho, com fonte fluida de 24 a 52 pixels, negrito e quebra de linhas balanceada. “Setembro” recebeu amarelo dourado, mantendo o botão de fumaça. O link “Onde buscar ajuda” do cabeçalho e seus estilos exclusivos foram retirados; a seção de ajuda na parte inferior e os demais botões permanecem.
+
+No Firefox, a frase foi conferida em 1920, 1440, 1024 e 768 pixels, sempre com duas linhas, e em 500 pixels, com três linhas para manter a leitura. Uma captura em 320 pixels também foi inspecionada. Não houve rolagem horizontal ou corte da frase. O texto permaneceu exatamente como aprovado, sem ponto final; Enter na palavra “Setembro” manteve a animação de 12 segundos. Foram confirmados os 12 meses, a seção de ajuda e o destino de “Sugestão de Apoio”. O diff passou na verificação, e as capturas continuam apenas na `.cache` local.
