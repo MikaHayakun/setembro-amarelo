@@ -105,6 +105,11 @@ class IntegrationTest(unittest.TestCase):
         self.assertIn("default-src 'self'", headers['Content-Security-Policy'])
         for path in ['/styles.css', '/app.js', '/smoke.js']:
             self.assertEqual(self.fetch(path)[0], 200)
+        video_path = ROOT / 'frontend/assets/pinterest-savepin-onl.mp4'
+        status, video, headers = self.fetch('/assets/pinterest-savepin-onl.mp4')
+        self.assertEqual(status, 200)
+        self.assertEqual(headers['Content-Type'], 'video/mp4')
+        self.assertEqual(video, video_path.read_bytes())
         for font in ['bricolage-grotesque.woff2', 'cuidado-sans.woff2']:
             status, data, headers = self.fetch('/assets/fonts/' + font)
             self.assertEqual(status, 200)

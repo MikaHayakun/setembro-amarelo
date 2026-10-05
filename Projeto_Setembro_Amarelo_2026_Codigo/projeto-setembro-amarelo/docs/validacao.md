@@ -54,7 +54,7 @@ A direção visual foi confirmada pelo responsável: amarelo marcante e maior co
 
 Continuam pendentes testes com usuários, leitor de tela, zoom de 200% e reprodução de voz no dispositivo da apresentação. As capturas e os perfis de verificação ficam apenas na `.cache` local, ignorada pelo Git.
 
-## Fumaças das campanhas — 5 de outubro de 2026
+## Primeira versão das fumaças — 5 de outubro de 2026
 
 O vídeo fornecido foi usado somente para observar o movimento. O efeito foi criado em Canvas com texturas procedurais, usando as cores já registradas para cada mês. Não foram incorporados vídeo, letras, imagens de fundo ou cores da referência.
 
@@ -66,3 +66,16 @@ O vídeo fornecido foi usado somente para observar o movimento. O efeito foi cri
 - Em uma janela de 500 pixels, a animação não provocou rolagem horizontal da página. Em outro perfil do Firefox, com a preferência nativa por movimento reduzido ativada, a seleção continuou funcionando sem criar fumaça.
 
 Não foi medida a fluidez em celulares físicos. Capturas, perfis temporários e quadros extraídos para inspeção permanecem na `.cache` ignorada pelo Git. O vídeo original permanece fora do projeto; PDFs e emblema continuam fora dos commits.
+
+## Nova referência de fumaça — 5 de outubro de 2026
+
+O responsável forneceu `pinterest-savepin-onl.mp4` e autorizou sua inclusão no commit. O arquivo foi copiado intacto para `frontend/assets/`. A animação agora usa as dobras e o movimento desse vídeo, remove seu fundo branco, substitui o pigmento pelas cores do mês e preserva luzes e sombras. A implementação procedural anterior foi removida. O vídeo anterior do WhatsApp, o emblema e os PDFs continuam fora dos commits.
+
+- Os oito testes HTTP passaram, incluindo entrega do MP4 intacto com tipo `video/mp4`. A sintaxe de `smoke.js` foi validada pelo Node.
+- No Firefox, a abertura não carregou o MP4 nem criou fumaça. O vídeo foi decodificado após clicar, sem áudio e sem controles expostos na página.
+- Foram inspecionadas capturas de Janeiro, Fevereiro e Agosto durante a animação, com fundo transparente e cores do mês. A terceira cor de Agosto entra pelo rodapé; somente essa fumaça usa a máscara inferior, sem recorte visível na ponta.
+- Os 12 botões mantiveram a seleção e criaram uma única camada decorativa por vez. A troca durante o efeito preservou os 10 segundos da nova seleção, e o efeito terminou com a remoção da camada e interrupção do vídeo.
+- Enter iniciou a fumaça; recarregar não a iniciou. A preferência nativa de movimento reduzido manteve a seleção sem o efeito.
+- A captura em janela de 500 pixels foi inspecionada e não houve rolagem horizontal da página.
+
+As verificações de vídeo foram realizadas no Firefox deste computador. Reprodução e fluidez em outros navegadores e celulares físicos continuam pendentes. As imagens e os perfis de teste ficam somente na `.cache`, fora do Git.

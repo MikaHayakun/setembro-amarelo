@@ -97,13 +97,14 @@ class Handler(BaseHTTPRequestHandler):
             public = {'/': 'index.html', '/index.html': 'index.html',
                       '/app.js': 'app.js', '/styles.css': 'styles.css', '/smoke.js': 'smoke.js',
                       '/assets/emblema-setembro-amarelo.png': 'assets/emblema-setembro-amarelo.png',
+                      '/assets/pinterest-savepin-onl.mp4': 'assets/pinterest-savepin-onl.mp4',
                       '/assets/fonts/bricolage-grotesque.woff2': 'assets/fonts/bricolage-grotesque.woff2',
                       '/assets/fonts/cuidado-sans.woff2': 'assets/fonts/cuidado-sans.woff2'}
             if path in public:
                 file = FRONTEND / public[path]
                 mime = mimetypes.guess_type(file.name)[0] or 'application/octet-stream'
                 return self.respond(file.read_bytes(), content_type=(
-                    mime if mime.startswith(('image/', 'font/')) else mime + '; charset=utf-8'))
+                    mime if mime.startswith(('image/', 'font/', 'video/')) else mime + '; charset=utf-8'))
             return self.respond({'error': 'Página não encontrada.'}, 404)
         except (sqlite3.Error, OSError, json.JSONDecodeError):
             return self.respond({'error': 'Conteúdo temporariamente indisponível. Tente novamente.'}, 503)

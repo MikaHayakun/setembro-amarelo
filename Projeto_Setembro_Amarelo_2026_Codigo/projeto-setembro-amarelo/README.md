@@ -22,7 +22,7 @@ Se a porta estiver ocupada: `python3 backend/server.py --port 8001`, abrindo o e
 
 A página inicia em Setembro. O usuário lê a síntese, os marcos históricos e a análise das evidências, consulta os links das fontes e encontra os canais de ajuda. Pode selecionar outro mês para entender sua campanha. É uma única jornada de consulta, com diferentes conteúdos; não existe cadastro nem atendimento clínico.
 
-Ao acionar um botão de mês por clique, toque ou teclado, duas fumaças com as cores indicadas entram pelas laterais, encontram-se no centro e se dissipam em 10 segundos. Meses com uma cor usam essa mesma cor dos dois lados; em Agosto, a terceira cor entra pelo rodapé. A abertura da página não inicia a animação. Uma nova seleção substitui o efeito anterior sem bloquear a navegação. A preferência do dispositivo por movimento reduzido desativa o efeito decorativo, mantendo a seleção e o conteúdo. A fumaça é desenhada localmente em Canvas, sem dependências nem uso do vídeo de referência.
+Ao acionar um botão de mês por clique, toque ou teclado, duas fumaças com as cores indicadas entram pelas laterais, encontram-se no centro e se dissipam em 10 segundos. Meses com uma cor usam essa mesma cor dos dois lados; em Agosto, a terceira cor entra pelo rodapé. A abertura da página não inicia a animação. Uma nova seleção substitui o efeito anterior sem bloquear a navegação. A preferência do dispositivo por movimento reduzido desativa o efeito decorativo, mantendo a seleção e o conteúdo. A fumaça é desenhada localmente em Canvas a partir do novo vídeo autorizado, com fundo branco removido e cores substituídas pelas cores da campanha. O vídeo só é carregado após acionar um mês, fica sem áudio e não exige bibliotecas externas.
 
 O botão “Ouvir texto” é complementar. Depende do suporte do navegador e da existência de uma voz em português. O conteúdo escrito permanece disponível quando a voz não funciona. O servidor não coleta relatos pessoais nem grava histórico de navegação. Links das fontes exigem conexão à internet; vozes podem depender de serviços do navegador.
 
@@ -30,6 +30,7 @@ O botão “Ouvir texto” é complementar. Depende do suporte do navegador e da
 
 - `frontend/`: HTML, CSS e JavaScript.
 - `frontend/assets/emblema-setembro-amarelo.png`: emblema original fornecido localmente, fora do versionamento.
+- `frontend/assets/pinterest-savepin-onl.mp4`: nova referência de fumaça fornecida e autorizada para versionamento pelo responsável. Sua imagem fornece as dobras em movimento da animação.
 - `frontend/assets/fonts/`: fontes variáveis locais e suas licenças. Os títulos usam Bricolage Grotesque; o texto usa Cuidado Sans, versão reduzida e renomeada de Source Sans 3. Não há carregamento externo de fontes.
 - `backend/server.py`: servidor HTTP e API de leitura.
 - `database/schema.sql`: estrutura relacional.
