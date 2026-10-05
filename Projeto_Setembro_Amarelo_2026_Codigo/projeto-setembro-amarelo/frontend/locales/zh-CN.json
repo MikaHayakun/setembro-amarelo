@@ -30,7 +30,7 @@
     "emblemAlt": "描绘两只相握的手的黄色丝带，是黄色九月的标志。",
     "campaignsLabel": "宣传活动",
     "monthsLabel": "一年中的月份",
-    "smokeAction": "在四个角落触发黄色烟雾，持续 12 秒",
+    "smokeAction": "显示四股黄色烟雾和三股浓白色烟雾，持续12秒",
     "loading": "正在加载内容...",
     "loadError": "无法加载内容。下面仍然提供帮助渠道。",
     "retry": "再试一次",

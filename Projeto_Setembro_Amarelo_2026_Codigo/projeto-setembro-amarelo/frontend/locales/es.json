@@ -30,7 +30,7 @@
     "emblemAlt": "Lazo amarillo con dos manos entrelazadas, emblema del Septiembre Amarillo",
     "campaignsLabel": "Campañas de sensibilización",
     "monthsLabel": "Meses del año",
-    "smokeAction": "Dispara humo amarillo en las cuatro esquinas durante 12 segundos.",
+    "smokeAction": "Activar cuatro columnas de humo amarillo y tres de humo blanco intenso durante 12 segundos",
     "loading": "Cargando contenido...",
     "loadError": "No se pudo cargar el contenido. Los canales de ayuda siguen disponibles a continuación.",
     "retry": "Inténtalo de nuevo",

@@ -30,7 +30,7 @@
     "emblemAlt": "Yellow bow with two clasped hands, emblem of Yellow September",
     "campaignsLabel": "Awareness campaigns",
     "monthsLabel": "Months of the year",
-    "smokeAction": "Trigger yellow smoke in all four corners for 12 seconds",
+    "smokeAction": "Trigger four yellow smoke plumes and three intense white plumes for 12 seconds",
     "loading": "Loading content...",
     "loadError": "The content could not be loaded. Help channels remain available below.",
     "retry": "Try again",

@@ -58,9 +58,11 @@ const monthSmoke = (() => {
     const sourceContext = source.getContext('2d', {willReadFrequently: true});
     const tinted = document.createElement('canvas');
     const tintContext = tinted.getContext('2d');
+    const white = document.createElement('canvas');
+    const whiteContext = white.getContext('2d');
     const emitter = corners || palette[2] ? document.createElement('canvas') : null;
     const emitterContext = emitter ? emitter.getContext('2d') : null;
-    if (!sourceContext || !tintContext || (emitter && !emitterContext)) return;
+    if (!sourceContext || !tintContext || !whiteContext || (emitter && !emitterContext)) return;
     const sides = [colors[palette[0]], colors[palette[1] || palette[0]]];
     const state = {canvas, video, frame: 0, timeout: 0, start: null, width: 0, height: 0};
     active = state;
@@ -76,10 +78,15 @@ const monthSmoke = (() => {
     const frameHeight = source.height = tinted.height = video.videoHeight;
     const frameWidth = source.width = tinted.width = Math.round(frameHeight * video.videoWidth / video.videoHeight);
     if (emitter) { emitter.width = frameWidth; emitter.height = frameHeight; }
+    white.width = frameWidth; white.height = frameHeight;
     const pixels = tintContext.createImageData(frameWidth, frameHeight);
+    const whitePixels = whiteContext.createImageData(frameWidth, frameHeight);
     const emitterPixels = emitterContext ? emitterContext.createImageData(frameWidth, frameHeight) : null;
     const tones = sides.map(lighting);
     const emitterTones = emitter ? lighting(colors[palette[2] || palette[0]]) : null;
+    // A white plume keeps the same sharp folds, with soft gray shadows for contrast.
+    const whiteTones = Float32Array.from({length: 256}, (_, light) => 164 + light * 90 / 255);
+    const whiteDensity = corners ? 1.28 : 1.08;
     const rowMix = Float32Array.from({length: frameHeight}, (_, y) => smooth((y / frameHeight - .44) / .12));
     state.start = performance.now();
     document.body.append(canvas);
@@ -117,6 +124,7 @@ const monthSmoke = (() => {
             if (!alpha) {
               pixels.data[index + 3] = 0;
               if (emitterPixels) emitterPixels.data[index + 3] = 0;
+              whitePixels.data[index + 3] = 0;
               continue;
             }
             const left = input[row + Math.max(0, x - 1) * 4 + 1];
@@ -128,16 +136,29 @@ const monthSmoke = (() => {
               const toneIndex = sharpened * 3 + channel;
               pixels.data[index + channel] = (tones[0][toneIndex] * (1 - mix) + tones[1][toneIndex] * mix);
               if (emitterPixels) emitterPixels.data[index + channel] = emitterTones[toneIndex];
+              whitePixels.data[index + channel] = whiteTones[sharpened];
             }
             pixels.data[index + 3] = alpha;
             if (emitterPixels) emitterPixels.data[index + 3] = alpha * bottomMask;
+            whitePixels.data[index + 3] = Math.min(255, alpha * whiteDensity) * bottomMask;
           }
         }
         tintContext.putImageData(pixels, 0, 0);
         if (emitterContext) emitterContext.putImageData(emitterPixels, 0, 0);
+        whiteContext.putImageData(whitePixels, 0, 0);
       }
       context.clearRect(0, 0, width, height);
       const expansion = smooth((elapsed * 10 / duration - 4) / 4);
+      function drawWhite(x, y, travel) {
+        const breadth = travel * frameWidth / (frameHeight * .54);
+        context.save();
+        context.translate(x, y);
+        context.rotate(Math.atan2(height / 2 - y, width / 2 - x) - Math.PI / 2);
+        context.imageSmoothingQuality = 'high';
+        context.drawImage(white, 0, 0, frameWidth, frameHeight * .54,
+          -breadth / 2, 0, breadth, travel);
+        context.restore();
+      }
       if (corners) {
         // The masked upper plume enters from each corner along its diagonal to the center.
         const travel = Math.hypot(width / 2, height / 2) * (1.12 + expansion * .24);
@@ -151,6 +172,12 @@ const monthSmoke = (() => {
           context.drawImage(emitter, 0, 0, frameWidth, frameHeight * .54,
             -breadth / 2, 0, breadth, travel);
           context.restore();
+        }
+        // September keeps its four yellow corners and adds exactly three white plumes.
+        const whiteOrigins = [[0, height * .5], [width, height * .5], [width * .5, height]];
+        for (const [x, y] of whiteOrigins) {
+          const distance = Math.hypot(width / 2 - x, height / 2 - y);
+          drawWhite(x, y, distance * (1.3 + expansion * .3));
         }
         state.frame = requestAnimationFrame(draw);
         return;
@@ -186,6 +213,8 @@ const monthSmoke = (() => {
           -bottomWidth / 2, 0, bottomWidth, travel);
         context.restore();
       }
+      // White accompanies every month; August's existing orange bottom stream remains distinct.
+      drawWhite(width * (palette[2] ? .22 : .5), height * 1.08, height * (.78 + expansion * .22));
       state.frame = requestAnimationFrame(draw);
     }
     state.timeout = setTimeout(stop, duration * 1000);
