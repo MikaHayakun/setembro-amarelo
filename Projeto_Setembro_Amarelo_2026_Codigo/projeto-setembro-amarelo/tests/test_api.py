@@ -105,6 +105,10 @@ class IntegrationTest(unittest.TestCase):
         self.assertIn("default-src 'self'", headers['Content-Security-Policy'])
         for path in ['/styles.css', '/app.js']:
             self.assertEqual(self.fetch(path)[0], 200)
+        status, image, headers = self.fetch('/assets/emblema-setembro-amarelo.png')
+        self.assertEqual(status, 200)
+        self.assertEqual(headers['Content-Type'], 'image/png')
+        self.assertEqual(image, (ROOT / 'frontend/assets/emblema-setembro-amarelo.png').read_bytes())
 
     def test_07_database_integrity(self):
         with sqlite3.connect(self.db) as connection:
