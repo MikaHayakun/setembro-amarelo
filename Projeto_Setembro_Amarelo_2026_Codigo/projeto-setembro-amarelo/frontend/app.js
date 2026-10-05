@@ -99,13 +99,12 @@ async function showMonth(month, moveFocus = false) {
       const ul = element('ul'); c.care.forEach(t => ul.append(element('li', t))); container.append(ul);
       paragraph(`${locale.ui.careSource} ${refs(c.care_source_ids)}`, container);
       const actions = element('div', undefined, 'support-actions');
-      const help = element('a', locale.ui.helpLink, 'primary-link'); help.href = '#ajuda';
       const suggestion = element('a', locale.ui.suggestion, 'support-link');
       suggestion.href = 'https://www.mikaweiai.com.br/';
       suggestion.target = '_blank'; suggestion.rel = 'noopener noreferrer';
       const arrow = element('span', '↗'); arrow.setAttribute('aria-hidden', 'true');
       suggestion.append(arrow);
-      actions.append(help, suggestion); container.append(actions);
+      actions.append(suggestion); container.append(actions);
     }
     narrator = createNarrator(c, locale, recordings[locale.lang]);
     container.append(narrator.element);

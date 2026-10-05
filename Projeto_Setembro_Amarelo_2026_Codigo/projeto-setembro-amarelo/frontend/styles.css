@@ -125,23 +125,6 @@ p { margin: 0 0 var(--space-lg); }
 .intro-message, .intro-lead { font-size: 1.1875rem; line-height: 1.55; }
 .intro-message { margin-bottom: var(--space-xl); font-weight: 700; }
 .support-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); margin-block: var(--space-sm); }
-.primary-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-lg);
-  min-height: 48px;
-  padding: var(--space-sm) var(--space-lg);
-  color: var(--paper);
-  background: var(--green);
-  border: 1px solid var(--green);
-  border-radius: 2rem;
-  font-size: 1rem;
-  font-weight: 650;
-  text-decoration: none;
-  transition: background-color .2s;
-}
-.primary-link:hover { background: var(--ink); }
 .support-link { display: inline-flex; align-items: center; gap: var(--space-sm); min-height: 48px; font-weight: 650; }
 .persistent-support {
   position: fixed;
@@ -282,7 +265,6 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   .support-actions { gap: var(--space-sm) var(--space-lg); }
   .persistent-support { gap: var(--space-md); padding-inline: var(--space-md); }
   .persistent-support a { flex: 1; font-size: 1rem; line-height: 1.35; }
-  .persistent-support .primary-link { padding-inline: var(--space-sm); }
   .layout, .privacy { grid-template-columns: 1fr; gap: var(--space-2xl); }
   .calendar { position: static; max-height: none; overflow: visible; padding-right: 0; min-width: 0; }
   #months { flex-direction: row; overflow-x: auto; scroll-snap-type: x proximity; padding: var(--space-xs); margin-inline: -.5rem; scrollbar-width: thin; }
