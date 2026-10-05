@@ -101,3 +101,17 @@ Após nova revisão com o responsável, foi mantido o mesmo vídeo. A renderiza�
 - A sintaxe JavaScript e o diff passaram nas verificações. Perfis e capturas permanecem apenas na `.cache` local.
 
 Não foi adicionada dependência de GSAP: sua [documentação de CSS](https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/) distingue animação de propriedades da qualidade de renderização do navegador. A correção foi realizada no processamento e no desenho do Canvas. A taxa de quadros em telas 4K físicas e celulares continua pendente de medição no dispositivo final.
+
+## Botões por mês e Setembro nos quatro cantos — 5 de outubro de 2026
+
+Todos os meses receberam um botão dedicado para repetir a fumaça sem recarregar o conteúdo. A seleção no calendário também aciona o efeito. Setembro usa quatro plumas amarelas direcionadas dos cantos ao centro, com dissipação em 12 segundos; os outros meses continuam com 10 segundos, suas cores e a terceira entrada pelo rodapé quando aplicável. O movimento do vídeo foi desacelerado proporcionalmente para os 12 segundos. As ocorrências visíveis de “Setembro”, inclusive em minúsculas, viraram botões que mantêm a tipografia do texto. Nas referências, o link externo é mantido como “Abrir fonte”, separado do botão.
+
+- No Firefox, os 12 botões de seleção e os 12 botões dedicados foram acionados. A duração foi conferida para cada mês; sempre houve uma única camada decorativa, sem interceptar cliques.
+- Todas as palavras “Setembro” no conteúdo inicial foram verificadas como botões. Os cinco acionadores inseridos nos textos foram testados, incluindo cabeçalho, introdução, título, síntese e referência. Nenhum botão ficou dentro de outro botão ou de um link. Os links das fontes mantiveram seus destinos e abertura externa.
+- Enter no acionador do cabeçalho iniciou o efeito amarelo sem trocar o mês selecionado. A frase do cabeçalho permaneceu exatamente como aprovada, em negrito e sem ponto final.
+- Capturas durante a entrada, o encontro e a dissipação mostraram fumaça nos quatro cantos. A camada continuou presente além dos 10 segundos e foi removida ao final dos 12 segundos. A troca de Setembro para Janeiro respeitou os 10 segundos da nova animação, sem interrupção pelo temporizador anterior.
+- Os botões e as fumaças foram inspecionados em telas de 1440 e 500 pixels, sem rolagem horizontal da página. O efeito de quatro entradas manteve o Canvas de 3840 × 2160 numa área visível de 1920 × 1080.
+- Com movimento reduzido ativado no Firefox, todos os meses continuaram selecionáveis, os botões dedicados e o acionador do cabeçalho não criaram fumaça e o vídeo não foi carregado. A abertura normal também não iniciou a animação nem carregou o vídeo.
+- `node --check frontend/app.js`, `node --check frontend/smoke.js` e `git diff --check` passaram. As capturas e os scripts de verificação ficaram na `.cache` local, fora do versionamento. PDFs e emblema continuam fora dos commits.
+
+A inspeção foi realizada no Firefox deste computador; a fluidez em celulares físicos e outros navegadores continua pendente.

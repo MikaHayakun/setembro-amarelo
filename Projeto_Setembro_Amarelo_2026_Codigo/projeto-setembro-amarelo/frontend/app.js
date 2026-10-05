@@ -11,6 +11,31 @@ function element(tag, text, className) {
 function paragraph(text, parent, className) { parent.append(element('p', text, className)); }
 function sectionTitle(text, parent) { parent.append(element('h3', text)); }
 function refs(ids) { return ids.map(id => `[${id}]`).join(' '); }
+function addSeptemberButtons(root) {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: node => /\bsetembro\b/i.test(node.textContent) &&
+      !node.parentElement.closest('button, a, script, style, title, textarea')
+      ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    const fragment = document.createDocumentFragment();
+    const text = node.textContent;
+    let start = 0;
+    for (const match of text.matchAll(/\bsetembro\b/gi)) {
+      fragment.append(document.createTextNode(text.slice(start, match.index)));
+      const button = element('button', match[0], 'september-trigger');
+      button.type = 'button';
+      button.setAttribute('aria-label', `${match[0]}: acionar fumaça amarela nos quatro cantos por 12 segundos`);
+      button.title = 'Acionar fumaça amarela por 12 segundos';
+      fragment.append(button);
+      start = match.index + match[0].length;
+    }
+    fragment.append(document.createTextNode(text.slice(start)));
+    node.replaceWith(fragment);
+  });
+}
 async function json(url) {
   const response = await fetch(url);
   if (!response.ok) throw new Error('Não foi possível carregar o conteúdo.');
@@ -36,6 +61,11 @@ async function showMonth(month, moveFocus = false) {
     const title = element('h2', `${c.name} ${c.color.toLowerCase()}`);
     title.tabIndex = -1; container.append(title);
     paragraph(c.theme, container, 'campaign-theme');
+    const smoke = element('button', `Acionar fumaça de ${c.name}`, 'smoke-button');
+    smoke.type = 'button';
+    smoke.dataset.smokeMonth = c.month;
+    smoke.addEventListener('click', () => monthSmoke.play(c.color, c.month));
+    container.append(smoke);
     paragraph(`${c.summary} ${refs(c.sources.map(s => s.id))}`, container, 'campaign-summary');
     sectionTitle('Por que a campanha existe', container);
     paragraph(c.purpose, container);
@@ -78,11 +108,15 @@ async function showMonth(month, moveFocus = false) {
     const sources = element('ul', undefined, 'sources');
     c.sources.forEach(s => {
       const li = element('li');
-      const a = element('a', `[${s.id}] ${s.institution} · ${s.title} (${s.year})`);
+      const label = `[${s.id}] ${s.institution} · ${s.title} (${s.year})`;
+      const hasSeptember = /\bsetembro\b/i.test(label);
+      const a = element('a', hasSeptember ? 'Abrir fonte ↗' : label);
+      if (hasSeptember) li.append(element('span', label), document.createTextNode(' · '));
       a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; li.append(a); sources.append(li);
     });
     container.append(sources);
     paragraph(`Conteúdo revisado em ${c.reviewed_on.split('-').reverse().join('/')}.`, container, 'review-date');
+    addSeptemberButtons(container);
     if (moveFocus) title.focus({preventScroll: true});
   } catch (error) {
     if (sequence !== requestSequence) return;
@@ -105,7 +139,7 @@ async function init() {
       button.append(number, label);
       button.setAttribute('aria-pressed', 'false');
       button.addEventListener('click', () => {
-        monthSmoke.play(c.color);
+        monthSmoke.play(c.color, c.month);
         showMonth(c.month, true);
       });
       document.getElementById('months').append(button);
@@ -117,4 +151,8 @@ async function init() {
   }
 }
 window.addEventListener('beforeunload', cancelSpeech);
+document.addEventListener('click', event => {
+  if (event.target.closest('.september-trigger')) monthSmoke.play('Amarelo', 9);
+});
+addSeptemberButtons(document.body);
 init();

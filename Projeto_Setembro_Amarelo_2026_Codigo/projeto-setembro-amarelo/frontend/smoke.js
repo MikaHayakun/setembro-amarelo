@@ -36,13 +36,15 @@ const monthSmoke = (() => {
     active = null;
   }
 
-  async function play(colorLabel) {
+  async function play(colorLabel, month) {
     stop();
     if (reducedMotion.matches || document.hidden) return;
-    const palette = colorLabel.toLocaleLowerCase('pt-BR').split(/,\s*|\s+e\s+/);
+    const corners = Number(month) === 9;
+    const duration = corners ? 12 : 10;
+    const palette = corners ? ['amarelo'] : colorLabel.toLocaleLowerCase('pt-BR').split(/,\s*|\s+e\s+/);
     if (!palette.length || palette.some(name => !colors[name])) return;
     const canvas = document.createElement('canvas');
-    canvas.className = 'month-smoke';
+    canvas.className = corners ? 'month-smoke month-smoke--september' : 'month-smoke';
     canvas.setAttribute('aria-hidden', 'true');
     const context = canvas.getContext('2d');
     if (!context) return;
@@ -50,20 +52,20 @@ const monthSmoke = (() => {
     video.muted = true;
     video.playsInline = true;
     video.preload = 'auto';
-    video.playbackRate = 1.25;
+    video.playbackRate = 12.5 / duration;
     video.src = '/assets/pinterest-savepin-onl.mp4';
     const source = document.createElement('canvas');
     const sourceContext = source.getContext('2d', {willReadFrequently: true});
     const tinted = document.createElement('canvas');
     const tintContext = tinted.getContext('2d');
-    const third = palette[2] ? document.createElement('canvas') : null;
-    const thirdContext = third ? third.getContext('2d') : null;
-    if (!sourceContext || !tintContext || (third && !thirdContext)) return;
+    const emitter = corners || palette[2] ? document.createElement('canvas') : null;
+    const emitterContext = emitter ? emitter.getContext('2d') : null;
+    if (!sourceContext || !tintContext || (emitter && !emitterContext)) return;
     const sides = [colors[palette[0]], colors[palette[1] || palette[0]]];
     const state = {canvas, video, frame: 0, timeout: 0, start: null, width: 0, height: 0};
     active = state;
     video.addEventListener('error', () => { if (active === state) stop(); }, {once: true});
-    // Wait for actual footage before starting the visible ten-second effect.
+    // Count the visible duration only after the reference is ready to play.
     try {
       await video.play();
     } catch (error) {
@@ -73,11 +75,11 @@ const monthSmoke = (() => {
     if (active !== state) return;
     const frameHeight = source.height = tinted.height = video.videoHeight;
     const frameWidth = source.width = tinted.width = Math.round(frameHeight * video.videoWidth / video.videoHeight);
-    if (third) { third.width = frameWidth; third.height = frameHeight; }
+    if (emitter) { emitter.width = frameWidth; emitter.height = frameHeight; }
     const pixels = tintContext.createImageData(frameWidth, frameHeight);
-    const thirdPixels = thirdContext ? thirdContext.createImageData(frameWidth, frameHeight) : null;
+    const emitterPixels = emitterContext ? emitterContext.createImageData(frameWidth, frameHeight) : null;
     const tones = sides.map(lighting);
-    const thirdTones = third ? lighting(colors[palette[2]]) : null;
+    const emitterTones = emitter ? lighting(colors[palette[2] || palette[0]]) : null;
     const rowMix = Float32Array.from({length: frameHeight}, (_, y) => smooth((y / frameHeight - .44) / .12));
     state.start = performance.now();
     document.body.append(canvas);
@@ -85,7 +87,7 @@ const monthSmoke = (() => {
     function draw(now) {
       if (active !== state) return;
       const elapsed = (now - state.start) / 1000;
-      if (elapsed >= 10) { stop(); return; }
+      if (elapsed >= duration) { stop(); return; }
       const width = innerWidth, height = innerHeight;
       if (state.width !== width || state.height !== height) {
         state.width = width; state.height = height;
@@ -114,7 +116,7 @@ const monthSmoke = (() => {
             const alpha = density[chroma];
             if (!alpha) {
               pixels.data[index + 3] = 0;
-              if (thirdPixels) thirdPixels.data[index + 3] = 0;
+              if (emitterPixels) emitterPixels.data[index + 3] = 0;
               continue;
             }
             const left = input[row + Math.max(0, x - 1) * 4 + 1];
@@ -125,17 +127,34 @@ const monthSmoke = (() => {
             for (let channel = 0; channel < 3; channel++) {
               const toneIndex = sharpened * 3 + channel;
               pixels.data[index + channel] = (tones[0][toneIndex] * (1 - mix) + tones[1][toneIndex] * mix);
-              if (thirdPixels) thirdPixels.data[index + channel] = thirdTones[toneIndex];
+              if (emitterPixels) emitterPixels.data[index + channel] = emitterTones[toneIndex];
             }
             pixels.data[index + 3] = alpha;
-            if (thirdPixels) thirdPixels.data[index + 3] = alpha * bottomMask;
+            if (emitterPixels) emitterPixels.data[index + 3] = alpha * bottomMask;
           }
         }
         tintContext.putImageData(pixels, 0, 0);
-        if (thirdContext) thirdContext.putImageData(thirdPixels, 0, 0);
+        if (emitterContext) emitterContext.putImageData(emitterPixels, 0, 0);
       }
       context.clearRect(0, 0, width, height);
-      const expansion = smooth((elapsed - 4) / 4);
+      const expansion = smooth((elapsed * 10 / duration - 4) / 4);
+      if (corners) {
+        // The masked upper plume enters from each corner along its diagonal to the center.
+        const travel = Math.hypot(width / 2, height / 2) * (1.12 + expansion * .24);
+        const breadth = travel * frameWidth / (frameHeight * .54);
+        const origins = [[0, 0], [width, 0], [0, height], [width, height]];
+        for (const [x, y] of origins) {
+          context.save();
+          context.translate(x, y);
+          context.rotate(Math.atan2(height / 2 - y, width / 2 - x) - Math.PI / 2);
+          context.imageSmoothingQuality = 'high';
+          context.drawImage(emitter, 0, 0, frameWidth, frameHeight * .54,
+            -breadth / 2, 0, breadth, travel);
+          context.restore();
+        }
+        state.frame = requestAnimationFrame(draw);
+        return;
+      }
       const length = width * (1.08 + expansion * .12);
       // Uniform scaling keeps every cloud's original proportions and avoids stretching.
       const breadth = length * frameWidth / frameHeight;
@@ -156,20 +175,20 @@ const monthSmoke = (() => {
       context.imageSmoothingQuality = 'high';
       context.drawImage(tinted, -breadth / 2, -length / 2, breadth, length);
       context.restore();
-      if (third) {
+      if (emitter) {
         const travel = height * (.65 + expansion * .2);
         const bottomWidth = travel * frameWidth / (frameHeight * .54);
         context.save();
         context.translate(width * .5, height * 1.08);
         context.rotate(Math.PI);
         context.imageSmoothingQuality = 'high';
-        context.drawImage(third, 0, 0, frameWidth, frameHeight * .54,
+        context.drawImage(emitter, 0, 0, frameWidth, frameHeight * .54,
           -bottomWidth / 2, 0, bottomWidth, travel);
         context.restore();
       }
       state.frame = requestAnimationFrame(draw);
     }
-    state.timeout = setTimeout(stop, 10000);
+    state.timeout = setTimeout(stop, duration * 1000);
     state.frame = requestAnimationFrame(draw);
   }
 

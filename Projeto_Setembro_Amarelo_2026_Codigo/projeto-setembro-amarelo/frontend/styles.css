@@ -212,6 +212,20 @@ p { margin: 0 0 var(--space-lg); }
   font-weight: 600;
 }
 .tools button:hover, #campaign > button:hover { background: var(--soft); }
+#campaign > .smoke-button { background: var(--yellow); border-color: #b58b19; margin-bottom: var(--space-md); }
+#campaign > .smoke-button:hover { background: #f4c933; }
+.september-trigger {
+  display: inline;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  text-decoration: underline dotted;
+  text-decoration-color: var(--gold);
+  text-underline-offset: .18em;
+}
+.september-trigger:hover { text-decoration-style: solid; }
 .tools span { width: 100%; color: var(--muted); font-size: .875rem; }
 .tools span:empty { display: none; }
 .sources { list-style: none; padding: 0; margin-block: var(--space-lg); font-size: 1rem; overflow-wrap: anywhere; }
@@ -276,6 +290,7 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   animation: smoke-dissipate 10s linear both;
   contain: strict;
 }
+.month-smoke--september { animation-duration: 12s; }
 @keyframes smoke-dissipate {
   0%, 60% { opacity: 1; }
   100% { opacity: 0; }
