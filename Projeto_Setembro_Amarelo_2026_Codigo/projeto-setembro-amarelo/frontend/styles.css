@@ -261,7 +261,6 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   .intro { grid-template-columns: 1fr; gap: var(--space-xl); padding: var(--space-lg); margin-top: var(--space-lg); }
   .intro-art { max-width: 22rem; padding: var(--space-md); }
   h1 { font-size: clamp(2.125rem, 1.5rem + 3.8vw, 3.5rem); }
-  .intro .primary-link { padding-inline: var(--space-md); }
   .intro-lead { font-size: 1.125rem; }
   .intro-actions { gap: var(--space-sm) var(--space-lg); }
   .layout, .privacy { grid-template-columns: 1fr; gap: var(--space-2xl); }
