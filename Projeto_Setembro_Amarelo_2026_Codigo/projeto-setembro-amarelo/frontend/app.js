@@ -73,7 +73,18 @@ async function showMonth(month, moveFocus = false) {
       });
       container.append(list);
       sectionTitle('O que a ciência permite afirmar', container);
-      paragraph(c.evidence_note, container);
+      const evidence = element('p', c.evidence_note);
+      if (c.evidence_link) {
+        const {text, url} = c.evidence_link;
+        const position = c.evidence_note.indexOf(text);
+        if (position !== -1) {
+          const link = element('a'); link.append(element('strong', text));
+          link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
+          evidence.replaceChildren(c.evidence_note.slice(0, position), link,
+            c.evidence_note.slice(position + text.length));
+        }
+      }
+      container.append(evidence);
       sectionTitle('Como oferecer apoio', container);
       const ul = element('ul'); c.care.forEach(t => ul.append(element('li', t))); container.append(ul);
       paragraph(`Orientações gerais da OMS. ${refs(c.care_source_ids)}`, container);
