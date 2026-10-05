@@ -212,8 +212,6 @@ p { margin: 0 0 var(--space-lg); }
   font-weight: 600;
 }
 .tools button:hover, #campaign > button:hover { background: var(--soft); }
-#campaign > .smoke-button { background: var(--yellow); border-color: #b58b19; margin-bottom: var(--space-md); }
-#campaign > .smoke-button:hover { background: #f4c933; }
 .september-trigger {
   display: inline;
   padding: 0;

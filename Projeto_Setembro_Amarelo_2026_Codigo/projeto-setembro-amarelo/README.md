@@ -22,7 +22,7 @@ Se a porta estiver ocupada: `python3 backend/server.py --port 8001`, abrindo o e
 
 A página inicia em Setembro. O usuário lê a síntese, os marcos históricos e a análise das evidências, consulta os links das fontes e encontra os canais de ajuda. Pode selecionar outro mês para entender sua campanha. É uma única jornada de consulta, com diferentes conteúdos; não existe cadastro nem atendimento clínico.
 
-Cada mês tem um botão “Acionar fumaça” no próprio conteúdo; o botão de seleção do mês também inicia o efeito. Por clique, toque ou teclado, as cores indicadas entram pelas laterais, encontram-se no centro e se dissipam em 10 segundos. Meses com uma cor usam essa mesma cor dos dois lados; em Agosto, a terceira cor entra pelo rodapé.
+O botão de seleção de cada mês no calendário inicia a fumaça. Por clique, toque ou teclado, as cores indicadas entram pelas laterais, encontram-se no centro e se dissipam em 10 segundos. Meses com uma cor usam essa mesma cor dos dois lados; em Agosto, a terceira cor entra pelo rodapé.
 
 Setembro tem uma animação específica: quatro fumaças amarelas entram pelos quatro cantos, avançam para o centro e se dissipam em 12 segundos. Toda ocorrência visível da palavra “Setembro” funciona como botão para esse efeito, incluindo o cabeçalho, os títulos, os textos e os nomes das fontes. Esses botões repetem a animação sem trocar o conteúdo selecionado. As referências com essa palavra mantêm um link separado “Abrir fonte”.
 

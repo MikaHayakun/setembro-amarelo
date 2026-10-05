@@ -61,11 +61,6 @@ async function showMonth(month, moveFocus = false) {
     const title = element('h2', `${c.name} ${c.color.toLowerCase()}`);
     title.tabIndex = -1; container.append(title);
     paragraph(c.theme, container, 'campaign-theme');
-    const smoke = element('button', `Acionar fumaça de ${c.name}`, 'smoke-button');
-    smoke.type = 'button';
-    smoke.dataset.smokeMonth = c.month;
-    smoke.addEventListener('click', () => monthSmoke.play(c.color, c.month));
-    container.append(smoke);
     paragraph(`${c.summary} ${refs(c.sources.map(s => s.id))}`, container, 'campaign-summary');
     sectionTitle('Por que a campanha existe', container);
     paragraph(c.purpose, container);

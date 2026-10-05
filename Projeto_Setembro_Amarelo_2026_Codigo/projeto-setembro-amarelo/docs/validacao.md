@@ -115,3 +115,7 @@ Todos os meses receberam um botão dedicado para repetir a fumaça sem recarrega
 - `node --check frontend/app.js`, `node --check frontend/smoke.js` e `git diff --check` passaram. As capturas e os scripts de verificação ficaram na `.cache` local, fora do versionamento. PDFs e emblema continuam fora dos commits.
 
 A inspeção foi realizada no Firefox deste computador; a fluidez em celulares físicos e outros navegadores continua pendente.
+
+## Remoção do botão adicional de fumaça — 5 de outubro de 2026
+
+Por solicitação do responsável, o botão “Acionar fumaça de [mês]” foi retirado do conteúdo de todos os meses, junto com seus estilos exclusivos. Os botões do calendário e as palavras “Setembro” continuam acionando as animações. O código da fumaça e suas durações permanecem iguais. A sintaxe de `app.js`, o diff e a ausência de referências ao botão removido foram conferidos; não houve nova execução em navegador nesta remoção.
