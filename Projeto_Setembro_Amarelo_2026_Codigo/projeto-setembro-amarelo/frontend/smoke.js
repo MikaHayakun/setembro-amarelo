@@ -13,22 +13,14 @@ const monthSmoke = (() => {
   let active = null;
   const clamp = value => Math.max(0, Math.min(1, value));
   const smooth = value => { const t = clamp(value); return t * t * (3 - 2 * t); };
-  // Small lookup tables keep directional relief and lighting out of the pixel loop.
-  const relief = Float32Array.from({length: 65 * 65}, (_, index) => {
-    const nx = -(index % 65 - 32) / 32;
-    const ny = -(Math.floor(index / 65) - 32) / 32;
-    const light = Math.max(0, (nx * -.55 + ny * -.45 + .7) / Math.hypot(nx, ny, 1));
-    return .8 + light * .28;
-  });
-  const density = Float32Array.from({length: 256}, (_, chroma) =>
-    smooth((chroma - 6) / 90) * (.27 + .68 * chroma / 255) * 255);
-
+  // Keep the recorded lighting; do not smooth or manufacture the video's folds.
+  const density = Float32Array.from({length: 256}, (_, chroma) => clamp((chroma - 4) / 70) * 250);
   function lighting(rgb) {
     return Float32Array.from({length: 256 * 3}, (_, index) => {
       const luminance = Math.floor(index / 3) / 255;
       const pigment = rgb[index % 3];
-      const shade = .3 + luminance ** 1.7 * .7;
-      const highlight = smooth((luminance - .6) / .35) * .25;
+      const shade = .18 + luminance * .92;
+      const highlight = smooth((luminance - .76) / .24) * .12;
       return pigment * shade + (255 - pigment) * highlight;
     });
   }
@@ -79,7 +71,7 @@ const monthSmoke = (() => {
       return;
     }
     if (active !== state) return;
-    const frameHeight = source.height = tinted.height = Math.min(video.videoHeight, innerWidth > 900 ? 992 : 640);
+    const frameHeight = source.height = tinted.height = video.videoHeight;
     const frameWidth = source.width = tinted.width = Math.round(frameHeight * video.videoWidth / video.videoHeight);
     if (third) { third.width = frameWidth; third.height = frameHeight; }
     const pixels = tintContext.createImageData(frameWidth, frameHeight);
@@ -97,7 +89,7 @@ const monthSmoke = (() => {
       const width = innerWidth, height = innerHeight;
       if (state.width !== width || state.height !== height) {
         state.width = width; state.height = height;
-        const ratio = Math.min(devicePixelRatio || 1, 1.5, 2000 / width);
+        const ratio = Math.min(Math.max(devicePixelRatio || 1, 2), 3840 / width, 2160 / height);
         canvas.width = Math.round(width * ratio);
         canvas.height = Math.round(height * ratio);
         context.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -111,8 +103,8 @@ const monthSmoke = (() => {
         for (let y = 0; y < frameHeight; y++) {
           const mix = rowMix[y];
           const row = y * frameWidth * 4;
-          const above = Math.max(0, y - 2) * frameWidth * 4;
-          const below = Math.min(frameHeight - 1, y + 2) * frameWidth * 4;
+          const above = Math.max(0, y - 1) * frameWidth * 4;
+          const below = Math.min(frameHeight - 1, y + 1) * frameWidth * 4;
           const bottomMask = 1 - smooth((y / frameHeight - .43) / .1);
           for (let x = 0; x < frameWidth; x++) {
             const offset = x * 4;
@@ -125,21 +117,15 @@ const monthSmoke = (() => {
               if (thirdPixels) thirdPixels.data[index + 3] = 0;
               continue;
             }
-            const lo = Math.max(0, x - 2) * 4 + 1;
-            const hi = Math.min(frameWidth - 1, x + 2) * 4 + 1;
-            // Smoothed normals reveal large folds without amplifying video grain.
-            const left = (input[above + lo] + input[row + lo] * 2 + input[below + lo]) / 4;
-            const right = (input[above + hi] + input[row + hi] * 2 + input[below + hi]) / 4;
-            const top = (input[above + lo] + input[above + offset + 1] * 2 + input[above + hi]) / 4;
-            const bottom = (input[below + lo] + input[below + offset + 1] * 2 + input[below + hi]) / 4;
-            const sharpened = Math.max(0, Math.min(255, Math.round(g + (4 * g - left - right - top - bottom) * .08)));
-            const dx = Math.max(-32, Math.min(32, Math.round(right - left))) + 32;
-            const dy = Math.max(-32, Math.min(32, Math.round(bottom - top))) + 32;
-            const light = relief[dy * 65 + dx];
+            const left = input[row + Math.max(0, x - 1) * 4 + 1];
+            const right = input[row + Math.min(frameWidth - 1, x + 1) * 4 + 1];
+            const top = input[above + offset + 1], bottom = input[below + offset + 1];
+            // Mild native-resolution unsharp masking preserves edges without fake relief.
+            const sharpened = Math.max(0, Math.min(255, Math.round(g + (4 * g - left - right - top - bottom) * .16)));
             for (let channel = 0; channel < 3; channel++) {
               const toneIndex = sharpened * 3 + channel;
-              pixels.data[index + channel] = (tones[0][toneIndex] * (1 - mix) + tones[1][toneIndex] * mix) * light;
-              if (thirdPixels) thirdPixels.data[index + channel] = thirdTones[toneIndex] * light;
+              pixels.data[index + channel] = (tones[0][toneIndex] * (1 - mix) + tones[1][toneIndex] * mix);
+              if (thirdPixels) thirdPixels.data[index + channel] = thirdTones[toneIndex];
             }
             pixels.data[index + 3] = alpha;
             if (thirdPixels) thirdPixels.data[index + 3] = alpha * bottomMask;
@@ -150,33 +136,35 @@ const monthSmoke = (() => {
       }
       context.clearRect(0, 0, width, height);
       const expansion = smooth((elapsed - 4) / 4);
-      const initialBreadth = Math.min(height * .78, width * .8);
-      const breadth = initialBreadth * (1 - expansion) + height * 1.8 * expansion;
-      const length = width * (1.08 + expansion * .6);
-      // Translucent drifting layers spread above and below the detailed folds.
-      for (const [position, alpha] of [[.46 - expansion * .32, .24], [.54 + expansion * .32, .24 * expansion]]) {
-        if (!alpha) continue;
+      const length = width * (1.08 + expansion * .12);
+      // Uniform scaling keeps every cloud's original proportions and avoids stretching.
+      const breadth = length * frameWidth / frameHeight;
+      // Extra streams spread to the edges instead of magnifying a blurry copy.
+      const positions = height > width * 1.2 ? [-.02, .28, .58, .88, 1.18] : [.08, 1.12];
+      for (const position of positions) {
+        if (!expansion) continue;
         context.save();
-        context.globalAlpha = alpha;
+        context.globalAlpha = .5 * expansion;
         context.translate(width / 2, height * position);
-        context.rotate(-Math.PI / 2 + Math.sin(elapsed * .4) * .035);
-        context.drawImage(tinted, -breadth * .65, -length * .57, breadth * 1.3, length * 1.14);
+        context.rotate(-Math.PI / 2);
+        context.drawImage(tinted, -breadth / 2, -length / 2, breadth, length);
         context.restore();
       }
       context.save();
-      context.globalAlpha = .9;
       context.translate(width / 2, height * .54);
       context.rotate(-Math.PI / 2);
+      context.imageSmoothingQuality = 'high';
       context.drawImage(tinted, -breadth / 2, -length / 2, breadth, length);
       context.restore();
       if (third) {
-        const bottomWidth = Math.min(width * .95, height * .8) * (1 + expansion * 1.2);
+        const travel = height * (.65 + expansion * .2);
+        const bottomWidth = travel * frameWidth / (frameHeight * .54);
         context.save();
-        context.globalAlpha = .8;
         context.translate(width * .5, height * 1.08);
         context.rotate(Math.PI);
+        context.imageSmoothingQuality = 'high';
         context.drawImage(third, 0, 0, frameWidth, frameHeight * .54,
-          -bottomWidth / 2, 0, bottomWidth, height * (.65 + expansion * .85));
+          -bottomWidth / 2, 0, bottomWidth, travel);
         context.restore();
       }
       state.frame = requestAnimationFrame(draw);

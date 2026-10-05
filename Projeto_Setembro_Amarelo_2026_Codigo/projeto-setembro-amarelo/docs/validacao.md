@@ -90,3 +90,14 @@ A fumaça recebeu iluminação direcional calculada a partir das dobras, sombras
 - A entrada da terceira cor pelo rodapé, a seleção por Enter, a ausência de efeito ao abrir/recarregar e a ausência de rolagem horizontal foram conferidas. Movimento reduzido continuou desativando o efeito sem impedir a seleção.
 
 As verificações são visuais e funcionais no Firefox deste computador. Não foi aferida a taxa de quadros em celulares físicos; a maior resolução deve ser conferida no dispositivo de apresentação.
+
+## Correção da renderização e Canvas até 4K — 5 de outubro de 2026
+
+Após nova revisão com o responsável, foi mantido o mesmo vídeo. A renderização anterior deformava suas proporções, sobrepunha cópias na entrada e limitava a largura do Canvas a 2000 pixels. Foram removidos a iluminação artificial por normais e os redimensionamentos desproporcionais. A recoloração preserva a iluminação registrada, com uma correção leve de contraste local. Todos os dispositivos agora processam os 704 × 992 pixels originais; a área de renderização pode chegar a 3840 × 2160 pixels. A fonte continua sendo o arquivo recebido, com sua resolução original.
+
+- No Firefox, em área visível de 1920 × 1080, foi confirmado um Canvas de exatamente 3840 × 2160. O desenho do vídeo no Canvas de processamento foi instrumentado e manteve os 704 × 992 pixels, sem redução.
+- Capturas de Janeiro, Fevereiro e Agosto foram inspecionadas, incluindo a terceira fumaça pelo rodapé e uma janela de 500 pixels. A quantidade é ampliada durante a dispersão por fluxos adicionais com proporções preservadas.
+- Foram verificadas a presença de fumaça nas bordas durante a dispersão, a remoção após 10 segundos, a ausência de vídeo e efeito na abertura, a ausência de rolagem horizontal e a seleção normal com movimento reduzido ativado.
+- A sintaxe JavaScript e o diff passaram nas verificações. Perfis e capturas permanecem apenas na `.cache` local.
+
+Não foi adicionada dependência de GSAP: sua [documentação de CSS](https://gsap.com/docs/v3/GSAP/CorePlugins/CSS/) distingue animação de propriedades da qualidade de renderização do navegador. A correção foi realizada no processamento e no desenho do Canvas. A taxa de quadros em telas 4K físicas e celulares continua pendente de medição no dispositivo final.
