@@ -149,14 +149,14 @@ const monthSmoke = (() => {
       }
       context.clearRect(0, 0, width, height);
       const expansion = smooth((elapsed * 10 / duration - 4) / 4);
-      function drawWhite(x, y, travel) {
+      function drawWhite(x, y, travel, sourceAnchor = .5) {
         const breadth = travel * frameWidth / (frameHeight * .54);
         context.save();
         context.translate(x, y);
         context.rotate(Math.atan2(height / 2 - y, width / 2 - x) - Math.PI / 2);
         context.imageSmoothingQuality = 'high';
         context.drawImage(white, 0, 0, frameWidth, frameHeight * .54,
-          -breadth / 2, 0, breadth, travel);
+          -breadth * sourceAnchor, 0, breadth, travel);
         context.restore();
       }
       if (corners) {
@@ -187,8 +187,9 @@ const monthSmoke = (() => {
       const breadth = length * frameWidth / frameHeight;
       // Keep white behind each month's colors, including August's third bottom stream.
       drawWhite(width * (palette[2] ? .22 : .5), height * 1.08, height * (.78 + expansion * .22));
-      // An additional white plume enters diagonally from the upper-left corner.
-      drawWhite(0, 0, Math.hypot(width / 2, height / 2) * (1.3 + expansion * .3));
+      // The reference's upper inlet is at 27% of its width, rather than its center.
+      // Anchor that inlet to the exact top-left vertex before rotating toward the center.
+      drawWhite(0, 0, Math.hypot(width / 2, height / 2) * (1.3 + expansion * .3), .27);
       // Extra streams spread to the edges instead of magnifying a blurry copy.
       const positions = height > width * 1.2 ? [-.02, .28, .58, .88, 1.18] : [.08, 1.12];
       for (const position of positions) {
