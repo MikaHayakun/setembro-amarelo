@@ -69,6 +69,7 @@ header {
 .brand { width: 100%; color: var(--ink); line-height: 1.2; }
 .brand strong {
   display: block;
+  text-align: center;
   font-size: clamp(1.5rem, 1rem + 2.5vw, 3.25rem);
   font-weight: 700;
   text-wrap: balance;
