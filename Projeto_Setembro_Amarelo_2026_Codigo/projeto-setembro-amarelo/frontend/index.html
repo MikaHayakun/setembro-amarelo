@@ -3,19 +3,24 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Setembro Amarelo | Informação e cuidado</title>
+<link rel="preload" href="/assets/fonts/cuidado-sans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css"><script src="/app.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Pular para o conteúdo</a>
-<header><a class="brand" href="/"><strong>O Setembro é Amarelo...mas O cuidado com a Saúde Mental acontece todos os dias</strong></a><a class="help-link" href="#ajuda">Onde buscar ajuda</a></header>
+<header id="inicio"><a class="brand" href="/"><strong>O Setembro é Amarelo...mas O cuidado com a Saúde Mental acontece todos os dias</strong></a><a class="help-link" href="#ajuda">Onde buscar ajuda <span aria-hidden="true">↗</span></a></header>
 <main id="main">
-<section class="intro"><img class="intro-emblem" src="/assets/emblema-setembro-amarelo.png" width="262" height="277" alt="Laço amarelo com duas mãos entrelaçadas, emblema do Setembro Amarelo"><div class="intro-content"><p class="eyebrow">EDUCAÇÃO EM SAÚDE</p><h1>Conhecer para cuidar.</h1><p>Entenda a história do Setembro Amarelo e o propósito dos outros meses de conscientização. Informação em português, com acesso às fontes.</p><p class="scope">Conteúdo educativo. O cuidado com a saúde acontece durante todo o ano.</p></div></section>
-<section class="layout" aria-label="Campanhas de conscientização">
-<nav class="calendar" aria-label="Meses do ano"><h2>Escolha um mês</h2><div id="months"></div><p class="calendar-note">Exemplos brasileiros. As cores e os temas variam entre campanhas e países.</p></nav>
+<section class="intro" aria-labelledby="intro-title">
+<figure class="intro-art"><img class="intro-emblem" src="/assets/emblema-setembro-amarelo.png" width="262" height="277" alt="Laço amarelo com duas mãos entrelaçadas, emblema do Setembro Amarelo"></figure>
+<div class="intro-content"><p class="eyebrow">EDUCAÇÃO EM SAÚDE</p><h1 id="intro-title">Conhecer<br>para cuidar<span class="title-dot">.</span></h1><p class="intro-lead">Entenda a história do Setembro Amarelo e o propósito dos outros meses de conscientização. Informação em português, com acesso às fontes.</p><div class="intro-actions"><a class="primary-link" href="#campanhas">Explorar os meses <span aria-hidden="true">↓</span></a><a class="intro-help" href="#ajuda">Encontrar apoio <span aria-hidden="true">↗</span></a></div><p class="scope">Conteúdo educativo. O cuidado com a saúde acontece durante todo o ano.</p></div>
+</section>
+<section id="campanhas" class="layout" aria-label="Campanhas de conscientização">
+<nav class="calendar" aria-label="Meses do ano"><p class="eyebrow">CALENDÁRIO DO CUIDADO</p><h2>Escolha um mês</h2><div id="months"></div><p class="mobile-hint">Deslize para ver todos os meses <span aria-hidden="true">→</span></p><p class="calendar-note">Exemplos brasileiros. As cores e os temas variam entre campanhas e países.</p></nav>
 <article id="campaign" aria-live="polite" aria-busy="true"><p>Carregando o conteúdo...</p></article>
 </section>
 <section id="ajuda" class="help"><p class="eyebrow">APOIO NO BRASIL</p><h2>Onde buscar ajuda</h2><p>Você pode conversar com alguém de confiança e procurar uma UBS ou um CAPS para orientação e acompanhamento.</p><div class="help-options"><section><h3>CVV 188</h3><p>Apoio emocional gratuito, disponível por telefone 24 horas por dia. [16]</p><a href="tel:188">Ligar 188</a></section><section><h3>SAMU 192</h3><p>Em perigo imediato ou emergência, procure atendimento de urgência. Não deixe a pessoa sozinha.</p><a href="tel:192">Ligar 192</a></section></div><p>O apoio emocional do CVV não substitui atendimento de urgência. Este protótipo não oferece consulta, diagnóstico ou atendimento em tempo real.</p><a href="https://bvsms.saude.gov.br/mudar-a-comunicacao-sobre-o-suicidio-10-9-dia-mundial-de-prevencao-ao-suicidio-2026/" target="_blank" rel="noopener noreferrer">[15] Canais de atendimento na Biblioteca Virtual em Saúde</a></section>
 <section class="privacy"><h2>Sua privacidade</h2><p>A consulta é livre e não exige cadastro. Não recebemos relatos pessoais, dados de saúde ou respostas sobre sofrimento emocional. O botão “Ouvir texto” usa a leitura de voz do navegador e depende das vozes disponíveis no dispositivo.</p></section>
 </main>
-<footer><p>Projeto acadêmico de educação em saúde · Fontes consultadas em 5 de outubro de 2026.</p></footer>
+<footer><p>Projeto acadêmico de educação em saúde · Fontes consultadas em 5 de outubro de 2026.</p><a href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a></footer>
 </body></html>

@@ -2,7 +2,9 @@
 
 ## Tela única de consulta
 
-No topo, a marca “Setembro Amarelo 2026” e o atalho “Onde buscar ajuda”. A abertura “Conhecer para cuidar” apresenta a finalidade educativa. Em telas maiores, os 12 meses ficam à esquerda e o conteúdo selecionado à direita. Em telas estreitas, as áreas ficam em sequência vertical.
+No topo, a frase aprovada “O Setembro é Amarelo...mas O cuidado com a Saúde Mental acontece todos os dias”, em negrito e sem ponto final, e o atalho “Onde buscar ajuda”. A abertura amarela “Conhecer para cuidar” apresenta a finalidade educativa, com o emblema original à esquerda e atalhos para os meses e o apoio. As fontes são locais, com títulos expressivos e texto de leitura em coluna limitada.
+
+Em telas maiores, os 12 meses ficam em uma coluna lateral e o conteúdo selecionado à direita. Em telas estreitas, os meses formam uma faixa com rolagem horizontal, com indicação para deslizar; todas as opções permanecem disponíveis. O mês selecionado é trazido para a área visível da faixa. O emblema passa para o início da abertura, mantendo suas proporções e cores.
 
 ## Estado inicial e conteúdo de Setembro
 

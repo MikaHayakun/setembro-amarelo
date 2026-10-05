@@ -40,3 +40,16 @@ Ambiente desta execução: Python 3.13.3 e Node.js 24.15.0.
 - O código original foi registrado no Git local. Os PDFs e o emblema original foram excluídos do versionamento e do histórico por solicitação do responsável. Nenhum repositório remoto foi publicado.
 
 Esta execução confirma funcionamento local e testes automatizados. A revisão em navegador gráfico, com leitor de tela e reprodução de voz continua pendente.
+
+## Modernização visual — 5 de outubro de 2026
+
+A direção visual foi confirmada pelo responsável: amarelo marcante e maior contraste. O layout usa amarelo, verde profundo, espaçamento consistente e duas fontes variáveis servidas localmente. O emblema foi mantido intacto; a imagem e os PDFs continuam fora do versionamento.
+
+- Os oito testes de integração passaram, incluindo a entrega das duas fontes como `font/woff2` e a preservação das rotas privadas.
+- A sintaxe do JavaScript foi verificada com `node --check frontend/app.js`.
+- No Firefox, a interface carregou os 12 meses, o emblema e as fontes. As larguras de 1440, 1024, 768 e 500 pixels não apresentaram rolagem horizontal da página. Capturas em 390 e 320 pixels também foram inspecionadas; o título e o botão foram ajustados para a tela de 320 pixels.
+- A seleção de Janeiro, Outubro e Setembro foi verificada por clique. Enter no botão de Janeiro ativou a campanha e transferiu o foco para seu título.
+- Foi confirmado que as fontes carregam apenas do servidor local. A abertura e a seção de apoio foram inspecionadas em capturas reais do navegador.
+- Os pares principais de texto e fundo tiveram contraste entre 4,78:1 e 12,24:1. Essa checagem não equivale a uma auditoria completa de acessibilidade.
+
+Continuam pendentes testes com usuários, leitor de tela, zoom de 200% e reprodução de voz no dispositivo da apresentação. As capturas e os perfis de verificação ficam apenas na `.cache` local, ignorada pelo Git.

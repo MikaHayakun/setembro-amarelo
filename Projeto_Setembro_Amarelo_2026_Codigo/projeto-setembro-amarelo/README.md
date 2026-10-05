@@ -28,6 +28,7 @@ O botão “Ouvir texto” é complementar. Depende do suporte do navegador e da
 
 - `frontend/`: HTML, CSS e JavaScript.
 - `frontend/assets/emblema-setembro-amarelo.png`: emblema original fornecido localmente, fora do versionamento.
+- `frontend/assets/fonts/`: fontes variáveis locais e suas licenças. Os títulos usam Bricolage Grotesque; o texto usa Cuidado Sans, versão reduzida e renomeada de Source Sans 3. Não há carregamento externo de fontes.
 - `backend/server.py`: servidor HTTP e API de leitura.
 - `database/schema.sql`: estrutura relacional.
 - `database/content.json`: conteúdo de referência e 16 fontes.

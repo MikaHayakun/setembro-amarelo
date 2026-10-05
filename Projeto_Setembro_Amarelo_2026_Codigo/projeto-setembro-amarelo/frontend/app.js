@@ -8,7 +8,7 @@ function element(tag, text, className) {
   if (className) e.className = className;
   return e;
 }
-function paragraph(text, parent) { parent.append(element('p', text)); }
+function paragraph(text, parent, className) { parent.append(element('p', text, className)); }
 function sectionTitle(text, parent) { parent.append(element('h3', text)); }
 function refs(ids) { return ids.map(id => `[${id}]`).join(' '); }
 async function json(url) {
@@ -23,6 +23,11 @@ async function showMonth(month, moveFocus = false) {
   container.setAttribute('aria-busy', 'true');
   container.replaceChildren(element('p', 'Carregando o conteúdo...'));
   document.querySelectorAll('[data-month]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.month) === month)));
+  const months = document.getElementById('months');
+  const selected = months.querySelector('[aria-pressed="true"]');
+  if (selected && months.scrollWidth > months.clientWidth) {
+    months.scrollLeft = selected.offsetLeft - months.offsetLeft - (months.clientWidth - selected.offsetWidth) / 2;
+  }
   try {
     const c = await json(`/api/campaigns/${month}`);
     if (sequence !== requestSequence) return;
@@ -30,8 +35,8 @@ async function showMonth(month, moveFocus = false) {
     container.append(element('p', c.color, 'eyebrow'));
     const title = element('h2', `${c.name} ${c.color.toLowerCase()}`);
     title.tabIndex = -1; container.append(title);
-    paragraph(c.theme, container);
-    paragraph(`${c.summary} ${refs(c.sources.map(s => s.id))}`, container);
+    paragraph(c.theme, container, 'campaign-theme');
+    paragraph(`${c.summary} ${refs(c.sources.map(s => s.id))}`, container, 'campaign-summary');
     sectionTitle('Por que a campanha existe', container);
     paragraph(c.purpose, container);
     if (c.history) {
@@ -77,7 +82,7 @@ async function showMonth(month, moveFocus = false) {
       a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; li.append(a); sources.append(li);
     });
     container.append(sources);
-    paragraph(`Conteúdo revisado em ${c.reviewed_on.split('-').reverse().join('/')}.`, container);
+    paragraph(`Conteúdo revisado em ${c.reviewed_on.split('-').reverse().join('/')}.`, container, 'review-date');
     if (moveFocus) title.focus({preventScroll: true});
   } catch (error) {
     if (sequence !== requestSequence) return;
@@ -93,7 +98,11 @@ async function init() {
     const campaigns = await json('/api/campaigns');
     campaigns.forEach(c => {
       const button = element('button'); button.type = 'button'; button.dataset.month = c.month;
-      button.append(element('span', c.name), element('small', c.color));
+      const number = element('span', String(c.month).padStart(2, '0'), 'month-number');
+      number.setAttribute('aria-hidden', 'true');
+      const label = element('span', undefined, 'month-label');
+      label.append(element('span', c.name), element('small', c.color));
+      button.append(number, label);
       button.setAttribute('aria-pressed', 'false');
       button.addEventListener('click', () => showMonth(c.month, true));
       document.getElementById('months').append(button);

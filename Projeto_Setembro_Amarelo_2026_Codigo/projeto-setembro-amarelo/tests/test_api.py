@@ -105,6 +105,11 @@ class IntegrationTest(unittest.TestCase):
         self.assertIn("default-src 'self'", headers['Content-Security-Policy'])
         for path in ['/styles.css', '/app.js']:
             self.assertEqual(self.fetch(path)[0], 200)
+        for font in ['bricolage-grotesque.woff2', 'cuidado-sans.woff2']:
+            status, data, headers = self.fetch('/assets/fonts/' + font)
+            self.assertEqual(status, 200)
+            self.assertEqual(headers['Content-Type'], 'font/woff2')
+            self.assertTrue(data.startswith(b'wOF2'))
         image_path = ROOT / 'frontend/assets/emblema-setembro-amarelo.png'
         status, image, headers = self.fetch('/assets/emblema-setembro-amarelo.png')
         if image_path.is_file():
