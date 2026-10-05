@@ -77,7 +77,14 @@ async function showMonth(month, moveFocus = false) {
       sectionTitle('Como oferecer apoio', container);
       const ul = element('ul'); c.care.forEach(t => ul.append(element('li', t))); container.append(ul);
       paragraph(`Orientações gerais da OMS. ${refs(c.care_source_ids)}`, container);
-      const help = element('a', 'Ver canais de ajuda no Brasil', 'primary-link'); help.href = '#ajuda'; container.append(help);
+      const actions = element('div', undefined, 'support-actions');
+      const help = element('a', 'Ver canais de ajuda no Brasil', 'primary-link'); help.href = '#ajuda';
+      const suggestion = element('a', 'Sugestão de Apoio', 'support-link');
+      suggestion.href = 'https://www.mikaweiai.com.br/';
+      suggestion.target = '_blank'; suggestion.rel = 'noopener noreferrer';
+      const arrow = element('span', '↗'); arrow.setAttribute('aria-hidden', 'true');
+      suggestion.append(arrow);
+      actions.append(help, suggestion); container.append(actions);
     }
     const tools = element('div', undefined, 'tools');
     const speak = element('button', 'Ouvir texto'); speak.type = 'button';

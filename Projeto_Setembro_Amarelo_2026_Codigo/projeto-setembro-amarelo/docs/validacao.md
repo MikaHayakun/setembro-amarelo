@@ -131,3 +131,9 @@ No Firefox, foram conferidas as larguras de 1920, 1440, 1024, 960, 768, 701, 700
 A frase aprovada passou a ocupar toda a largura do cabeçalho, com fonte fluida de 24 a 52 pixels, negrito e quebra de linhas balanceada. “Setembro” recebeu amarelo dourado, mantendo o botão de fumaça. O link “Onde buscar ajuda” do cabeçalho e seus estilos exclusivos foram retirados; a seção de ajuda na parte inferior e os demais botões permanecem.
 
 No Firefox, a frase foi conferida em 1920, 1440, 1024 e 768 pixels, sempre com duas linhas, e em 500 pixels, com três linhas para manter a leitura. Uma captura em 320 pixels também foi inspecionada. Não houve rolagem horizontal ou corte da frase. O texto permaneceu exatamente como aprovado, sem ponto final; Enter na palavra “Setembro” manteve a animação de 12 segundos. Foram confirmados os 12 meses, a seção de ajuda e o destino de “Sugestão de Apoio”. O diff passou na verificação, e as capturas continuam apenas na `.cache` local.
+
+## Sugestão de Apoio junto aos canais de ajuda — 5 de outubro de 2026
+
+O link “Sugestão de Apoio” foi movido da abertura para ao lado do botão verde “Ver canais de ajuda no Brasil”, abaixo de “Como oferecer apoio” no conteúdo de Setembro. O endereço `https://www.mikaweiai.com.br/`, a abertura em nova aba e o aspecto de link sublinhado foram preservados. O grupo permite quebra de linha quando não houver espaço suficiente. Os estilos exclusivos da localização anterior foram removidos.
+
+No Firefox, os dois links foram conferidos lado a lado em 1440 e 500 pixels, sem rolagem horizontal. O link da abertura foi removido e o botão verde manteve seu destino `#ajuda`. A troca para Janeiro e o retorno a Setembro não duplicaram o novo link. `node --check frontend/app.js` e `git diff --check` passaram; as capturas ficaram na `.cache` local.

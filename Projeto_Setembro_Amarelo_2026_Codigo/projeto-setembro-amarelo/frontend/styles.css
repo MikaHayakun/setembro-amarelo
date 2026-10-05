@@ -121,7 +121,7 @@ h2 { margin: 0 0 var(--space-lg); font-size: 2rem; line-height: 1.15; letter-spa
 h3 { margin: var(--space-2xl) 0 var(--space-md); font-size: 1.5rem; line-height: 1.25; letter-spacing: -.015em; }
 p { margin: 0 0 var(--space-lg); }
 .intro-lead { font-size: 1.1875rem; line-height: 1.55; }
-.intro-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); }
+.support-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); margin-block: var(--space-sm); }
 .primary-link {
   display: inline-flex;
   align-items: center;
@@ -139,7 +139,7 @@ p { margin: 0 0 var(--space-lg); }
   transition: background-color .2s;
 }
 .primary-link:hover { background: var(--ink); }
-.intro-help { display: inline-flex; align-items: center; gap: var(--space-sm); min-height: 48px; font-weight: 650; }
+.support-link { display: inline-flex; align-items: center; gap: var(--space-sm); min-height: 48px; font-weight: 650; }
 .scope { max-width: 56ch; margin: var(--space-lg) 0 0; font-size: .9375rem; line-height: 1.5; }
 .layout { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); padding-bottom: var(--space-section); }
 .calendar {
@@ -182,7 +182,6 @@ p { margin: 0 0 var(--space-lg); }
 #campaign h3 { border-top: 1px solid var(--line); padding-top: var(--space-lg); }
 .campaign-theme { font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
 .campaign-summary { color: var(--muted); }
-#campaign > .primary-link { margin-block: var(--space-sm); }
 .timeline { padding: 0; margin: var(--space-lg) 0; list-style: none; }
 .timeline li { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: var(--space-lg); padding-block: var(--space-lg); border-bottom: 1px solid var(--line); }
 .timeline strong { color: var(--gold); font-size: 1rem; font-weight: 700; }
@@ -248,7 +247,7 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   .intro-art { max-width: 22rem; padding: var(--space-md); }
   h1 { font-size: clamp(2.125rem, 1.5rem + 3.8vw, 3.5rem); }
   .intro-lead { font-size: 1.125rem; }
-  .intro-actions { gap: var(--space-sm) var(--space-lg); }
+  .support-actions { gap: var(--space-sm) var(--space-lg); }
   .layout, .privacy { grid-template-columns: 1fr; gap: var(--space-2xl); }
   .calendar { position: static; max-height: none; overflow: visible; padding-right: 0; min-width: 0; }
   #months { flex-direction: row; overflow-x: auto; scroll-snap-type: x proximity; padding: var(--space-xs); margin-inline: -.5rem; scrollbar-width: thin; }
@@ -283,7 +282,7 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   .month-smoke { display: none; }
 }
 @media print {
-  header, .calendar, .tools, .intro-actions, footer, .month-smoke { display: none; }
+  header, .calendar, .tools, .support-actions, footer, .month-smoke { display: none; }
   body { font-size: 11pt; background: var(--paper); }
   main { width: 100%; }
   .layout, .privacy { display: block; }
