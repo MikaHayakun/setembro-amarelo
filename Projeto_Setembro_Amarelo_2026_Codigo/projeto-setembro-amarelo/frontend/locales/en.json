@@ -1,0 +1,200 @@
+{
+  "lang": "en",
+  "ui": {
+    "skip": "Skip to content",
+    "brand": "September is yellow...but caring for mental health happens every day",
+    "introMessage": "We know some things feel like they belong only to us...and we want a secret little place to keep them. But talking can bring relief and is part of the process...You are not alone in this!",
+    "introLead": "Explore the history of Yellow September and the purpose of other awareness months, with links to the sources.",
+    "scope": "Educational content. Health care takes place throughout the year.",
+    "calendar": "CARE CALENDAR",
+    "chooseMonth": "Choose a month",
+    "swipe": "Swipe to see all months",
+    "calendarNote": "Brazilian examples. Colors and themes vary between campaigns and countries.",
+    "supportBrazil": "SUPPORT IN BRAZIL",
+    "whereHelp": "Where to seek help",
+    "helpIntro": "You can talk to someone you trust and seek guidance and follow-up at a Brazilian primary care unit (UBS) or psychosocial care centre (CAPS).",
+    "cvvText": "Free emotional support, available by phone 24 hours a day. [16]",
+    "call188": "Call 188",
+    "emergencyText": "In immediate danger or emergency, seek urgent care. Don't leave the person alone.",
+    "call192": "Call 192",
+    "helpScope": "CVV's emotional support does not replace emergency care. This prototype does not offer real-time consultation, diagnosis or service.",
+    "helpSource": "[15] Service channels in the Virtual Health Library",
+    "privacyTitle": "Your privacy",
+    "privacyText": "Browsing is free and requires no registration. We do not collect personal stories or health data. Audio loads from this website only when you choose to listen. No text is sent to a speech service during playback.",
+    "footer": "Academic health education project · Sources consulted on October 5, 2026.",
+    "backTop": "Back to top",
+    "language": "Language",
+    "introTitleFirst": "Understand",
+    "introTitleSecond": "to care",
+    "pageTitle": "Yellow September | Information and care",
+    "emblemAlt": "Yellow bow with two clasped hands, emblem of Yellow September",
+    "campaignsLabel": "Awareness campaigns",
+    "monthsLabel": "Months of the year",
+    "smokeAction": "Trigger yellow smoke in all four corners for 12 seconds",
+    "loading": "Loading content...",
+    "loadError": "The content could not be loaded. Help channels remain available below.",
+    "retry": "Try again",
+    "serverError": "The server did not respond. Restart the project and reload the page.",
+    "languageError": "Unable to load language. Please try again.",
+    "purposeTitle": "Why the campaign exists",
+    "historyTitle": "A story with different milestones",
+    "evidenceTitle": "What science allows us to say",
+    "careTitle": "How to offer support",
+    "careSource": "WHO general guidelines.",
+    "helpLink": "View help channels in Brazil",
+    "suggestion": "Support Suggestion",
+    "sourcesTitle": "Sources to consult",
+    "openSource": "View reference ↗",
+    "reviewed": "Content reviewed on",
+    "audioControls": "Read aloud controls",
+    "listen": "Listen to text",
+    "pause": "Pause reading",
+    "resume": "Resume reading",
+    "stop": "Stop reading",
+    "speed": "Reading speed",
+    "slower": "Slower",
+    "normal": "Normal",
+    "faster": "Faster",
+    "reading": "Reading the text...",
+    "finished": "Reading completed.",
+    "paused": "Paused reading.",
+    "stopped": "Reading interrupted.",
+    "audioLoading": "Loading audio...",
+    "audioError": "Unable to play audio. Try listening again.",
+    "audioUnavailable": "The audio for this content is not yet available. The text remains accessible to your screen reader.",
+    "languageChanged": "Language changed."
+  },
+  "campaigns": {
+    "1": {
+      "name": "January",
+      "color": "White and purple",
+      "theme": "Mental health and leprosy",
+      "summary": "White represents mental health awareness. Purple is also used for leprosy awareness. These are different campaigns held in the same month.",
+      "purpose": "Give visibility to emotional care and information about leprosy."
+    },
+    "2": {
+      "name": "February",
+      "color": "Purple and orange",
+      "theme": "Alzheimer's and leukemia",
+      "summary": "The calendar consulted associates purple with Alzheimer's and orange with leukemia. This section does not include all February campaigns.",
+      "purpose": "Stimulate knowledge, monitoring and support for individuals and families."
+    },
+    "3": {
+      "name": "March",
+      "color": "Lilac and dark blue",
+      "theme": "Cervical and colorectal cancer",
+      "summary": "Lilac identifies actions on cervical cancer; dark blue, about colorectal cancer.",
+      "purpose": "Disseminate information and guide the search for appropriate care."
+    },
+    "4": {
+      "name": "April",
+      "color": "Light blue and green",
+      "theme": "Autism and health at work",
+      "summary": "Light blue appears in autism awareness actions; green, in preventing accidents at work.",
+      "purpose": "Promote inclusion and give visibility to the protection of workers’ health."
+    },
+    "5": {
+      "name": "May",
+      "color": "Yellow and purple",
+      "theme": "Traffic safety and inflammatory bowel diseases",
+      "summary": "Yellow May was launched in Brazil in 2014 to mobilize society for road safety. Purple also identifies actions on inflammatory bowel diseases.",
+      "purpose": "Promote traffic education and information about intestinal conditions."
+    },
+    "6": {
+      "name": "June",
+      "color": "Red and orange",
+      "theme": "Blood and bone marrow donation; anemia and leukemia",
+      "summary": "A university extension study describes Red June for blood and bone marrow donation and Orange June for anemia and leukemia.",
+      "purpose": "Encourage donation and understanding of hematological conditions."
+    },
+    "7": {
+      "name": "July",
+      "color": "Yellow",
+      "theme": "Viral hepatitis",
+      "summary": "Yellow July brings together prevention and care actions for viral hepatitis. The campaign was established by law in Brazil in 2019.",
+      "purpose": "Promote prevention, diagnosis and access to care."
+    },
+    "8": {
+      "name": "August",
+      "color": "Gold, lilac and orange",
+      "theme": "Breastfeeding, violence against women and multiple sclerosis",
+      "summary": "The calendar consulted associates gold with breastfeeding, lilac with violence against women and orange with multiple sclerosis.",
+      "purpose": "Give visibility to breastfeeding support, women’s protection and continued care."
+    },
+    "9": {
+      "name": "September",
+      "color": "Yellow",
+      "theme": "Preventing suicide and valuing life",
+      "summary": "Scientific articles date the Brazilian national campaign to 2015; the Virtual Health Library (BVS) records activities since 2014. September 10 is World Suicide Prevention Day, established in 2003 by IASP in partnership with WHO.",
+      "purpose": "Expand responsible information, reduce stigma and facilitate the search for help.",
+      "history": [
+        {
+          "year": "1994",
+          "text": "The symbolic antecedent of the yellow ribbon is linked to the mobilization of Mike Emme's family and friends in the United States. The distribution of ribbons accompanied by messages of help gave visibility to the symbol. This story does not correspond to the launch of the Brazilian campaign.",
+          "source_ids": [
+            3
+          ]
+        },
+        {
+          "year": "2003",
+          "text": "IASP and WHO established World Suicide Prevention Day, celebrated on September 10th.",
+          "source_ids": [
+            2
+          ]
+        },
+        {
+          "year": "2015",
+          "text": "Scientific articles record the Brazilian national campaign in 2015, involving CVV, ABP and CFM. The Virtual Health Library (BVS) mentions activities since 2014. This project preserves that difference in the records and does not confuse these dates with the origin of the yellow ribbon.",
+          "source_ids": [
+            3,
+            4,
+            15
+          ]
+        },
+        {
+          "year": "2024 to 2026",
+          "text": "The international theme is Changing the narrative on suicide. The aim is to replace stigma with understanding and support.",
+          "source_ids": [
+            2
+          ]
+        }
+      ],
+      "evidence_note": "Campaign publicity needs to be accompanied by care and professional training. [4]...To support this, WHO developed Live Life (Viva a Vida).",
+      "evidence_link": {
+        "text": "Live Life",
+        "url": "https://www.who.int/initiatives/live-life-initiative-for-suicide-prevention"
+      },
+      "care": [
+        "Talk to someone you trust and look for a healthcare professional.",
+        "Listen without judgment and offer to accompany the person when they seek care.",
+        "If there is immediate danger, seek emergency care. Don't leave the person alone."
+      ]
+    },
+    "10": {
+      "name": "October",
+      "color": "Pink",
+      "theme": "Breast cancer",
+      "summary": "Pink October began in the United States in the 1990s. The campaign gained international recognition and uses pink in public awareness campaigns.",
+      "purpose": "Expand information about breast cancer and access to care."
+    },
+    "11": {
+      "name": "November",
+      "color": "Blue",
+      "theme": "Men's health, prostate cancer and diabetes",
+      "summary": "Blue is used in campaigns about prostate health and diabetes. Movember began in Australia in 2003. According to the review consulted, Brazil adopted the name Novembro Azul (Blue November) in 2012.",
+      "purpose": "Encourage health care. Exams depend on professional guidance and assessment of benefits and risks."
+    },
+    "12": {
+      "name": "December",
+      "color": "Red and orange",
+      "theme": "HIV, AIDS, other STIs and skin cancer",
+      "summary": "Red identifies actions on HIV, AIDS and other STIs; orange appears in actions on skin cancer. Red December was established by law in Brazil in 2017.",
+      "purpose": "Promote prevention, care and rights, in addition to attention to skin health."
+    }
+  },
+  "translation": {
+    "method": "machine-assisted",
+    "source": "pt-BR",
+    "review": "core interface and support wording reviewed; native-language review pending"
+  }
+}

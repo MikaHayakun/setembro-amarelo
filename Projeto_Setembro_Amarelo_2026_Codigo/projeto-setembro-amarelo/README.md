@@ -30,11 +30,19 @@ A abertura da página não inicia a animação. Um novo acionamento substitui o 
 
 A animação preserva a proporção e os 704 × 992 pixels do vídeo em todas as telas. A iluminação registrada é mantida na recoloração, com uma correção leve de contraste local; as cópias translúcidas entram apenas durante a dispersão. O Canvas usa amostragem em maior resolução, até 3840 × 2160 pixels conforme o tamanho da janela. Esse limite descreve a área de renderização; o material original permanece em 704 × 992 pixels. As fumaças alcançam as bordas da área visível e perdem opacidade até desaparecer.
 
-O botão “Ouvir texto” é complementar. Depende do suporte do navegador e da existência de uma voz em português. O conteúdo escrito permanece disponível quando a voz não funciona. O servidor não coleta relatos pessoais nem grava histórico de navegação. Links das fontes exigem conexão à internet; vozes podem depender de serviços do navegador.
+O botão “Ouvir texto” reproduz uma narração neural local no idioma selecionado, com ritmo moderado e pausas entre os trechos. Há controles de pausa, retomada, parada e velocidade (mais devagar, normal e mais rápido), utilizáveis por teclado. A reprodução começa somente por ação do usuário e é interrompida ao trocar de mês ou idioma. Não depende de uma voz instalada no computador nem envia textos a um serviço externo durante a reprodução. O conteúdo escrito continua disponível para leitores de tela. Se o texto de um mês for alterado, uma gravação anterior não é reproduzida: o site informa que o áudio precisa ser atualizado.
+
+O seletor no início da página oferece português do Brasil, inglês, espanhol, alemão, francês, japonês, chinês simplificado e coreano. Ele traduz a interface, os doze meses, o histórico e as orientações de apoio, além de atualizar o idioma do documento para os leitores de tela. A escolha pode ser compartilhada com `?lang=en`, `?lang=es`, `?lang=de`, `?lang=fr`, `?lang=ja`, `?lang=zh-CN`, `?lang=ko` ou `?lang=pt-BR`, e é lembrada localmente no navegador. Os títulos bibliográficos e links das fontes são preservados no original; os contatos do rodapé continuam identificados como serviços do Brasil. As traduções tiveram assistência automática e revisão dos principais textos; a revisão por falantes nativos continua recomendada antes de uma publicação definitiva.
+
+O servidor não coleta relatos pessoais nem grava histórico de navegação. Links das fontes exigem conexão à internet. Os áudios e as traduções acompanham o repositório e são servidos pelo próprio site.
 
 ## Estrutura
 
 - `frontend/`: HTML, CSS e JavaScript.
+- `frontend/narration.js`: reprodução das narrações e controles acessíveis de áudio.
+- `frontend/locales/`: textos e interface dos oito idiomas, em JSON.
+- `frontend/assets/audio/`: 96 narrações MP3 e um manifesto que as associa ao texto correspondente.
+- `scripts/generate_narration.py`: geração editorial dos áudios; não é necessária para executar o site.
 - `frontend/assets/emblema-setembro-amarelo.png`: emblema original fornecido localmente, fora do versionamento.
 - `frontend/assets/pinterest-savepin-onl.mp4`: nova referência de fumaça fornecida e autorizada para versionamento pelo responsável. Sua imagem fornece as dobras em movimento da animação.
 - `frontend/assets/fonts/`: fontes variáveis locais e suas licenças. Os títulos usam Bricolage Grotesque; o texto usa Cuidado Sans, versão reduzida e renomeada de Source Sans 3. Não há carregamento externo de fontes.
@@ -42,7 +50,8 @@ O botão “Ouvir texto” é complementar. Depende do suporte do navegador e da
 - `database/schema.sql`: estrutura relacional.
 - `database/content.json`: conteúdo de referência e 16 fontes.
 - `database/campaigns.sqlite3`: banco persistente com 12 meses.
-- `tests/test_api.py`: oito testes de integração.
+- `tests/test_api.py`: nove testes de integração, incluindo idiomas, correspondência dos textos e entrega dos 96 áudios.
+- `tests/test_narration.js`: verificações dos controles, de cancelamento e de gravações desatualizadas.
 - `docs/`: roteiro do pitch, descrição das telas e relatório de validação.
 
 ## API
@@ -59,6 +68,14 @@ Mês inválido retorna HTTP 400, recurso inexistente retorna 404 e POST retorna 
 ## Testes
 
 Execute `python3 -m unittest discover -s tests -v`. Os testes iniciam um servidor real com um banco temporário; não alteram o banco distribuído. A validação realizada cobre HTTP, conteúdo, relações e persistência. A revisão visual em navegador e o teste com leitor de tela devem ser feitos no dispositivo da apresentação.
+
+Execute também `node --test tests/test_narration.js` para verificar o comportamento dos controles. Esses testes não substituem uma avaliação da compreensão auditiva nem um teste com leitor de tela e pessoas usuárias no dispositivo final.
+
+## Atualizar narrações e traduções
+
+Revise os arquivos em `frontend/locales/` ao alterar o conteúdo editorial. O português é a referência; mantenha os IDs das fontes e os endereços dos links. Para regenerar os áudios, use um ambiente Python isolado com `edge-tts==7.2.8` e execute `python3 scripts/generate_narration.py`. Para somente um idioma: `python3 scripts/generate_narration.py --languages pt-BR`. Essa etapa exige internet e envia apenas o texto editorial público ao serviço de voz; a aplicação entregue não precisa dessa ferramenta. O gerador aproveita gravações cujo texto não mudou. Revise o manifesto e os MP3 com os textos e inclua os arquivos de áudio no commit editorial.
+
+As vozes usadas são Francisca (pt-BR), Jenny (en), Elvira (es), Katja (de), Denise (fr), Nanami (ja), Xiaoxiao (zh-CN) e SunHi (ko). A geração usa a ferramenta [edge-tts](https://github.com/rany2/edge-tts), com ritmo 8% mais lento que o padrão. Os arquivos MP3 são materiais públicos do site; modelos de voz, ambientes Python, credenciais, PDFs e o emblema original não entram no repositório.
 
 ## Atualização editorial
 

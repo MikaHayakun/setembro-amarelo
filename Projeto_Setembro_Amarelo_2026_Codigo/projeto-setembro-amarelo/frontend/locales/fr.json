@@ -1,0 +1,200 @@
+{
+  "lang": "fr",
+  "ui": {
+    "skip": "Passer au contenu",
+    "brand": "Septembre est jaune... mais les soins de santé mentale sont dispensés tous les jours",
+    "introMessage": "Nous savons que certaines choses sont très personnelles...et que nous aimerions leur garder un petit coin secret. Mais en parler peut soulager et fait partie du chemin...Vous n’êtes pas seul ni seule !",
+    "introLead": "Découvrez l’histoire du Septembre jaune et les objectifs des autres mois de sensibilisation, avec des liens vers les sources.",
+    "scope": "Contenu éducatif. Les soins de santé ont lieu tout au long de l'année.",
+    "calendar": "CALENDRIER DE SOINS",
+    "chooseMonth": "Choisissez un mois",
+    "swipe": "Faites glisser pour voir tous les mois",
+    "calendarNote": "Exemples brésiliens. Les couleurs et les thèmes varient selon les campagnes et les pays.",
+    "supportBrazil": "SOUTIEN AU BRÉSIL",
+    "whereHelp": "Où demander de l'aide",
+    "helpIntro": "Vous pouvez parler à une personne de confiance et demander conseil et suivi dans une unité brésilienne de soins primaires (UBS) ou un centre de soins psychosociaux (CAPS).",
+    "cvvText": "Un soutien émotionnel gratuit, disponible par téléphone 24h/24. [16]",
+    "call188": "Appelez le 188",
+    "emergencyText": "En cas de danger immédiat ou d'urgence, demandez des soins d'urgence. Ne laissez pas la personne seule.",
+    "call192": "Appelez le 192",
+    "helpScope": "Le soutien émotionnel du CVV ne remplace pas les soins d'urgence. Ce prototype n'offre pas de consultation, de diagnostic ou de service en temps réel.",
+    "helpSource": "[15] Canaux de service dans la bibliothèque virtuelle de santé",
+    "privacyTitle": "Votre vie privée",
+    "privacyText": "Le site est accessible gratuitement et sans inscription. Nous ne recueillons ni récits personnels ni données de santé. Les audios sont chargés depuis ce site uniquement lorsque vous choisissez de les écouter. Aucun texte n’est envoyé à un service vocal pendant la lecture.",
+    "footer": "Projet académique d'éducation à la santé · Sources consultées le 5 octobre 2026.",
+    "backTop": "Retour en haut",
+    "language": "Langue",
+    "introTitleFirst": "Comprendre",
+    "introTitleSecond": "pour prendre soin",
+    "pageTitle": "Septembre jaune | Informations et soins",
+    "emblemAlt": "Noeud jaune à deux mains jointes, emblème de Septembre Jaune",
+    "campaignsLabel": "Campagnes de sensibilisation",
+    "monthsLabel": "Mois de l'année",
+    "smokeAction": "Déclenche de la fumée jaune dans les quatre coins pendant 12 secondes",
+    "loading": "Chargement du contenu...",
+    "loadError": "Le contenu n'a pas pu être chargé. Les canaux d'aide restent disponibles ci-dessous.",
+    "retry": "Réessayez",
+    "serverError": "Le serveur n'a pas répondu. Redémarrez le projet et rechargez la page.",
+    "languageError": "Impossible de charger la langue. Veuillez réessayer.",
+    "purposeTitle": "Pourquoi la campagne existe",
+    "historyTitle": "Une histoire avec différentes étapes",
+    "evidenceTitle": "Ce que la science nous permet de dire",
+    "careTitle": "Comment offrir du soutien",
+    "careSource": "Directives générales de l'OMS.",
+    "helpLink": "Afficher les chaînes d'aide au Brésil",
+    "suggestion": "Suggestions d'assistance",
+    "sourcesTitle": "Sources à consulter",
+    "openSource": "Consulter la source ↗",
+    "reviewed": "Contenu examiné dans",
+    "audioControls": "Lire à haute voix les commandes",
+    "listen": "Écouter le texte",
+    "pause": "Mettre en pause",
+    "resume": "Reprendre la lecture",
+    "stop": "Arrêter la lecture",
+    "speed": "Vitesse de lecture",
+    "slower": "Plus lent",
+    "normal": "Normale",
+    "faster": "Plus rapide",
+    "reading": "Lire le texte...",
+    "finished": "Lecture terminée.",
+    "paused": "Lecture en pause.",
+    "stopped": "Lecture interrompue.",
+    "audioLoading": "Chargement du son...",
+    "audioError": "Impossible de lire l'audio. Essayez d'écouter à nouveau.",
+    "audioUnavailable": "L'audio de ce contenu n'est pas encore disponible. Le texte reste accessible à votre lecteur d'écran.",
+    "languageChanged": "Langue modifiée."
+  },
+  "campaigns": {
+    "1": {
+      "name": "Janvier",
+      "color": "Blanc et violet",
+      "theme": "Santé mentale et lèpre",
+      "summary": "Le blanc représente les actions de sensibilisation à la santé mentale. Le violet est aussi utilisé pour sensibiliser à la lèpre. Ce sont des campagnes différentes organisées le même mois.",
+      "purpose": "Donner de la visibilité aux soins émotionnels et aux informations sur la lèpre."
+    },
+    "2": {
+      "name": "Février",
+      "color": "Violet et orange",
+      "theme": "Alzheimer et leucémie",
+      "summary": "Le calendrier consulté associe le violet à la maladie d'Alzheimer et l'orange à la leucémie. Cette section n'inclut pas toutes les campagnes de février.",
+      "purpose": "Stimuler la connaissance, le suivi et l’accompagnement des individus et des familles."
+    },
+    "3": {
+      "name": "Mars",
+      "color": "Lilas et bleu foncé",
+      "theme": "Cancer du col de l'utérus et colorectal",
+      "summary": "Le lilas représente les actions de sensibilisation au cancer du col de l’utérus ; le bleu foncé, celles consacrées au cancer colorectal.",
+      "purpose": "Diffuser l’information et orienter la recherche de soins adaptés."
+    },
+    "4": {
+      "name": "Avril",
+      "color": "Bleu clair et vert",
+      "theme": "Autisme et santé au travail",
+      "summary": "Le bleu clair apparaît dans les actions de sensibilisation à l'autisme ; vert, dans la prévention des accidents du travail.",
+      "purpose": "Promouvoir l’inclusion et donner de la visibilité à la protection de la santé des travailleurs."
+    },
+    "5": {
+      "name": "Mai",
+      "color": "Jaune et violet",
+      "theme": "Sécurité routière et maladies inflammatoires de l’intestin",
+      "summary": "Le Mai jaune a été lancé au Brésil en 2014 pour mobiliser la société en faveur de la sécurité routière. Le violet représente aussi des actions sur les maladies inflammatoires de l’intestin.",
+      "purpose": "Promouvoir l’éducation routière et l’information sur les affections intestinales."
+    },
+    "6": {
+      "name": "Juin",
+      "color": "Rouge et orange",
+      "theme": "Don de sang et de moelle osseuse ; anémie et leucémie",
+      "summary": "Une étude sur un projet universitaire de sensibilisation décrit le Juin rouge pour le don de sang et de moelle osseuse et le Juin orange pour l’anémie et la leucémie.",
+      "purpose": "Encourager le don et la compréhension des conditions hématologiques."
+    },
+    "7": {
+      "name": "Juillet",
+      "color": "Jaune",
+      "theme": "Hépatite virale",
+      "summary": "Juillet Jaune regroupe les actions de prévention et de soins des hépatites virales. La campagne a été créée par la loi au Brésil en 2019.",
+      "purpose": "Promouvoir la prévention, le diagnostic et l’accès aux soins."
+    },
+    "8": {
+      "name": "Août",
+      "color": "Or, lilas et orange",
+      "theme": "Allaitement maternel, violences faites aux femmes et sclérose en plaques",
+      "summary": "Le calendrier consulté associe l'or à l'allaitement, le lilas aux violences faites aux femmes et l'orange à la sclérose en plaques.",
+      "purpose": "Donner de la visibilité au soutien à l’allaitement, à la protection des femmes et à la continuité des soins."
+    },
+    "9": {
+      "name": "Septembre",
+      "color": "Jaune",
+      "theme": "Prévenir le suicide et valoriser la vie",
+      "summary": "Des articles scientifiques situent la mobilisation nationale brésilienne en 2015 ; la Bibliothèque virtuelle de santé (BVS) mentionne des actions depuis 2014. Le 10 septembre est la Journée mondiale de prévention du suicide, instaurée en 2003 par l’IASP en partenariat avec l’OMS.",
+      "purpose": "Développez l’information responsable, réduisez la stigmatisation et facilitez la recherche d’aide.",
+      "history": [
+        {
+          "year": "1994",
+          "text": "L'antécédent symbolique du ruban jaune est lié à la mobilisation de la famille et des amis de Mike Emme aux Etats-Unis. La distribution de rubans accompagnés de messages d'aide a donné de la visibilité au symbole. Cette histoire ne correspond pas au lancement de la campagne brésilienne.",
+          "source_ids": [
+            3
+          ]
+        },
+        {
+          "year": "2003",
+          "text": "L'IASP et l'OMS ont institué la Journée mondiale de prévention du suicide, célébrée le 10 septembre.",
+          "source_ids": [
+            2
+          ]
+        },
+        {
+          "year": "2015",
+          "text": "Des articles scientifiques rapportent une mobilisation nationale brésilienne en 2015, avec la participation du CVV, de l’ABP et du CFM. La Bibliothèque virtuelle de santé (BVS) mentionne des actions depuis 2014. Le projet conserve cette différence entre les sources, sans confondre ces années avec l’origine du ruban jaune.",
+          "source_ids": [
+            3,
+            4,
+            15
+          ]
+        },
+        {
+          "year": "2024 à 2026",
+          "text": "Le thème international est « Changer le regard sur le suicide ». L’objectif est de remplacer la stigmatisation par la compréhension et le soutien.",
+          "source_ids": [
+            2
+          ]
+        }
+      ],
+      "evidence_note": "La diffusion de la campagne doit s’accompagner d’actions de soins et de formation professionnelle. [4]...Pour cela, l’OMS a développé Live Life (Viva a Vida).",
+      "evidence_link": {
+        "text": "Live Life",
+        "url": "https://www.who.int/initiatives/live-life-initiative-for-suicide-prevention"
+      },
+      "care": [
+        "Parlez à une personne de confiance et recherchez un professionnel de la santé.",
+        "Écoutez sans juger et proposez d’accompagner la personne lorsqu’elle cherche à obtenir des soins.",
+        "En cas de danger immédiat, recherchez des soins d'urgence. Ne laissez pas la personne seule."
+      ]
+    },
+    "10": {
+      "name": "Octobre",
+      "color": "Rose",
+      "theme": "Cancer du sein",
+      "summary": "L’Octobre rose est né aux États-Unis dans les années 1990. La campagne a acquis une reconnaissance internationale et utilise le rose dans les campagnes de sensibilisation du public.",
+      "purpose": "Développez l’information sur le cancer du sein et l’accès aux soins."
+    },
+    "11": {
+      "name": "Novembre",
+      "color": "Bleu",
+      "theme": "Santé des hommes, cancer de la prostate et diabète",
+      "summary": "La couleur bleue apparaît dans les campagnes sur la prostate et le diabète. Le mouvement Movember a débuté en Australie en 2003 ; Au Brésil, le nom Novembro Azul a été adopté en 2012, selon la revue consultée.",
+      "purpose": "Encourager les soins de santé. Les examens dépendent des conseils professionnels et de l’évaluation des avantages et des risques."
+    },
+    "12": {
+      "name": "Décembre",
+      "color": "Rouge et orange",
+      "theme": "VIH, SIDA, autres IST et cancer de la peau",
+      "summary": "Le rouge identifie les actions contre le VIH, le SIDA et d'autres IST ; l'orange apparaît dans les actions sur le cancer de la peau. Le Décembre Rouge a été créé par la loi au Brésil en 2017.",
+      "purpose": "Promouvoir la prévention, les soins et les droits, en plus de prêter attention à la santé de la peau."
+    }
+  },
+  "translation": {
+    "method": "machine-assisted",
+    "source": "pt-BR",
+    "review": "core interface and support wording reviewed; native-language review pending"
+  }
+}

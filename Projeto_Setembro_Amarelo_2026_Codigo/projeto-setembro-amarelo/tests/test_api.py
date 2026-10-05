@@ -1,6 +1,7 @@
 """Verificação de integração com HTTP real e um SQLite isolado."""
 import json
 import os
+import re
 from pathlib import Path
 import socket
 import sqlite3
@@ -141,6 +142,38 @@ class IntegrationTest(unittest.TestCase):
         finally:
             with sqlite3.connect(self.db) as connection:
                 connection.execute('UPDATE campaign SET reviewed_on = ? WHERE month = 9', (before,))
+
+    def test_09_languages_and_matching_narration(self):
+        languages = ['pt-BR', 'en', 'es', 'de', 'fr', 'ja', 'zh-CN', 'ko']
+        status, manifest, _ = self.fetch('/assets/audio/manifest.json')
+        self.assertEqual(status, 200)
+        self.assertEqual(set(manifest), set(languages))
+        keys = None
+        for lang in languages:
+            status, locale, _ = self.fetch(f'/locales/{lang}.json')
+            self.assertEqual(status, 200)
+            self.assertEqual(locale['lang'], lang)
+            self.assertEqual(set(locale['campaigns']), {str(m) for m in range(1, 13)})
+            if keys is None: keys = set(locale['ui'])
+            self.assertEqual(set(locale['ui']), keys)
+            self.assertTrue(all(isinstance(v, str) and v for v in locale['ui'].values()))
+            self.assertIn('Live Life', locale['campaigns']['9']['evidence_note'])
+            self.assertEqual(locale['campaigns']['9']['evidence_link']['url'],
+                             'https://www.who.int/initiatives/live-life-initiative-for-suicide-prevention')
+            self.assertEqual(set(manifest[lang]), {str(m) for m in range(1, 13)})
+            for month in range(1, 13):
+                original = self.fetch(f'/api/campaigns/{month}')[1]
+                c = original if lang == 'pt-BR' else {**original, **locale['campaigns'][str(month)]}
+                recording = manifest[lang][str(month)]
+                self.assertEqual(recording['source'], {k: c.get(k) for k in recording['source']})
+                self.assertFalse(re.search(r'\[\d+\]', recording['transcript']))
+                status, audio, headers = self.fetch(recording['file'])
+                self.assertEqual(status, 200)
+                self.assertEqual(headers['Content-Type'], 'audio/mpeg')
+                self.assertGreater(len(audio), 1000)
+        for path in ['/locales/unknown.json', '/assets/audio/pt-BR/13.mp3',
+                     '/assets/audio/../manifest.json', '/scripts/generate_narration.py']:
+            self.assertEqual(self.fetch(path)[0], 404)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

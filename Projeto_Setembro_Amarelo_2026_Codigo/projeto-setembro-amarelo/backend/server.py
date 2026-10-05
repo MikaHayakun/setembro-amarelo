@@ -11,6 +11,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 FRONTEND = ROOT / 'frontend'
+LANGUAGES = ('pt-BR', 'en', 'es', 'de', 'fr', 'ja', 'zh-CN', 'ko')
 DB = Path(os.environ.get('CAMPAIGN_DB', str(ROOT / 'database' / 'campaigns.sqlite3')))
 
 
@@ -96,15 +97,22 @@ class Handler(BaseHTTPRequestHandler):
             # Apenas arquivos públicos conhecidos são acessíveis.
             public = {'/': 'index.html', '/index.html': 'index.html',
                       '/app.js': 'app.js', '/styles.css': 'styles.css', '/smoke.js': 'smoke.js',
+                      '/narration.js': 'narration.js',
+                      '/assets/audio/manifest.json': 'assets/audio/manifest.json',
                       '/assets/emblema-setembro-amarelo.png': 'assets/emblema-setembro-amarelo.png',
                       '/assets/pinterest-savepin-onl.mp4': 'assets/pinterest-savepin-onl.mp4',
                       '/assets/fonts/bricolage-grotesque.woff2': 'assets/fonts/bricolage-grotesque.woff2',
                       '/assets/fonts/cuidado-sans.woff2': 'assets/fonts/cuidado-sans.woff2'}
+            for lang in LANGUAGES:
+                public[f'/locales/{lang}.json'] = f'locales/{lang}.json'
+                for month in range(1, 13):
+                    filename = f'assets/audio/{lang}/{month:02}.mp3'
+                    public['/' + filename] = filename
             if path in public:
                 file = FRONTEND / public[path]
                 mime = mimetypes.guess_type(file.name)[0] or 'application/octet-stream'
                 return self.respond(file.read_bytes(), content_type=(
-                    mime if mime.startswith(('image/', 'font/', 'video/')) else mime + '; charset=utf-8'))
+                    mime if mime.startswith(('image/', 'font/', 'video/', 'audio/')) else mime + '; charset=utf-8'))
             return self.respond({'error': 'Página não encontrada.'}, 404)
         except (sqlite3.Error, OSError, json.JSONDecodeError):
             return self.respond({'error': 'Conteúdo temporariamente indisponível. Tente novamente.'}, 503)

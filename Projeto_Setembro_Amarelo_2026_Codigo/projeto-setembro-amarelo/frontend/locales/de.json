@@ -1,0 +1,200 @@
+{
+  "lang": "de",
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "brand": "Der September ist gelb ... aber psychische Gesundheitsfürsorge gibt es jeden Tag",
+    "introMessage": "Wir wissen, dass es Dinge gibt, die ganz persönlich sind...und für die wir uns einen kleinen, geschützten Ort wünschen. Aber darüber zu sprechen kann entlasten und gehört zum Prozess...Du bist damit nicht allein!",
+    "introLead": "Erfahre mehr über die Geschichte des Gelben Septembers und die Ziele anderer Aufklärungsmonate, mit Links zu den Quellen.",
+    "scope": "Bildungsinhalte. Die Gesundheitsversorgung erfolgt das ganze Jahr über.",
+    "calendar": "PFLEGEKALENDER",
+    "chooseMonth": "Wählen Sie einen Monat",
+    "swipe": "Wischen Sie, um alle Monate anzuzeigen",
+    "calendarNote": "Brasilianische Beispiele. Farben und Themen variieren je nach Kampagne und Land.",
+    "supportBrazil": "UNTERSTÜTZUNG IN BRASILIEN",
+    "whereHelp": "Wo Sie Hilfe suchen können",
+    "helpIntro": "Sprich mit einer vertrauten Person. Eine brasilianische Einrichtung der medizinischen Grundversorgung (UBS) oder ein psychosoziales Versorgungszentrum (CAPS) bietet Beratung und Begleitung.",
+    "cvvText": "Kostenlose emotionale Unterstützung, telefonisch rund um die Uhr erreichbar. [16]",
+    "call188": "Rufen Sie 188 an",
+    "emergencyText": "Bei unmittelbarer Gefahr oder im Notfall suchen Sie dringend medizinische Hilfe auf. Lassen Sie die Person nicht allein.",
+    "call192": "Rufen Sie 192 an",
+    "helpScope": "Die emotionale Unterstützung von CVV ersetzt nicht die Notfallversorgung. Dieser Prototyp bietet keine Beratung, Diagnose oder Service in Echtzeit.",
+    "helpSource": "[15] Servicekanäle in der Virtuellen Gesundheitsbibliothek",
+    "privacyTitle": "Ihre Privatsphäre",
+    "privacyText": "Die Inhalte sind kostenlos und ohne Anmeldung zugänglich. Wir erfassen keine persönlichen Berichte oder Gesundheitsdaten. Audiodateien werden erst geladen, wenn du sie anhören möchtest. Während der Wiedergabe wird kein Text an einen Sprachdienst gesendet.",
+    "footer": "Akademisches Gesundheitsbildungsprojekt · Quellen konsultiert am 5. Oktober 2026.",
+    "backTop": "Zurück nach oben",
+    "language": "Sprache",
+    "introTitleFirst": "Verstehen",
+    "introTitleSecond": "und helfen",
+    "pageTitle": "Gelber September | Information und Betreuung",
+    "emblemAlt": "Gelbe Schleife mit zwei gefalteten Händen, Emblem des Gelben Septembers",
+    "campaignsLabel": "Aufklärungskampagnen",
+    "monthsLabel": "Monate im Jahr",
+    "smokeAction": "Löst 12 Sekunden lang gelben Rauch in allen vier Ecken aus",
+    "loading": "Inhalt wird geladen...",
+    "loadError": "Der Inhalt konnte nicht geladen werden. Die Hilfekanäle bleiben unten verfügbar.",
+    "retry": "Versuchen Sie es erneut",
+    "serverError": "Der Server hat nicht geantwortet. Starten Sie das Projekt neu und laden Sie die Seite neu.",
+    "languageError": "Sprache kann nicht geladen werden. Bitte versuchen Sie es erneut.",
+    "purposeTitle": "Warum es die Kampagne gibt",
+    "historyTitle": "Eine Geschichte mit verschiedenen Meilensteinen",
+    "evidenceTitle": "Was uns die Wissenschaft zu sagen erlaubt",
+    "careTitle": "So bieten Sie Unterstützung an",
+    "careSource": "Allgemeine Leitlinien der WHO.",
+    "helpLink": "Sehen Sie sich die Hilfekanäle in Brasilien an",
+    "suggestion": "Support-Vorschlag",
+    "sourcesTitle": "Zu konsultierende Quellen",
+    "openSource": "Quelle öffnen ↗",
+    "reviewed": "Inhalt überprüft in",
+    "audioControls": "Steuerelemente zum Vorlesen",
+    "listen": "Text anhören",
+    "pause": "Lesen pausieren",
+    "resume": "Lesen fortsetzen",
+    "stop": "Lesen beenden",
+    "speed": "Lesegeschwindigkeit",
+    "slower": "Langsamer",
+    "normal": "Normal",
+    "faster": "Schneller",
+    "reading": "Den Text lesen...",
+    "finished": "Lesung abgeschlossen.",
+    "paused": "Lesepause.",
+    "stopped": "Das Lesen wurde unterbrochen.",
+    "audioLoading": "Audio wird geladen...",
+    "audioError": "Audio kann nicht abgespielt werden. Versuchen Sie noch einmal, zuzuhören.",
+    "audioUnavailable": "Der Ton für diesen Inhalt ist noch nicht verfügbar. Der Text bleibt für Ihren Screenreader zugänglich.",
+    "languageChanged": "Sprache geändert."
+  },
+  "campaigns": {
+    "1": {
+      "name": "Januar",
+      "color": "Weiß und Lila",
+      "theme": "Psychische Gesundheit und Lepra",
+      "summary": "Weiß steht für Aktionen zur psychischen Gesundheit. Lila wird auch bei Aktionen zur Aufklärung über Lepra verwendet. Es handelt sich um verschiedene Kampagnen im selben Monat.",
+      "purpose": "Machen Sie emotionale Fürsorge sichtbar und informieren Sie über Lepra."
+    },
+    "2": {
+      "name": "Februar",
+      "color": "Lila und Orange",
+      "theme": "Alzheimer und Leukämie",
+      "summary": "Der konsultierte Kalender assoziiert Lila mit Alzheimer und Orange mit Leukämie. Dieser Abschnitt umfasst nicht alle Februar-Kampagnen.",
+      "purpose": "Fördern Sie Wissen, Überwachung und Unterstützung für Einzelpersonen und Familien."
+    },
+    "3": {
+      "name": "März",
+      "color": "Flieder und Dunkelblau",
+      "theme": "Gebärmutterhals- und Darmkrebs",
+      "summary": "Lila steht für Aufklärung über Gebärmutterhalskrebs; Dunkelblau steht für Aufklärung über Darmkrebs.",
+      "purpose": "Verbreiten Sie Informationen und leiten Sie die Suche nach geeigneter Pflege."
+    },
+    "4": {
+      "name": "April",
+      "color": "Hellblau und Grün",
+      "theme": "Autismus und Gesundheit am Arbeitsplatz",
+      "summary": "Hellblau erscheint bei Aktionen zur Sensibilisierung für Autismus; grün, bei der Vermeidung von Arbeitsunfällen.",
+      "purpose": "Fördern Sie die Inklusion und machen Sie den Schutz der Gesundheit der Arbeitnehmer sichtbar."
+    },
+    "5": {
+      "name": "Mai",
+      "color": "Gelb und Lila",
+      "theme": "Verkehrssicherheit und entzündliche Darmerkrankungen",
+      "summary": "Der Gelbe Mai wurde 2014 in Brasilien ins Leben gerufen, um die Gesellschaft für Verkehrssicherheit zu mobilisieren. Lila steht außerdem für Aufklärung über chronisch-entzündliche Darmerkrankungen.",
+      "purpose": "Verkehrsaufklärung und Aufklärung über Darmbeschwerden fördern."
+    },
+    "6": {
+      "name": "Juni",
+      "color": "Rot und Orange",
+      "theme": "Blut- und Knochenmarkspende; Anämie und Leukämie",
+      "summary": "Eine Studie über ein universitäres Bildungsprojekt beschreibt den Roten Juni für Blut- und Knochenmarkspenden und den Orangen Juni für Anämie und Leukämie.",
+      "purpose": "Fördern Sie Spenden und Verständnis für hämatologische Erkrankungen."
+    },
+    "7": {
+      "name": "Juli",
+      "color": "Gelb",
+      "theme": "Virushepatitis",
+      "summary": "Der Gelbe Juli vereint Präventions- und Pflegemaßnahmen gegen Virushepatitis. Die Kampagne wurde 2019 in Brasilien per Gesetz eingeführt.",
+      "purpose": "Förderung von Prävention, Diagnose und Zugang zur Gesundheitsversorgung."
+    },
+    "8": {
+      "name": "August",
+      "color": "Gold, Flieder und Orange",
+      "theme": "Stillen, Gewalt gegen Frauen und Multiple Sklerose",
+      "summary": "Der konsultierte Kalender assoziiert Gold mit Stillen, Flieder mit Gewalt gegen Frauen und Orange mit Multipler Sklerose.",
+      "purpose": "Machen Sie Stillunterstützung, Frauenschutz und kontinuierliche Betreuung sichtbar."
+    },
+    "9": {
+      "name": "September",
+      "color": "Gelb",
+      "theme": "Selbstmord verhindern und das Leben wertschätzen",
+      "summary": "Wissenschaftliche Artikel datieren die landesweite brasilianische Kampagne auf 2015; die Virtuelle Gesundheitsbibliothek (BVS) dokumentiert Aktivitäten seit 2014. Der 10. September ist der Welttag der Suizidprävention, der 2003 von der IASP gemeinsam mit der WHO eingeführt wurde.",
+      "purpose": "Erweitern Sie verantwortungsvolle Informationen, reduzieren Sie Stigmatisierung und erleichtern Sie die Suche nach Hilfe.",
+      "history": [
+        {
+          "year": "1994",
+          "text": "Der symbolische Vorläufer der gelben Schleife ist mit der Mobilisierung von Mike Emmes Familie und Freunden in den Vereinigten Staaten verbunden. Durch die Verteilung von Bändern und Hilfsbotschaften wurde das Symbol sichtbar. Diese Geschichte steht nicht im Zusammenhang mit dem Start der brasilianischen Kampagne.",
+          "source_ids": [
+            3
+          ]
+        },
+        {
+          "year": "2003",
+          "text": "IASP und WHO haben den Welttag der Suizidprävention ins Leben gerufen, der am 10. September gefeiert wird.",
+          "source_ids": [
+            2
+          ]
+        },
+        {
+          "year": "2015",
+          "text": "Wissenschaftliche Artikel dokumentieren die nationale Mobilisierung Brasiliens im Jahr 2015 unter Beteiligung von CVV, ABP und CFM. Die VHL erwähnt Aktionen seit 2014. Das Projekt behält diesen Unterschied zwischen den Aufzeichnungen bei, ohne diese Jahre mit dem Ursprung des gelben Bandes zu verwechseln.",
+          "source_ids": [
+            3,
+            4,
+            15
+          ]
+        },
+        {
+          "year": "2024 bis 2026",
+          "text": "Das internationale Thema lautet „Die Sichtweise auf Suizid verändern“. Ziel ist es, Stigmatisierung durch Verständnis und Unterstützung zu ersetzen.",
+          "source_ids": [
+            2
+          ]
+        }
+      ],
+      "evidence_note": "Die Öffentlichkeitsarbeit für die Kampagne muss mit Versorgungsmaßnahmen und der Schulung von Fachkräften einhergehen. [4]...Dafür hat die WHO Live Life (Viva a Vida) entwickelt.",
+      "evidence_link": {
+        "text": "Live Life",
+        "url": "https://www.who.int/initiatives/live-life-initiative-for-suicide-prevention"
+      },
+      "care": [
+        "Sprechen Sie mit jemandem, dem Sie vertrauen, und suchen Sie einen Arzt auf.",
+        "Höre ohne Vorurteile zu und biete an, die Person bei der Suche nach Hilfe zu begleiten.",
+        "Wenn eine unmittelbare Gefahr besteht, suchen Sie einen Notarzt auf. Lassen Sie die Person nicht allein."
+      ]
+    },
+    "10": {
+      "name": "Oktober",
+      "color": "Rosa",
+      "theme": "Brustkrebs",
+      "summary": "Der Rosa Oktober begann in den 1990er Jahren in den Vereinigten Staaten. Die Kampagne wurde international bekannt und verwendet Rosa bei öffentlichen Aufklärungsaktionen.",
+      "purpose": "Erweitern Sie die Informationen über Brustkrebs und den Zugang zu medizinischer Versorgung."
+    },
+    "11": {
+      "name": "November",
+      "color": "Blau",
+      "theme": "Männergesundheit, Prostatakrebs und Diabetes",
+      "summary": "Die Farbe Blau taucht in Kampagnen zum Thema Prostata und Diabetes auf. Die Movember-Bewegung begann 2003 in Australien; In Brasilien wurde der Name Novembro Azul laut der konsultierten Rezension im Jahr 2012 eingeführt.",
+      "purpose": "Aufmerksamkeit für die Gesundheit fördern. Untersuchungen sollten sich nach fachlicher Beratung und einer Bewertung von Nutzen und Risiken richten."
+    },
+    "12": {
+      "name": "Dezember",
+      "color": "Rot und Orange",
+      "theme": "HIV, AIDS, andere sexuell übertragbare Krankheiten und Hautkrebs",
+      "summary": "Rot steht für Aufklärung über HIV, Aids und andere sexuell übertragbare Infektionen; Orange wird bei Aktionen zur Aufklärung über Hautkrebs verwendet. Der Rote Dezember wurde 2017 in Brasilien gesetzlich eingeführt.",
+      "purpose": "Fördern Sie neben der Aufmerksamkeit für die Hautgesundheit auch Prävention, Pflege und Rechte."
+    }
+  },
+  "translation": {
+    "method": "machine-assisted",
+    "source": "pt-BR",
+    "review": "core interface and support wording reviewed; native-language review pending"
+  }
+}

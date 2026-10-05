@@ -45,7 +45,7 @@ a { color: var(--green); text-underline-offset: .2em; }
 a:hover { text-decoration-thickness: 2px; }
 button, a { touch-action: manipulation; }
 button { font: inherit; cursor: pointer; }
-button:focus-visible, a:focus-visible, [tabindex]:focus-visible {
+button:focus-visible, a:focus-visible, select:focus-visible, [tabindex]:focus-visible {
   outline: 3px solid var(--green);
   outline-offset: 5px;
 }
@@ -213,8 +213,21 @@ p { margin: 0 0 var(--space-lg); }
   text-underline-offset: .18em;
 }
 .september-trigger:hover { text-decoration-style: solid; }
-.tools span { width: 100%; color: var(--muted); font-size: .875rem; }
-.tools span:empty { display: none; }
+.tools .audio-status { width: 100%; color: var(--muted); font-size: 1rem; margin: 0; }
+.audio-status:empty { display: none; }
+.tools button:disabled { opacity: .55; cursor: default; }
+.audio-speed { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.audio-speed select, .language-bar select {
+  min-height: 48px; max-width: 100%; padding: .5rem .75rem;
+  border: 1px solid #a6b3a4; border-radius: .75rem;
+  background: var(--paper); color: var(--green); font: inherit;
+}
+.language-bar {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end;
+  gap: .75rem; padding: .75rem clamp(1rem, 4vw, 4rem); color: var(--green);
+}
+#language-status:empty { display: none; }
+html:lang(ja), html:lang(zh), html:lang(ko) { word-break: normal; overflow-wrap: anywhere; }
 .sources { list-style: none; padding: 0; margin-block: var(--space-lg); font-size: 1rem; overflow-wrap: anywhere; }
 .sources li { padding-block: var(--space-md); border-bottom: 1px solid var(--line); }
 .sources li:first-child { padding-top: 0; }
@@ -283,7 +296,7 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   .month-smoke { display: none; }
 }
 @media print {
-  header, .calendar, .tools, .support-actions, footer, .month-smoke { display: none; }
+  header, .calendar, .tools, .language-bar, .support-actions, footer, .month-smoke { display: none; }
   body { font-size: 11pt; background: var(--paper); }
   main { width: 100%; }
   .layout, .privacy { display: block; }

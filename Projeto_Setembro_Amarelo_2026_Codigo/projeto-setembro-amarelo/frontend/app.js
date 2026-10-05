@@ -1,6 +1,12 @@
 'use strict';
 const container = document.getElementById('campaign');
-let currentText = '';
+let narrator = null;
+let locale;
+let recordings = {};
+let campaigns = [];
+let selectedMonth = 9;
+let languageSequence = 0;
+const localeCache = new Map();
 let requestSequence = 0;
 function element(tag, text, className) {
   const e = document.createElement(tag);
@@ -12,8 +18,11 @@ function paragraph(text, parent, className) { parent.append(element('p', text, c
 function sectionTitle(text, parent) { parent.append(element('h3', text)); }
 function refs(ids) { return ids.map(id => `[${id}]`).join(' '); }
 function addSeptemberButtons(root) {
+  const terms = [...new Set(['Setembro', locale?.campaigns['9'].name].filter(Boolean))];
+  const pattern = terms.map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const september = new RegExp(pattern, 'giu');
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode: node => /\bsetembro\b/i.test(node.textContent) &&
+    acceptNode: node => terms.some(term => node.textContent.toLocaleLowerCase().includes(term.toLocaleLowerCase())) &&
       !node.parentElement.closest('button, a, script, style, title, textarea')
       ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
   });
@@ -23,12 +32,12 @@ function addSeptemberButtons(root) {
     const fragment = document.createDocumentFragment();
     const text = node.textContent;
     let start = 0;
-    for (const match of text.matchAll(/\bsetembro\b/gi)) {
+    for (const match of text.matchAll(september)) {
       fragment.append(document.createTextNode(text.slice(start, match.index)));
       const button = element('button', match[0], 'september-trigger');
       button.type = 'button';
-      button.setAttribute('aria-label', `${match[0]}: acionar fumaça amarela nos quatro cantos por 12 segundos`);
-      button.title = 'Acionar fumaça amarela por 12 segundos';
+      button.setAttribute('aria-label', `${match[0]}: ${locale.ui.smokeAction}`);
+      button.title = locale.ui.smokeAction;
       fragment.append(button);
       start = match.index + match[0].length;
     }
@@ -41,12 +50,13 @@ async function json(url) {
   if (!response.ok) throw new Error('Não foi possível carregar o conteúdo.');
   return response.json();
 }
-function cancelSpeech() { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); }
+function cancelReading() { narrator?.dispose(); narrator = null; }
 async function showMonth(month, moveFocus = false) {
+  selectedMonth = month;
   const sequence = ++requestSequence;
-  cancelSpeech();
+  cancelReading();
   container.setAttribute('aria-busy', 'true');
-  container.replaceChildren(element('p', 'Carregando o conteúdo...'));
+  container.replaceChildren(element('p', locale.ui.loading));
   document.querySelectorAll('[data-month]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.month) === month)));
   const months = document.getElementById('months');
   const selected = months.querySelector('[aria-pressed="true"]');
@@ -54,24 +64,25 @@ async function showMonth(month, moveFocus = false) {
     months.scrollLeft = selected.offsetLeft - months.offsetLeft - (months.clientWidth - selected.offsetWidth) / 2;
   }
   try {
-    const c = await json(`/api/campaigns/${month}`);
+    const original = await json(`/api/campaigns/${month}`);
+    const c = locale.lang === 'pt-BR' ? original : {...original, ...locale.campaigns[String(month)]};
     if (sequence !== requestSequence) return;
     container.replaceChildren();
     const title = element('h2', `${c.name} ${c.color.toLowerCase()}`);
     title.tabIndex = -1; container.append(title);
     paragraph(c.theme, container, 'campaign-theme');
     paragraph(`${c.summary} ${refs(c.sources.map(s => s.id))}`, container, 'campaign-summary');
-    sectionTitle('Por que a campanha existe', container);
+    sectionTitle(locale.ui.purposeTitle, container);
     paragraph(c.purpose, container);
     if (c.history) {
-      sectionTitle('Uma história com marcos diferentes', container);
+      sectionTitle(locale.ui.historyTitle, container);
       const list = element('ol', undefined, 'timeline');
       c.history.forEach(item => {
         const li = element('li'); li.append(element('strong', item.year));
         paragraph(`${item.text} ${refs(item.source_ids)}`, li); list.append(li);
       });
       container.append(list);
-      sectionTitle('O que a ciência permite afirmar', container);
+      sectionTitle(locale.ui.evidenceTitle, container);
       const evidence = element('p', c.evidence_note);
       if (c.evidence_link) {
         const {text, url} = c.evidence_link;
@@ -84,87 +95,127 @@ async function showMonth(month, moveFocus = false) {
         }
       }
       container.append(evidence);
-      sectionTitle('Como oferecer apoio', container);
+      sectionTitle(locale.ui.careTitle, container);
       const ul = element('ul'); c.care.forEach(t => ul.append(element('li', t))); container.append(ul);
-      paragraph(`Orientações gerais da OMS. ${refs(c.care_source_ids)}`, container);
+      paragraph(`${locale.ui.careSource} ${refs(c.care_source_ids)}`, container);
       const actions = element('div', undefined, 'support-actions');
-      const help = element('a', 'Ver canais de ajuda no Brasil', 'primary-link'); help.href = '#ajuda';
-      const suggestion = element('a', 'Sugestão de Apoio', 'support-link');
+      const help = element('a', locale.ui.helpLink, 'primary-link'); help.href = '#ajuda';
+      const suggestion = element('a', locale.ui.suggestion, 'support-link');
       suggestion.href = 'https://www.mikaweiai.com.br/';
       suggestion.target = '_blank'; suggestion.rel = 'noopener noreferrer';
       const arrow = element('span', '↗'); arrow.setAttribute('aria-hidden', 'true');
       suggestion.append(arrow);
       actions.append(help, suggestion); container.append(actions);
     }
-    const tools = element('div', undefined, 'tools');
-    const speak = element('button', 'Ouvir texto'); speak.type = 'button';
-    const stop = element('button', 'Parar leitura'); stop.type = 'button';
-    const status = element('span'); status.setAttribute('role', 'status');
-    currentText = `${c.name}. ${c.theme}. ${c.summary}. ${c.purpose}. ` +
-      (c.history ? c.history.map(i => `${i.year}. ${i.text}`).join(' ') + ' ' + c.evidence_note + ' ' + c.care.join(' ') : '');
-    speak.addEventListener('click', () => {
-      cancelSpeech();
-      if (!('speechSynthesis' in window)) { status.textContent = 'A leitura por voz não está disponível neste navegador.'; return; }
-      const voices = window.speechSynthesis.getVoices();
-      const voice = voices.find(v => /^pt-BR$/i.test(v.lang)) || voices.find(v => /^pt/i.test(v.lang));
-      if (!voice) { status.textContent = 'Não há voz em português disponível neste navegador. O texto continua disponível para leitura.'; return; }
-      const utterance = new SpeechSynthesisUtterance(currentText.replace(/\[\d+\]/g, ''));
-      utterance.lang = voice.lang; utterance.voice = voice; utterance.rate = 0.95;
-      utterance.onend = () => { status.textContent = 'Leitura concluída.'; };
-      utterance.onerror = () => { status.textContent = 'A voz não pôde ser reproduzida.'; };
-      status.textContent = 'Lendo o texto...'; window.speechSynthesis.speak(utterance);
-    });
-    stop.addEventListener('click', () => { cancelSpeech(); status.textContent = 'Leitura interrompida.'; });
-    tools.append(speak, stop, status); container.append(tools);
-    sectionTitle('Fontes para consultar', container);
+    narrator = createNarrator(c, locale, recordings[locale.lang]);
+    container.append(narrator.element);
+    sectionTitle(locale.ui.sourcesTitle, container);
     const sources = element('ul', undefined, 'sources');
     c.sources.forEach(s => {
       const li = element('li');
       const label = `[${s.id}] ${s.institution} · ${s.title} (${s.year})`;
       const hasSeptember = /\bsetembro\b/i.test(label);
-      const a = element('a', hasSeptember ? 'Abrir fonte ↗' : label);
+      const a = element('a', hasSeptember ? locale.ui.openSource : label);
       if (hasSeptember) li.append(element('span', label), document.createTextNode(' · '));
       a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; li.append(a); sources.append(li);
     });
     container.append(sources);
-    paragraph(`Conteúdo revisado em ${c.reviewed_on.split('-').reverse().join('/')}.`, container, 'review-date');
+    paragraph(`${locale.ui.reviewed} ${new Intl.DateTimeFormat(locale.lang, {timeZone: 'UTC'}).format(new Date(c.reviewed_on + 'T00:00:00Z'))}.`, container, 'review-date');
     addSeptemberButtons(container);
     if (moveFocus) title.focus({preventScroll: true});
   } catch (error) {
     if (sequence !== requestSequence) return;
-    container.replaceChildren(element('p', 'O conteúdo não pôde ser carregado. Os canais de ajuda continuam disponíveis abaixo.'));
-    const retry = element('button', 'Tentar novamente'); retry.type = 'button';
+    container.replaceChildren(element('p', locale.ui.loadError));
+    const retry = element('button', locale.ui.retry); retry.type = 'button';
     retry.addEventListener('click', () => showMonth(month)); container.append(retry);
   } finally {
     if (sequence === requestSequence) container.setAttribute('aria-busy', 'false');
   }
 }
-async function init() {
-  try {
-    const campaigns = await json('/api/campaigns');
-    campaigns.forEach(c => {
-      const button = element('button'); button.type = 'button'; button.dataset.month = c.month;
-      const number = element('span', String(c.month).padStart(2, '0'), 'month-number');
-      number.setAttribute('aria-hidden', 'true');
-      const label = element('span', undefined, 'month-label');
-      label.append(element('span', c.name), element('small', c.color));
-      button.append(number, label);
-      button.setAttribute('aria-pressed', 'false');
-      button.addEventListener('click', () => {
-        monthSmoke.play(c.color, c.month);
-        showMonth(c.month, true);
-      });
-      document.getElementById('months').append(button);
+function renderMonths() {
+  const months = document.getElementById('months');
+  months.replaceChildren();
+  campaigns.forEach(c => {
+    const translated = locale.lang === 'pt-BR' ? c : locale.campaigns[String(c.month)];
+    const button = element('button'); button.type = 'button'; button.dataset.month = c.month;
+    const number = element('span', String(c.month).padStart(2, '0'), 'month-number');
+    number.setAttribute('aria-hidden', 'true');
+    const label = element('span', undefined, 'month-label');
+    label.append(element('span', translated.name), element('small', translated.color));
+    button.append(number, label);
+    button.setAttribute('aria-pressed', String(c.month === selectedMonth));
+    button.addEventListener('click', () => {
+      monthSmoke.play(c.color, c.month);
+      showMonth(c.month, true);
     });
-    await showMonth(9);
+    months.append(button);
+  });
+}
+function applyLocale() {
+  document.documentElement.lang = locale.lang;
+  document.title = locale.ui.pageTitle;
+  document.querySelectorAll('[data-i18n]').forEach(node => {
+    node.textContent = locale.ui[node.dataset.i18n];
+  });
+  document.querySelector('.intro-emblem').alt = locale.ui.emblemAlt;
+  document.getElementById('campanhas').setAttribute('aria-label', locale.ui.campaignsLabel);
+  document.querySelector('.calendar').setAttribute('aria-label', locale.ui.monthsLabel);
+  addSeptemberButtons(document.querySelector('header'));
+  addSeptemberButtons(document.querySelector('.intro'));
+}
+async function loadLocale(lang) {
+  if (!localeCache.has(lang)) localeCache.set(lang, await json(`/locales/${lang}.json`));
+  return localeCache.get(lang);
+}
+async function init() {
+  const select = document.getElementById('language');
+  select.disabled = true;
+  try {
+    let initial = 'pt-BR';
+    const requested = new URL(window.location.href).searchParams.get('lang');
+    try {
+      const saved = localStorage.getItem('site-language');
+      if ([...select.options].some(option => option.value === saved)) initial = saved;
+    } catch (_) { /* Browsing without storage remains supported. */ }
+    if ([...select.options].some(option => option.value === requested)) initial = requested;
+    locale = await loadLocale(initial).catch(() => loadLocale('pt-BR'));
+    select.value = locale.lang;
+    applyLocale();
+    [campaigns, recordings] = await Promise.all([
+      json('/api/campaigns'), json('/assets/audio/manifest.json').catch(() => ({}))
+    ]);
+    renderMonths();
+    await showMonth(selectedMonth);
+    select.disabled = false;
   } catch (error) {
     container.setAttribute('aria-busy', 'false');
-    container.replaceChildren(element('p', 'O servidor não respondeu. Reinicie o projeto e recarregue a página.'));
+    container.replaceChildren(element('p', locale?.ui.serverError || 'O servidor não respondeu. Reinicie o projeto e recarregue a página.'));
   }
+  select.addEventListener('change', async () => {
+    const sequence = ++languageSequence;
+    const status = document.getElementById('language-status');
+    cancelReading();
+    status.textContent = locale.ui.loading;
+    try {
+      const next = await loadLocale(select.value);
+      if (sequence !== languageSequence) return;
+      locale = next;
+      applyLocale(); renderMonths();
+      await showMonth(selectedMonth);
+      if (sequence !== languageSequence) return;
+      status.textContent = locale.ui.languageChanged;
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', locale.lang);
+      window.history.replaceState(null, '', url);
+      try { localStorage.setItem('site-language', locale.lang); } catch (_) {}
+    } catch (error) {
+      if (sequence !== languageSequence) return;
+      select.value = locale.lang; status.textContent = locale.ui.languageError;
+    }
+  });
 }
-window.addEventListener('beforeunload', cancelSpeech);
+window.addEventListener('pagehide', cancelReading);
 document.addEventListener('click', event => {
   if (event.target.closest('.september-trigger')) monthSmoke.play('Amarelo', 9);
 });
-addSeptemberButtons(document.body);
 init();

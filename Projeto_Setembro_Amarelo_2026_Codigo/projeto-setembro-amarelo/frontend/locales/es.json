@@ -1,0 +1,200 @@
+{
+  "lang": "es",
+  "ui": {
+    "skip": "Saltar al contenido",
+    "brand": "Septiembre es amarillo...pero la atención de Salud Mental ocurre todos los días",
+    "introMessage": "Sabemos que hay cosas que sentimos solo nuestras...y queremos tener un rinconcito secreto para ellas, pero hablar alivia y forma parte del proceso...¡No estás solo ni sola en esto!",
+    "introLead": "Conoce la historia del Septiembre Amarillo y el propósito de otros meses de concientización, con acceso a las fuentes.",
+    "scope": "Contenido educativo. La atención sanitaria se realiza durante todo el año.",
+    "calendar": "CALENDARIO DE CUIDADOS",
+    "chooseMonth": "Elige un mes",
+    "swipe": "Desliza para ver todos los meses",
+    "calendarNote": "Ejemplos brasileños. Los colores y temas varían entre campañas y países.",
+    "supportBrazil": "APOYO EN BRASIL",
+    "whereHelp": "Dónde buscar ayuda",
+    "helpIntro": "Puedes hablar con alguien de confianza y buscar orientación y seguimiento en una unidad de atención primaria brasileña (UBS) o un centro de atención psicosocial (CAPS).",
+    "cvvText": "Apoyo emocional gratuito, disponible telefónicamente las 24 horas del día. [16]",
+    "call188": "Llama al 188",
+    "emergencyText": "En caso de peligro o emergencia inmediato, busque atención urgente. No dejes sola a la persona.",
+    "call192": "Llama al 192",
+    "helpScope": "El apoyo emocional de CVV no reemplaza la atención de emergencia. Este prototipo no ofrece consulta, diagnóstico o servicio en tiempo real.",
+    "helpSource": "[15] Canales de atención en la Biblioteca Virtual en Salud",
+    "privacyTitle": "Tu privacidad",
+    "privacyText": "Consultar el sitio es gratis y no requiere registro. No recibimos relatos personales ni datos de salud. Los audios se cargan desde este sitio solo cuando decides escucharlos. No se envía el texto a un servicio de voz durante la reproducción.",
+    "footer": "Proyecto académico de educación para la salud · Fuentes consultadas el 5 de octubre de 2026.",
+    "backTop": "Volver arriba",
+    "language": "Idioma",
+    "introTitleFirst": "Conocer",
+    "introTitleSecond": "para cuidar",
+    "pageTitle": "Septiembre amarillo | Información y atención",
+    "emblemAlt": "Lazo amarillo con dos manos entrelazadas, emblema del Septiembre Amarillo",
+    "campaignsLabel": "Campañas de sensibilización",
+    "monthsLabel": "Meses del año",
+    "smokeAction": "Dispara humo amarillo en las cuatro esquinas durante 12 segundos.",
+    "loading": "Cargando contenido...",
+    "loadError": "No se pudo cargar el contenido. Los canales de ayuda siguen disponibles a continuación.",
+    "retry": "Inténtalo de nuevo",
+    "serverError": "El servidor no respondió. Reinicie el proyecto y vuelva a cargar la página.",
+    "languageError": "No se puede cargar el idioma. Por favor inténtalo de nuevo.",
+    "purposeTitle": "Por qué existe la campaña",
+    "historyTitle": "Una historia con diferentes hitos",
+    "evidenceTitle": "Lo que la ciencia nos permite decir",
+    "careTitle": "Cómo ofrecer apoyo",
+    "careSource": "Directrices generales de la OMS.",
+    "helpLink": "Ver canales de ayuda en Brasil",
+    "suggestion": "Sugerencia de apoyo",
+    "sourcesTitle": "Fuentes para consultar",
+    "openSource": "Consultar fuente ↗",
+    "reviewed": "Contenido revisado en",
+    "audioControls": "Controles de lectura en voz alta",
+    "listen": "Escuchar texto",
+    "pause": "Pausar lectura",
+    "resume": "Continuar lectura",
+    "stop": "Parar lectura",
+    "speed": "Velocidad de lectura",
+    "slower": "Más despacio",
+    "normal": "Normal",
+    "faster": "Más rápido",
+    "reading": "Leyendo el texto...",
+    "finished": "Lectura completada.",
+    "paused": "Lectura pausada.",
+    "stopped": "Se interrumpió la lectura.",
+    "audioLoading": "Cargando audio...",
+    "audioError": "No se puede reproducir audio. Intenta escuchar de nuevo.",
+    "audioUnavailable": "El audio de este contenido aún no está disponible. El texto permanece accesible para su lector de pantalla.",
+    "languageChanged": "Idioma cambiado."
+  },
+  "campaigns": {
+    "1": {
+      "name": "Enero",
+      "color": "Blanco y morado",
+      "theme": "Salud mental y lepra",
+      "summary": "El blanco identifica acciones de salud mental. El morado también se utiliza en acciones sobre la lepra. Son campañas diferentes en el mismo mes.",
+      "purpose": "Dar visibilidad a la atención emocional y a la información sobre la lepra."
+    },
+    "2": {
+      "name": "Febrero",
+      "color": "Morado y naranja",
+      "theme": "Alzheimer y leucemia",
+      "summary": "El calendario consultado asocia el morado con el Alzheimer y el naranja con la leucemia. Esta sección no incluye todas las campañas de febrero.",
+      "purpose": "Estimular el conocimiento, el seguimiento y el apoyo a las personas y familias."
+    },
+    "3": {
+      "name": "Marzo",
+      "color": "Lila y azul oscuro",
+      "theme": "Cáncer de cuello uterino y colorrectal",
+      "summary": "Lila identifica acciones sobre cáncer de cuello uterino; azul oscuro, sobre el cáncer colorrectal.",
+      "purpose": "Difundir información y orientar la búsqueda de una atención adecuada."
+    },
+    "4": {
+      "name": "Abril",
+      "color": "Azul claro y verde",
+      "theme": "Autismo y salud en el trabajo",
+      "summary": "El azul claro aparece en acciones de concientización sobre el autismo; verde, en la prevención de accidentes laborales.",
+      "purpose": "Promover la inclusión y dar visibilidad a la protección de la salud de los trabajadores."
+    },
+    "5": {
+      "name": "Mayo",
+      "color": "Amarillo y morado",
+      "theme": "Seguridad vial y enfermedades inflamatorias intestinales",
+      "summary": "Mayo Amarillo se lanzó en Brasil en 2014 para movilizar a la sociedad por la seguridad vial. El morado también identifica acciones sobre las enfermedades inflamatorias del intestino.",
+      "purpose": "Promover la educación vial y la información sobre afecciones intestinales."
+    },
+    "6": {
+      "name": "Junio",
+      "color": "rojo y naranja",
+      "theme": "Donación de sangre y médula ósea; anemia y leucemia",
+      "summary": "Un estudio de extensión universitaria describe el Junio Rojo para la donación de sangre y médula ósea y el Junio Naranja para la anemia y la leucemia.",
+      "purpose": "Fomentar la donación y la comprensión de las condiciones hematológicas."
+    },
+    "7": {
+      "name": "Julio",
+      "color": "amarillo",
+      "theme": "hepatitis viral",
+      "summary": "Julio Amarillo reúne acciones de prevención y atención de las hepatitis virales. La campaña fue establecida por ley en Brasil en 2019.",
+      "purpose": "Promover la prevención, el diagnóstico y el acceso a la atención."
+    },
+    "8": {
+      "name": "Agosto",
+      "color": "Oro, lila y naranja",
+      "theme": "Lactancia materna, violencia contra la mujer y esclerosis múltiple",
+      "summary": "El calendario consultado asocia el oro con la lactancia materna, el lila con la violencia contra la mujer y el naranja con la esclerosis múltiple.",
+      "purpose": "Dar visibilidad al apoyo a la lactancia materna, la protección de las mujeres y la atención continuada."
+    },
+    "9": {
+      "name": "Septiembre",
+      "color": "amarillo",
+      "theme": "Prevenir el suicidio y valorar la vida.",
+      "summary": "Artículos científicos sitúan la movilización nacional brasileña en 2015; la BVS registra acciones desde 2014. El 10 de septiembre es el Día Mundial para la Prevención del Suicidio, instituido en 2003 por la IASP en colaboración con la OMS.",
+      "purpose": "Ampliar la información responsable, reducir el estigma y facilitar la búsqueda de ayuda.",
+      "history": [
+        {
+          "year": "1994",
+          "text": "El antecedente simbólico del lazo amarillo está vinculado a la movilización de familiares y amigos de Mike Emme en Estados Unidos. La distribución de cintas acompañadas de mensajes de ayuda dio visibilidad al símbolo. Esta historia no corresponde al lanzamiento de la campaña brasileña.",
+          "source_ids": [
+            3
+          ]
+        },
+        {
+          "year": "2003",
+          "text": "La IASP y la OMS establecieron el Día Mundial para la Prevención del Suicidio, que se celebra el 10 de septiembre.",
+          "source_ids": [
+            2
+          ]
+        },
+        {
+          "year": "2015",
+          "text": "Artículos científicos registran la movilización nacional brasileña en 2015, con la participación de CVV, ABP y CFM. La BVS menciona acciones desde 2014. El proyecto mantiene esta diferencia entre registros, sin confundir estos años con el origen del listón amarillo.",
+          "source_ids": [
+            3,
+            4,
+            15
+          ]
+        },
+        {
+          "year": "2024 a 2026",
+          "text": "El tema internacional es Cambiar la narrativa sobre el suicidio. El objetivo es sustituir el estigma por comprensión y apoyo.",
+          "source_ids": [
+            2
+          ]
+        }
+      ],
+      "evidence_note": "La difusión de la campaña debe ir acompañada de acciones de atención y formación profesional. [4]...Para ello, la OMS desarrolló Live Life (Viva a Vida).",
+      "evidence_link": {
+        "text": "Live Life",
+        "url": "https://www.who.int/initiatives/live-life-initiative-for-suicide-prevention"
+      },
+      "care": [
+        "Habla con alguien de confianza y busca un profesional sanitario.",
+        "Escucha sin juzgar y ofrece acompañar a la persona cuando busque atención.",
+        "Si existe un peligro inmediato, busque atención de emergencia. No dejes sola a la persona."
+      ]
+    },
+    "10": {
+      "name": "Octubre",
+      "color": "rosa",
+      "theme": "Cáncer de mama",
+      "summary": "El Octubre Rosa comenzó en Estados Unidos en la década de 1990. La campaña obtuvo reconocimiento internacional y utiliza el rosa en campañas de concientización pública.",
+      "purpose": "Ampliar información sobre el cáncer de mama y el acceso a la atención."
+    },
+    "11": {
+      "name": "Noviembre",
+      "color": "azul",
+      "theme": "Salud masculina, cáncer de próstata y diabetes.",
+      "summary": "El azul aparece en campañas sobre la próstata y la diabetes. El movimiento Movember comenzó en Australia en 2003; en Brasil se adoptó la denominación Novembro Azul en 2012, según la revisión consultada.",
+      "purpose": "Fomentar la atención sanitaria. Los exámenes dependen de la orientación profesional y la evaluación de beneficios y riesgos."
+    },
+    "12": {
+      "name": "Diciembre",
+      "color": "rojo y naranja",
+      "theme": "VIH, SIDA, otras ITS y cáncer de piel",
+      "summary": "El rojo identifica acciones sobre VIH, SIDA y otras ITS; El naranja aparece en acciones sobre el cáncer de piel. Diciembre Rojo fue establecido por ley en Brasil en 2017.",
+      "purpose": "Promover la prevención, los cuidados y los derechos, además de la atención a la salud de la piel."
+    }
+  },
+  "translation": {
+    "method": "machine-assisted",
+    "source": "pt-BR",
+    "review": "core interface and support wording reviewed; native-language review pending"
+  }
+}

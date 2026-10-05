@@ -1,0 +1,195 @@
+{
+  "lang": "pt-BR",
+  "ui": {
+    "skip": "Pular para o conteúdo",
+    "brand": "O Setembro é Amarelo...mas O cuidado com a Saúde Mental acontece todos os dias",
+    "introMessage": "A gente sabe que têm coisas que são só nossas...e queremos ter um cantinho secreto só para elas, mas Falar alivia e faz parte do processo...Você não está sozinho (a) nessa!",
+    "introLead": "Entenda a história do Setembro Amarelo e o propósito dos outros meses de conscientização. Informação em português, com acesso às fontes.",
+    "scope": "Conteúdo educativo. O cuidado com a saúde acontece durante todo o ano.",
+    "calendar": "CALENDÁRIO DO CUIDADO",
+    "chooseMonth": "Escolha um mês",
+    "swipe": "Deslize para ver todos os meses",
+    "calendarNote": "Exemplos brasileiros. As cores e os temas variam entre campanhas e países.",
+    "supportBrazil": "APOIO NO BRASIL",
+    "whereHelp": "Onde buscar ajuda",
+    "helpIntro": "Você pode conversar com alguém de confiança e procurar uma UBS ou um CAPS para orientação e acompanhamento.",
+    "cvvText": "Apoio emocional gratuito, disponível por telefone 24 horas por dia. [16]",
+    "call188": "Ligar 188",
+    "emergencyText": "Em perigo imediato ou emergência, procure atendimento de urgência. Não deixe a pessoa sozinha.",
+    "call192": "Ligar 192",
+    "helpScope": "O apoio emocional do CVV não substitui atendimento de urgência. Este protótipo não oferece consulta, diagnóstico ou atendimento em tempo real.",
+    "helpSource": "[15] Canais de atendimento na Biblioteca Virtual em Saúde",
+    "privacyTitle": "Sua privacidade",
+    "privacyText": "A consulta é livre e não exige cadastro. Não recebemos relatos pessoais ou dados de saúde. Os áudios são carregados do próprio site somente quando você escolhe ouvir, sem enviar o texto para um serviço de voz durante a reprodução.",
+    "footer": "Projeto acadêmico de educação em saúde · Fontes consultadas em 5 de outubro de 2026.",
+    "backTop": "Voltar ao início",
+    "language": "Idioma",
+    "introTitleFirst": "Conhecer",
+    "introTitleSecond": "para cuidar",
+    "pageTitle": "Setembro Amarelo | Informação e cuidado",
+    "emblemAlt": "Laço amarelo com duas mãos entrelaçadas, emblema do Setembro Amarelo",
+    "campaignsLabel": "Campanhas de conscientização",
+    "monthsLabel": "Meses do ano",
+    "smokeAction": "Acionar fumaça amarela nos quatro cantos por 12 segundos",
+    "loading": "Carregando o conteúdo...",
+    "loadError": "O conteúdo não pôde ser carregado. Os canais de ajuda continuam disponíveis abaixo.",
+    "retry": "Tentar novamente",
+    "serverError": "O servidor não respondeu. Reinicie o projeto e recarregue a página.",
+    "languageError": "Não foi possível carregar o idioma. Tente novamente.",
+    "purposeTitle": "Por que a campanha existe",
+    "historyTitle": "Uma história com marcos diferentes",
+    "evidenceTitle": "O que a ciência permite afirmar",
+    "careTitle": "Como oferecer apoio",
+    "careSource": "Orientações gerais da OMS.",
+    "helpLink": "Ver canais de ajuda no Brasil",
+    "suggestion": "Sugestão de Apoio",
+    "sourcesTitle": "Fontes para consultar",
+    "openSource": "Abrir fonte ↗",
+    "reviewed": "Conteúdo revisado em",
+    "audioControls": "Controles da leitura em voz alta",
+    "listen": "Ouvir texto",
+    "pause": "Pausar leitura",
+    "resume": "Continuar leitura",
+    "stop": "Parar leitura",
+    "speed": "Velocidade da leitura",
+    "slower": "Mais devagar",
+    "normal": "Normal",
+    "faster": "Mais rápido",
+    "reading": "Lendo o texto...",
+    "finished": "Leitura concluída.",
+    "paused": "Leitura pausada.",
+    "stopped": "Leitura interrompida.",
+    "audioLoading": "Carregando o áudio...",
+    "audioError": "Não foi possível reproduzir o áudio. Tente ouvir novamente.",
+    "audioUnavailable": "O áudio deste conteúdo ainda não está disponível. O texto permanece acessível para seu leitor de tela.",
+    "languageChanged": "Idioma alterado."
+  },
+  "campaigns": {
+    "1": {
+      "name": "Janeiro",
+      "color": "Branco e roxo",
+      "theme": "Saúde mental e hanseníase",
+      "summary": "Branco identifica ações de saúde mental. Roxo também aparece em ações sobre hanseníase. São campanhas diferentes no mesmo mês.",
+      "purpose": "Dar visibilidade ao cuidado emocional e às informações sobre hanseníase."
+    },
+    "2": {
+      "name": "Fevereiro",
+      "color": "Roxo e laranja",
+      "theme": "Alzheimer e leucemia",
+      "summary": "O calendário consultado associa o roxo ao Alzheimer e o laranja à leucemia. Este recorte não reúne todas as campanhas de fevereiro.",
+      "purpose": "Estimular conhecimento, acompanhamento e apoio a pessoas e famílias."
+    },
+    "3": {
+      "name": "Março",
+      "color": "Lilás e azul escuro",
+      "theme": "Câncer do colo do útero e colorretal",
+      "summary": "Lilás identifica ações sobre câncer do colo do útero; azul escuro, sobre câncer colorretal.",
+      "purpose": "Divulgar informação e orientar a busca de cuidado adequado."
+    },
+    "4": {
+      "name": "Abril",
+      "color": "Azul claro e verde",
+      "theme": "Autismo e saúde no trabalho",
+      "summary": "O azul claro aparece nas ações de conscientização sobre autismo; o verde, na prevenção de acidentes no trabalho.",
+      "purpose": "Promover inclusão e dar visibilidade à proteção da saúde dos trabalhadores."
+    },
+    "5": {
+      "name": "Maio",
+      "color": "Amarelo e roxo",
+      "theme": "Segurança no trânsito e doenças inflamatórias intestinais",
+      "summary": "O Maio Amarelo foi lançado no Brasil em 2014 para mobilizar a sociedade pela segurança viária. O roxo também identifica ações sobre doenças inflamatórias intestinais.",
+      "purpose": "Promover educação para o trânsito e informação sobre condições intestinais."
+    },
+    "6": {
+      "name": "Junho",
+      "color": "Vermelho e laranja",
+      "theme": "Doação de sangue e medula óssea; anemia e leucemia",
+      "summary": "Um estudo de extensão universitária descreve Junho Vermelho para doação de sangue e medula óssea e Junho Laranja para anemia e leucemia.",
+      "purpose": "Incentivar a doação e a compreensão de condições hematológicas."
+    },
+    "7": {
+      "name": "Julho",
+      "color": "Amarelo",
+      "theme": "Hepatites virais",
+      "summary": "Julho Amarelo reúne ações de prevenção e atenção às hepatites virais. A campanha foi instituída em lei no Brasil em 2019.",
+      "purpose": "Divulgar prevenção, diagnóstico e acesso ao cuidado."
+    },
+    "8": {
+      "name": "Agosto",
+      "color": "Dourado, lilás e laranja",
+      "theme": "Amamentação, violência contra a mulher e esclerose múltipla",
+      "summary": "O calendário consultado associa dourado à amamentação, lilás à violência contra a mulher e laranja à esclerose múltipla.",
+      "purpose": "Dar visibilidade ao apoio à amamentação, à proteção das mulheres e ao cuidado continuado."
+    },
+    "9": {
+      "name": "Setembro",
+      "color": "Amarelo",
+      "theme": "Prevenção do suicídio e valorização da vida",
+      "summary": "Artigos científicos situam a mobilização nacional brasileira em 2015; a BVS registra ações desde 2014. O dia 10 de setembro é o Dia Mundial de Prevenção do Suicídio, estabelecido em 2003 pela IASP em parceria com a OMS.",
+      "purpose": "Ampliar informação responsável, reduzir o estigma e facilitar a busca de ajuda.",
+      "history": [
+        {
+          "year": "1994",
+          "text": "O antecedente simbólico do laço amarelo está ligado à mobilização da família e de amigos de Mike Emme nos Estados Unidos. A distribuição de fitas acompanhadas de mensagens de ajuda deu visibilidade ao símbolo. Essa história não corresponde ao lançamento da campanha brasileira.",
+          "source_ids": [
+            3
+          ]
+        },
+        {
+          "year": "2003",
+          "text": "IASP e OMS estabeleceram o Dia Mundial de Prevenção do Suicídio, celebrado em 10 de setembro.",
+          "source_ids": [
+            2
+          ]
+        },
+        {
+          "year": "2015",
+          "text": "Artigos científicos registram a mobilização nacional brasileira em 2015, com participação do CVV, da ABP e do CFM. A BVS menciona ações desde 2014. O projeto mantém essa diferença entre os registros, sem confundir esses anos com a origem do laço amarelo.",
+          "source_ids": [
+            3,
+            4,
+            15
+          ]
+        },
+        {
+          "year": "2024 a 2026",
+          "text": "O tema internacional é Changing the narrative on suicide, aqui apresentado em português como Mudar a narrativa sobre o suicídio. O foco é substituir o estigma por compreensão e apoio.",
+          "source_ids": [
+            2
+          ]
+        }
+      ],
+      "evidence_note": "A divulgação da campanha precisa acompanhar ações de cuidado e formação profissional. [4]...E para isso a OMS desenvolveu o Live Life (Viva a Vida).",
+      "evidence_link": {
+        "text": "Live Life",
+        "url": "https://www.who.int/initiatives/live-life-initiative-for-suicide-prevention"
+      },
+      "care": [
+        "Converse com alguém de confiança e procure um profissional de saúde.",
+        "Ouça sem julgamento e ofereça companhia para buscar atendimento.",
+        "Se houver perigo imediato, procure atendimento de urgência. Não deixe a pessoa sozinha."
+      ]
+    },
+    "10": {
+      "name": "Outubro",
+      "color": "Rosa",
+      "theme": "Câncer de mama",
+      "summary": "O Outubro Rosa começou nos Estados Unidos na década de 1990. A campanha ganhou projeção internacional e usa o rosa em ações públicas de conscientização.",
+      "purpose": "Ampliar informação sobre câncer de mama e acesso ao cuidado."
+    },
+    "11": {
+      "name": "Novembro",
+      "color": "Azul",
+      "theme": "Saúde do homem, câncer de próstata e diabetes",
+      "summary": "A cor azul aparece em campanhas sobre próstata e diabetes. O movimento Movember começou na Austrália em 2003; no Brasil, a denominação Novembro Azul foi adotada em 2012, segundo a revisão consultada.",
+      "purpose": "Estimular atenção à saúde. Exames dependem de orientação profissional e avaliação de benefícios e riscos."
+    },
+    "12": {
+      "name": "Dezembro",
+      "color": "Vermelho e laranja",
+      "theme": "HIV, Aids, outras IST e câncer de pele",
+      "summary": "Vermelho identifica ações sobre HIV, Aids e outras IST; laranja aparece nas ações sobre câncer de pele. Dezembro Vermelho foi instituído em lei no Brasil em 2017.",
+      "purpose": "Divulgar prevenção, cuidado e direitos, além da atenção à saúde da pele."
+    }
+  }
+}

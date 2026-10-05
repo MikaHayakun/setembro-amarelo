@@ -1,0 +1,1738 @@
+{
+  "pt-BR": {
+    "1": {
+      "source": {
+        "name": "Janeiro",
+        "color": "Branco e roxo",
+        "theme": "Saúde mental e hanseníase",
+        "summary": "Branco identifica ações de saúde mental. Roxo também aparece em ações sobre hanseníase. São campanhas diferentes no mesmo mês.",
+        "purpose": "Dar visibilidade ao cuidado emocional e às informações sobre hanseníase.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Janeiro. Branco e roxo.\n\nSaúde mental e hanseníase.\n\nBranco identifica ações de saúde mental. Roxo também aparece em ações sobre hanseníase. São campanhas diferentes no mesmo mês.\n\nPor que a campanha existe.\n\nDar visibilidade ao cuidado emocional e às informações sobre hanseníase.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/01.mp3"
+    },
+    "2": {
+      "source": {
+        "name": "Fevereiro",
+        "color": "Roxo e laranja",
+        "theme": "Alzheimer e leucemia",
+        "summary": "O calendário consultado associa o roxo ao Alzheimer e o laranja à leucemia. Este recorte não reúne todas as campanhas de fevereiro.",
+        "purpose": "Estimular conhecimento, acompanhamento e apoio a pessoas e famílias.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Fevereiro. Roxo e laranja.\n\nAlzheimer e leucemia.\n\nO calendário consultado associa o roxo ao Alzheimer e o laranja à leucemia. Este recorte não reúne todas as campanhas de fevereiro.\n\nPor que a campanha existe.\n\nEstimular conhecimento, acompanhamento e apoio a pessoas e famílias.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/02.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "Março",
+        "color": "Lilás e azul escuro",
+        "theme": "Câncer do colo do útero e colorretal",
+        "summary": "Lilás identifica ações sobre câncer do colo do útero; azul escuro, sobre câncer colorretal.",
+        "purpose": "Divulgar informação e orientar a busca de cuidado adequado.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Março. Lilás e azul escuro.\n\nCâncer do colo do útero e colorretal.\n\nLilás identifica ações sobre câncer do colo do útero; azul escuro, sobre câncer colorretal.\n\nPor que a campanha existe.\n\nDivulgar informação e orientar a busca de cuidado adequado.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "Abril",
+        "color": "Azul claro e verde",
+        "theme": "Autismo e saúde no trabalho",
+        "summary": "O azul claro aparece nas ações de conscientização sobre autismo; o verde, na prevenção de acidentes no trabalho.",
+        "purpose": "Promover inclusão e dar visibilidade à proteção da saúde dos trabalhadores.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Abril. Azul claro e verde.\n\nAutismo e saúde no trabalho.\n\nO azul claro aparece nas ações de conscientização sobre autismo; o verde, na prevenção de acidentes no trabalho.\n\nPor que a campanha existe.\n\nPromover inclusão e dar visibilidade à proteção da saúde dos trabalhadores.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/04.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "Maio",
+        "color": "Amarelo e roxo",
+        "theme": "Segurança no trânsito e doenças inflamatórias intestinais",
+        "summary": "O Maio Amarelo foi lançado no Brasil em 2014 para mobilizar a sociedade pela segurança viária. O roxo também identifica ações sobre doenças inflamatórias intestinais.",
+        "purpose": "Promover educação para o trânsito e informação sobre condições intestinais.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Maio. Amarelo e roxo.\n\nSegurança no trânsito e doenças inflamatórias intestinais.\n\nO Maio Amarelo foi lançado no Brasil em 2014 para mobilizar a sociedade pela segurança viária. O roxo também identifica ações sobre doenças inflamatórias intestinais.\n\nPor que a campanha existe.\n\nPromover educação para o trânsito e informação sobre condições intestinais.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/05.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "Junho",
+        "color": "Vermelho e laranja",
+        "theme": "Doação de sangue e medula óssea; anemia e leucemia",
+        "summary": "Um estudo de extensão universitária descreve Junho Vermelho para doação de sangue e medula óssea e Junho Laranja para anemia e leucemia.",
+        "purpose": "Incentivar a doação e a compreensão de condições hematológicas.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Junho. Vermelho e laranja.\n\nDoação de sangue e medula óssea; anemia e leucemia.\n\nUm estudo de extensão universitária descreve Junho Vermelho para doação de sangue e medula óssea e Junho Laranja para anemia e leucemia.\n\nPor que a campanha existe.\n\nIncentivar a doação e a compreensão de condições hematológicas.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/06.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "Julho",
+        "color": "Amarelo",
+        "theme": "Hepatites virais",
+        "summary": "Julho Amarelo reúne ações de prevenção e atenção às hepatites virais. A campanha foi instituída em lei no Brasil em 2019.",
+        "purpose": "Divulgar prevenção, diagnóstico e acesso ao cuidado.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Julho. Amarelo.\n\nHepatites virais.\n\nJulho Amarelo reúne ações de prevenção e atenção às hepatites virais. A campanha foi instituída em lei no Brasil em 2019.\n\nPor que a campanha existe.\n\nDivulgar prevenção, diagnóstico e acesso ao cuidado.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/07.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "Agosto",
+        "color": "Dourado, lilás e laranja",
+        "theme": "Amamentação, violência contra a mulher e esclerose múltipla",
+        "summary": "O calendário consultado associa dourado à amamentação, lilás à violência contra a mulher e laranja à esclerose múltipla.",
+        "purpose": "Dar visibilidade ao apoio à amamentação, à proteção das mulheres e ao cuidado continuado.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Agosto. Dourado, lilás e laranja.\n\nAmamentação, violência contra a mulher e esclerose múltipla.\n\nO calendário consultado associa dourado à amamentação, lilás à violência contra a mulher e laranja à esclerose múltipla.\n\nPor que a campanha existe.\n\nDar visibilidade ao apoio à amamentação, à proteção das mulheres e ao cuidado continuado.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/08.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "Outubro",
+        "color": "Rosa",
+        "theme": "Câncer de mama",
+        "summary": "O Outubro Rosa começou nos Estados Unidos na década de 1990. A campanha ganhou projeção internacional e usa o rosa em ações públicas de conscientização.",
+        "purpose": "Ampliar informação sobre câncer de mama e acesso ao cuidado.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Outubro. Rosa.\n\nCâncer de mama.\n\nO Outubro Rosa começou nos Estados Unidos na década de 1990. A campanha ganhou projeção internacional e usa o rosa em ações públicas de conscientização.\n\nPor que a campanha existe.\n\nAmpliar informação sobre câncer de mama e acesso ao cuidado.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "Novembro",
+        "color": "Azul",
+        "theme": "Saúde do homem, câncer de próstata e diabetes",
+        "summary": "A cor azul aparece em campanhas sobre próstata e diabetes. O movimento Movember começou na Austrália em 2003; no Brasil, a denominação Novembro Azul foi adotada em 2012, segundo a revisão consultada.",
+        "purpose": "Estimular atenção à saúde. Exames dependem de orientação profissional e avaliação de benefícios e riscos.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Novembro. Azul.\n\nSaúde do homem, câncer de próstata e diabetes.\n\nA cor azul aparece em campanhas sobre próstata e diabetes. O movimento Movember começou na Austrália em 2003; no Brasil, a denominação Novembro Azul foi adotada em 2012, segundo a revisão consultada.\n\nPor que a campanha existe.\n\nEstimular atenção à saúde. Exames dependem de orientação profissional e avaliação de benefícios e riscos.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/11.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "Dezembro",
+        "color": "Vermelho e laranja",
+        "theme": "HIV, Aids, outras IST e câncer de pele",
+        "summary": "Vermelho identifica ações sobre HIV, Aids e outras IST; laranja aparece nas ações sobre câncer de pele. Dezembro Vermelho foi instituído em lei no Brasil em 2017.",
+        "purpose": "Divulgar prevenção, cuidado e direitos, além da atenção à saúde da pele.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Dezembro. Vermelho e laranja.\n\nHIV, Aids, outras infecções sexualmente transmissíveis e câncer de pele.\n\nVermelho identifica ações sobre HIV, Aids e outras infecções sexualmente transmissíveis; laranja aparece nas ações sobre câncer de pele. Dezembro Vermelho foi instituído em lei no Brasil em 2017.\n\nPor que a campanha existe.\n\nDivulgar prevenção, cuidado e direitos, além da atenção à saúde da pele.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/12.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "Setembro",
+        "color": "Amarelo",
+        "theme": "Prevenção do suicídio e valorização da vida",
+        "summary": "Artigos científicos situam a mobilização nacional brasileira em 2015; a BVS registra ações desde 2014. O dia 10 de setembro é o Dia Mundial de Prevenção do Suicídio, estabelecido em 2003 pela IASP em parceria com a OMS.",
+        "purpose": "Ampliar informação responsável, reduzir o estigma e facilitar a busca de ajuda.",
+        "history": [
+          {
+            "year": "1994",
+            "text": "O antecedente simbólico do laço amarelo está ligado à mobilização da família e de amigos de Mike Emme nos Estados Unidos. A distribuição de fitas acompanhadas de mensagens de ajuda deu visibilidade ao símbolo. Essa história não corresponde ao lançamento da campanha brasileira.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003",
+            "text": "IASP e OMS estabeleceram o Dia Mundial de Prevenção do Suicídio, celebrado em 10 de setembro.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015",
+            "text": "Artigos científicos registram a mobilização nacional brasileira em 2015, com participação do CVV, da ABP e do CFM. A BVS menciona ações desde 2014. O projeto mantém essa diferença entre os registros, sem confundir esses anos com a origem do laço amarelo.",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024 a 2026",
+            "text": "O tema internacional é Changing the narrative on suicide, aqui apresentado em português como Mudar a narrativa sobre o suicídio. O foco é substituir o estigma por compreensão e apoio.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "A divulgação da campanha precisa acompanhar ações de cuidado e formação profissional. [4]...E para isso a OMS desenvolveu o Live Life (Viva a Vida).",
+        "care": [
+          "Converse com alguém de confiança e procure um profissional de saúde.",
+          "Ouça sem julgamento e ofereça companhia para buscar atendimento.",
+          "Se houver perigo imediato, procure atendimento de urgência. Não deixe a pessoa sozinha."
+        ]
+      },
+      "transcript": "Setembro. Amarelo.\n\nPrevenção do suicídio e valorização da vida.\n\nArtigos científicos situam a mobilização nacional brasileira em 2015; a Biblioteca Virtual em Saúde registra ações desde 2014. O dia 10 de setembro é o Dia Mundial de Prevenção do Suicídio, estabelecido em 2003 pela Associação Internacional para a Prevenção do Suicídio em parceria com a Organização Mundial da Saúde.\n\nPor que a campanha existe.\n\nAmpliar informação responsável, reduzir o estigma e facilitar a busca de ajuda.\n\nUma história com marcos diferentes.\n\n1994.\n\nO antecedente simbólico do laço amarelo está ligado à mobilização da família e de amigos de Mike Emme nos Estados Unidos. A distribuição de fitas acompanhadas de mensagens de ajuda deu visibilidade ao símbolo. Essa história não corresponde ao lançamento da campanha brasileira.\n\n2003.\n\nAssociação Internacional para a Prevenção do Suicídio e Organização Mundial da Saúde estabeleceram o Dia Mundial de Prevenção do Suicídio, celebrado em 10 de setembro.\n\n2015.\n\nArtigos científicos registram a mobilização nacional brasileira em 2015, com participação do Centro de Valorização da Vida, da Associação Brasileira de Psiquiatria e do Conselho Federal de Medicina. A Biblioteca Virtual em Saúde menciona ações desde 2014. O projeto mantém essa diferença entre os registros, sem confundir esses anos com a origem do laço amarelo.\n\n2024 a 2026.\n\nO tema internacional é  aqui apresentado em português como Mudar a narrativa sobre o suicídio. O foco é substituir o estigma por compreensão e apoio.\n\nO que a ciência permite afirmar.\n\nA divulgação da campanha precisa acompanhar ações de cuidado e formação profissional. E para isso a Organização Mundial da Saúde desenvolveu o Laiv Laif (Viva a Vida).\n\nComo oferecer apoio.\n\nConverse com alguém de confiança e procure um profissional de saúde.\n\nOuça sem julgamento e ofereça companhia para buscar atendimento.\n\nSe houver perigo imediato, procure atendimento de urgência. Não deixe a pessoa sozinha.",
+      "voice": "pt-BR-FranciscaNeural",
+      "file": "/assets/audio/pt-BR/09.mp3"
+    }
+  },
+  "en": {
+    "2": {
+      "source": {
+        "name": "February",
+        "color": "Purple and orange",
+        "theme": "Alzheimer's and leukemia",
+        "summary": "The calendar consulted associates purple with Alzheimer's and orange with leukemia. This section does not include all February campaigns.",
+        "purpose": "Stimulate knowledge, monitoring and support for individuals and families.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "February. Purple and orange.\n\nAlzheimer's and leukemia.\n\nThe calendar consulted associates purple with Alzheimer's and orange with leukemia. This section does not include all February campaigns.\n\nWhy the campaign exists.\n\nStimulate knowledge, monitoring and support for individuals and families.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/02.mp3"
+    },
+    "1": {
+      "source": {
+        "name": "January",
+        "color": "White and purple",
+        "theme": "Mental health and leprosy",
+        "summary": "White represents mental health awareness. Purple is also used for leprosy awareness. These are different campaigns held in the same month.",
+        "purpose": "Give visibility to emotional care and information about leprosy.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "January. White and purple.\n\nMental health and leprosy.\n\nWhite represents mental health awareness. Purple is also used for leprosy awareness. These are different campaigns held in the same month.\n\nWhy the campaign exists.\n\nGive visibility to emotional care and information about leprosy.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/01.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "March",
+        "color": "Lilac and dark blue",
+        "theme": "Cervical and colorectal cancer",
+        "summary": "Lilac identifies actions on cervical cancer; dark blue, about colorectal cancer.",
+        "purpose": "Disseminate information and guide the search for appropriate care.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "March. Lilac and dark blue.\n\nCervical and colorectal cancer.\n\nLilac identifies actions on cervical cancer; dark blue, about colorectal cancer.\n\nWhy the campaign exists.\n\nDisseminate information and guide the search for appropriate care.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "April",
+        "color": "Light blue and green",
+        "theme": "Autism and health at work",
+        "summary": "Light blue appears in autism awareness actions; green, in preventing accidents at work.",
+        "purpose": "Promote inclusion and give visibility to the protection of workers’ health.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "April. Light blue and green.\n\nAutism and health at work.\n\nLight blue appears in autism awareness actions; green, in preventing accidents at work.\n\nWhy the campaign exists.\n\nPromote inclusion and give visibility to the protection of workers’ health.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/04.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "May",
+        "color": "Yellow and purple",
+        "theme": "Traffic safety and inflammatory bowel diseases",
+        "summary": "Yellow May was launched in Brazil in 2014 to mobilize society for road safety. Purple also identifies actions on inflammatory bowel diseases.",
+        "purpose": "Promote traffic education and information about intestinal conditions.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "May. Yellow and purple.\n\nTraffic safety and inflammatory bowel diseases.\n\nYellow May was launched in Brazil in 2014 to mobilize society for road safety. Purple also identifies actions on inflammatory bowel diseases.\n\nWhy the campaign exists.\n\nPromote traffic education and information about intestinal conditions.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/05.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "June",
+        "color": "Red and orange",
+        "theme": "Blood and bone marrow donation; anemia and leukemia",
+        "summary": "A university extension study describes Red June for blood and bone marrow donation and Orange June for anemia and leukemia.",
+        "purpose": "Encourage donation and understanding of hematological conditions.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "June. Red and orange.\n\nBlood and bone marrow donation; anemia and leukemia.\n\nA university extension study describes Red June for blood and bone marrow donation and Orange June for anemia and leukemia.\n\nWhy the campaign exists.\n\nEncourage donation and understanding of hematological conditions.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/06.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "July",
+        "color": "Yellow",
+        "theme": "Viral hepatitis",
+        "summary": "Yellow July brings together prevention and care actions for viral hepatitis. The campaign was established by law in Brazil in 2019.",
+        "purpose": "Promote prevention, diagnosis and access to care.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "July. Yellow.\n\nViral hepatitis.\n\nYellow July brings together prevention and care actions for viral hepatitis. The campaign was established by law in Brazil in 2019.\n\nWhy the campaign exists.\n\nPromote prevention, diagnosis and access to care.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/07.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "August",
+        "color": "Gold, lilac and orange",
+        "theme": "Breastfeeding, violence against women and multiple sclerosis",
+        "summary": "The calendar consulted associates gold with breastfeeding, lilac with violence against women and orange with multiple sclerosis.",
+        "purpose": "Give visibility to breastfeeding support, women’s protection and continued care.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "August. Gold, lilac and orange.\n\nBreastfeeding, violence against women and multiple sclerosis.\n\nThe calendar consulted associates gold with breastfeeding, lilac with violence against women and orange with multiple sclerosis.\n\nWhy the campaign exists.\n\nGive visibility to breastfeeding support, women’s protection and continued care.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/08.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "October",
+        "color": "Pink",
+        "theme": "Breast cancer",
+        "summary": "Pink October began in the United States in the 1990s. The campaign gained international recognition and uses pink in public awareness campaigns.",
+        "purpose": "Expand information about breast cancer and access to care.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "October. Pink.\n\nBreast cancer.\n\nPink October began in the United States in the 1990s. The campaign gained international recognition and uses pink in public awareness campaigns.\n\nWhy the campaign exists.\n\nExpand information about breast cancer and access to care.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "November",
+        "color": "Blue",
+        "theme": "Men's health, prostate cancer and diabetes",
+        "summary": "Blue is used in campaigns about prostate health and diabetes. Movember began in Australia in 2003. According to the review consulted, Brazil adopted the name Novembro Azul (Blue November) in 2012.",
+        "purpose": "Encourage health care. Exams depend on professional guidance and assessment of benefits and risks.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "November. Blue.\n\nMen's health, prostate cancer and diabetes.\n\nBlue is used in campaigns about prostate health and diabetes. Movember began in Australia in 2003. According to the review consulted, Brazil adopted the name Novembro Azul (Blue November) in 2012.\n\nWhy the campaign exists.\n\nEncourage health care. Exams depend on professional guidance and assessment of benefits and risks.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/11.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "December",
+        "color": "Red and orange",
+        "theme": "HIV, AIDS, other STIs and skin cancer",
+        "summary": "Red identifies actions on HIV, AIDS and other STIs; orange appears in actions on skin cancer. Red December was established by law in Brazil in 2017.",
+        "purpose": "Promote prevention, care and rights, in addition to attention to skin health.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "December. Red and orange.\n\nHIV, AIDS, other STIs and skin cancer.\n\nRed identifies actions on HIV, AIDS and other STIs; orange appears in actions on skin cancer. Red December was established by law in Brazil in 2017.\n\nWhy the campaign exists.\n\nPromote prevention, care and rights, in addition to attention to skin health.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/12.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "September",
+        "color": "Yellow",
+        "theme": "Preventing suicide and valuing life",
+        "summary": "Scientific articles date the Brazilian national campaign to 2015; the Virtual Health Library (BVS) records activities since 2014. September 10 is World Suicide Prevention Day, established in 2003 by IASP in partnership with WHO.",
+        "purpose": "Expand responsible information, reduce stigma and facilitate the search for help.",
+        "history": [
+          {
+            "year": "1994",
+            "text": "The symbolic antecedent of the yellow ribbon is linked to the mobilization of Mike Emme's family and friends in the United States. The distribution of ribbons accompanied by messages of help gave visibility to the symbol. This story does not correspond to the launch of the Brazilian campaign.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003",
+            "text": "IASP and WHO established World Suicide Prevention Day, celebrated on September 10th.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015",
+            "text": "Scientific articles record the Brazilian national campaign in 2015, involving CVV, ABP and CFM. The Virtual Health Library (BVS) mentions activities since 2014. This project preserves that difference in the records and does not confuse these dates with the origin of the yellow ribbon.",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024 to 2026",
+            "text": "The international theme is Changing the narrative on suicide. The aim is to replace stigma with understanding and support.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "Campaign publicity needs to be accompanied by care and professional training. [4]...To support this, WHO developed Live Life (Viva a Vida).",
+        "care": [
+          "Talk to someone you trust and look for a healthcare professional.",
+          "Listen without judgment and offer to accompany the person when they seek care.",
+          "If there is immediate danger, seek emergency care. Don't leave the person alone."
+        ]
+      },
+      "transcript": "September. Yellow.\n\nPreventing suicide and valuing life.\n\nScientific articles date the Brazilian national campaign to 2015; the Virtual Health Library (BVS) records activities since 2014. September 10 is World Suicide Prevention Day, established in 2003 by IASP in partnership with WHO.\n\nWhy the campaign exists.\n\nExpand responsible information, reduce stigma and facilitate the search for help.\n\nA story with different milestones.\n\n1994.\n\nThe symbolic antecedent of the yellow ribbon is linked to the mobilization of Mike Emme's family and friends in the United States. The distribution of ribbons accompanied by messages of help gave visibility to the symbol. This story does not correspond to the launch of the Brazilian campaign.\n\n2003.\n\nIASP and WHO established World Suicide Prevention Day, celebrated on September 10th.\n\n2015.\n\nScientific articles record the Brazilian national campaign in 2015, involving CVV, ABP and CFM. The Virtual Health Library (BVS) mentions activities since 2014. This project preserves that difference in the records and does not confuse these dates with the origin of the yellow ribbon.\n\n2024 to 2026.\n\nThe international theme is Changing the narrative on suicide. The aim is to replace stigma with understanding and support.\n\nWhat science allows us to say.\n\nCampaign publicity needs to be accompanied by care and professional training. To support this, WHO developed Live Life (Viva a Vida).\n\nHow to offer support.\n\nTalk to someone you trust and look for a healthcare professional.\n\nListen without judgment and offer to accompany the person when they seek care.\n\nIf there is immediate danger, seek emergency care. Don't leave the person alone.",
+      "voice": "en-US-JennyNeural",
+      "file": "/assets/audio/en/09.mp3"
+    }
+  },
+  "es": {
+    "1": {
+      "source": {
+        "name": "Enero",
+        "color": "Blanco y morado",
+        "theme": "Salud mental y lepra",
+        "summary": "El blanco identifica acciones de salud mental. El morado también se utiliza en acciones sobre la lepra. Son campañas diferentes en el mismo mes.",
+        "purpose": "Dar visibilidad a la atención emocional y a la información sobre la lepra.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Enero. Blanco y morado.\n\nSalud mental y lepra.\n\nEl blanco identifica acciones de salud mental. El morado también se utiliza en acciones sobre la lepra. Son campañas diferentes en el mismo mes.\n\nPor qué existe la campaña.\n\nDar visibilidad a la atención emocional y a la información sobre la lepra.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/01.mp3"
+    },
+    "2": {
+      "source": {
+        "name": "Febrero",
+        "color": "Morado y naranja",
+        "theme": "Alzheimer y leucemia",
+        "summary": "El calendario consultado asocia el morado con el Alzheimer y el naranja con la leucemia. Esta sección no incluye todas las campañas de febrero.",
+        "purpose": "Estimular el conocimiento, el seguimiento y el apoyo a las personas y familias.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Febrero. Morado y naranja.\n\nAlzheimer y leucemia.\n\nEl calendario consultado asocia el morado con el Alzheimer y el naranja con la leucemia. Esta sección no incluye todas las campañas de febrero.\n\nPor qué existe la campaña.\n\nEstimular el conocimiento, el seguimiento y el apoyo a las personas y familias.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/02.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "Marzo",
+        "color": "Lila y azul oscuro",
+        "theme": "Cáncer de cuello uterino y colorrectal",
+        "summary": "Lila identifica acciones sobre cáncer de cuello uterino; azul oscuro, sobre el cáncer colorrectal.",
+        "purpose": "Difundir información y orientar la búsqueda de una atención adecuada.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Marzo. Lila y azul oscuro.\n\nCáncer de cuello uterino y colorrectal.\n\nLila identifica acciones sobre cáncer de cuello uterino; azul oscuro, sobre el cáncer colorrectal.\n\nPor qué existe la campaña.\n\nDifundir información y orientar la búsqueda de una atención adecuada.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "Abril",
+        "color": "Azul claro y verde",
+        "theme": "Autismo y salud en el trabajo",
+        "summary": "El azul claro aparece en acciones de concientización sobre el autismo; verde, en la prevención de accidentes laborales.",
+        "purpose": "Promover la inclusión y dar visibilidad a la protección de la salud de los trabajadores.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Abril. Azul claro y verde.\n\nAutismo y salud en el trabajo.\n\nEl azul claro aparece en acciones de concientización sobre el autismo; verde, en la prevención de accidentes laborales.\n\nPor qué existe la campaña.\n\nPromover la inclusión y dar visibilidad a la protección de la salud de los trabajadores.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/04.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "Junio",
+        "color": "rojo y naranja",
+        "theme": "Donación de sangre y médula ósea; anemia y leucemia",
+        "summary": "Un estudio de extensión universitaria describe el Junio Rojo para la donación de sangre y médula ósea y el Junio Naranja para la anemia y la leucemia.",
+        "purpose": "Fomentar la donación y la comprensión de las condiciones hematológicas.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Junio. rojo y naranja.\n\nDonación de sangre y médula ósea; anemia y leucemia.\n\nUn estudio de extensión universitaria describe el Junio Rojo para la donación de sangre y médula ósea y el Junio Naranja para la anemia y la leucemia.\n\nPor qué existe la campaña.\n\nFomentar la donación y la comprensión de las condiciones hematológicas.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/06.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "Mayo",
+        "color": "Amarillo y morado",
+        "theme": "Seguridad vial y enfermedades inflamatorias intestinales",
+        "summary": "Mayo Amarillo se lanzó en Brasil en 2014 para movilizar a la sociedad por la seguridad vial. El morado también identifica acciones sobre las enfermedades inflamatorias del intestino.",
+        "purpose": "Promover la educación vial y la información sobre afecciones intestinales.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Mayo. Amarillo y morado.\n\nSeguridad vial y enfermedades inflamatorias intestinales.\n\nMayo Amarillo se lanzó en Brasil en 2014 para movilizar a la sociedad por la seguridad vial. El morado también identifica acciones sobre las enfermedades inflamatorias del intestino.\n\nPor qué existe la campaña.\n\nPromover la educación vial y la información sobre afecciones intestinales.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/05.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "Agosto",
+        "color": "Oro, lila y naranja",
+        "theme": "Lactancia materna, violencia contra la mujer y esclerosis múltiple",
+        "summary": "El calendario consultado asocia el oro con la lactancia materna, el lila con la violencia contra la mujer y el naranja con la esclerosis múltiple.",
+        "purpose": "Dar visibilidad al apoyo a la lactancia materna, la protección de las mujeres y la atención continuada.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Agosto. Oro, lila y naranja.\n\nLactancia materna, violencia contra la mujer y esclerosis múltiple.\n\nEl calendario consultado asocia el oro con la lactancia materna, el lila con la violencia contra la mujer y el naranja con la esclerosis múltiple.\n\nPor qué existe la campaña.\n\nDar visibilidad al apoyo a la lactancia materna, la protección de las mujeres y la atención continuada.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/08.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "Julio",
+        "color": "amarillo",
+        "theme": "hepatitis viral",
+        "summary": "Julio Amarillo reúne acciones de prevención y atención de las hepatitis virales. La campaña fue establecida por ley en Brasil en 2019.",
+        "purpose": "Promover la prevención, el diagnóstico y el acceso a la atención.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Julio. amarillo.\n\nhepatitis viral.\n\nJulio Amarillo reúne acciones de prevención y atención de las hepatitis virales. La campaña fue establecida por ley en Brasil en 2019.\n\nPor qué existe la campaña.\n\nPromover la prevención, el diagnóstico y el acceso a la atención.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/07.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "Octubre",
+        "color": "rosa",
+        "theme": "Cáncer de mama",
+        "summary": "El Octubre Rosa comenzó en Estados Unidos en la década de 1990. La campaña obtuvo reconocimiento internacional y utiliza el rosa en campañas de concientización pública.",
+        "purpose": "Ampliar información sobre el cáncer de mama y el acceso a la atención.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Octubre. rosa.\n\nCáncer de mama.\n\nEl Octubre Rosa comenzó en Estados Unidos en la década de 1990. La campaña obtuvo reconocimiento internacional y utiliza el rosa en campañas de concientización pública.\n\nPor qué existe la campaña.\n\nAmpliar información sobre el cáncer de mama y el acceso a la atención.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "Noviembre",
+        "color": "azul",
+        "theme": "Salud masculina, cáncer de próstata y diabetes.",
+        "summary": "El azul aparece en campañas sobre la próstata y la diabetes. El movimiento Movember comenzó en Australia en 2003; en Brasil se adoptó la denominación Novembro Azul en 2012, según la revisión consultada.",
+        "purpose": "Fomentar la atención sanitaria. Los exámenes dependen de la orientación profesional y la evaluación de beneficios y riesgos.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Noviembre. azul.\n\nSalud masculina, cáncer de próstata y diabetes.\n\nEl azul aparece en campañas sobre la próstata y la diabetes. El movimiento Movember comenzó en Australia en 2003; en Brasil se adoptó la denominación Novembro Azul en 2012, según la revisión consultada.\n\nPor qué existe la campaña.\n\nFomentar la atención sanitaria. Los exámenes dependen de la orientación profesional y la evaluación de beneficios y riesgos.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/11.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "Septiembre",
+        "color": "amarillo",
+        "theme": "Prevenir el suicidio y valorar la vida.",
+        "summary": "Artículos científicos sitúan la movilización nacional brasileña en 2015; la BVS registra acciones desde 2014. El 10 de septiembre es el Día Mundial para la Prevención del Suicidio, instituido en 2003 por la IASP en colaboración con la OMS.",
+        "purpose": "Ampliar la información responsable, reducir el estigma y facilitar la búsqueda de ayuda.",
+        "history": [
+          {
+            "year": "1994",
+            "text": "El antecedente simbólico del lazo amarillo está vinculado a la movilización de familiares y amigos de Mike Emme en Estados Unidos. La distribución de cintas acompañadas de mensajes de ayuda dio visibilidad al símbolo. Esta historia no corresponde al lanzamiento de la campaña brasileña.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003",
+            "text": "La IASP y la OMS establecieron el Día Mundial para la Prevención del Suicidio, que se celebra el 10 de septiembre.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015",
+            "text": "Artículos científicos registran la movilización nacional brasileña en 2015, con la participación de CVV, ABP y CFM. La BVS menciona acciones desde 2014. El proyecto mantiene esta diferencia entre registros, sin confundir estos años con el origen del listón amarillo.",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024 a 2026",
+            "text": "El tema internacional es Cambiar la narrativa sobre el suicidio. El objetivo es sustituir el estigma por comprensión y apoyo.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "La difusión de la campaña debe ir acompañada de acciones de atención y formación profesional. [4]...Para ello, la OMS desarrolló Live Life (Viva a Vida).",
+        "care": [
+          "Habla con alguien de confianza y busca un profesional sanitario.",
+          "Escucha sin juzgar y ofrece acompañar a la persona cuando busque atención.",
+          "Si existe un peligro inmediato, busque atención de emergencia. No dejes sola a la persona."
+        ]
+      },
+      "transcript": "Septiembre. amarillo.\n\nPrevenir el suicidio y valorar la vida.\n\nArtículos científicos sitúan la movilización nacional brasileña en 2015; la BVS registra acciones desde 2014. El 10 de septiembre es el Día Mundial para la Prevención del Suicidio, instituido en 2003 por la IASP en colaboración con la OMS.\n\nPor qué existe la campaña.\n\nAmpliar la información responsable, reducir el estigma y facilitar la búsqueda de ayuda.\n\nUna historia con diferentes hitos.\n\n1994.\n\nEl antecedente simbólico del lazo amarillo está vinculado a la movilización de familiares y amigos de Mike Emme en Estados Unidos. La distribución de cintas acompañadas de mensajes de ayuda dio visibilidad al símbolo. Esta historia no corresponde al lanzamiento de la campaña brasileña.\n\n2003.\n\nLa IASP y la OMS establecieron el Día Mundial para la Prevención del Suicidio, que se celebra el 10 de septiembre.\n\n2015.\n\nArtículos científicos registran la movilización nacional brasileña en 2015, con la participación de CVV, ABP y CFM. La BVS menciona acciones desde 2014. El proyecto mantiene esta diferencia entre registros, sin confundir estos años con el origen del listón amarillo.\n\n2024 a 2026.\n\nEl tema internacional es Cambiar la narrativa sobre el suicidio. El objetivo es sustituir el estigma por comprensión y apoyo.\n\nLo que la ciencia nos permite decir.\n\nLa difusión de la campaña debe ir acompañada de acciones de atención y formación profesional. Para ello, la OMS desarrolló Live Life (Viva a Vida).\n\nCómo ofrecer apoyo.\n\nHabla con alguien de confianza y busca un profesional sanitario.\n\nEscucha sin juzgar y ofrece acompañar a la persona cuando busque atención.\n\nSi existe un peligro inmediato, busque atención de emergencia. No dejes sola a la persona.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/09.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "Diciembre",
+        "color": "rojo y naranja",
+        "theme": "VIH, SIDA, otras ITS y cáncer de piel",
+        "summary": "El rojo identifica acciones sobre VIH, SIDA y otras ITS; El naranja aparece en acciones sobre el cáncer de piel. Diciembre Rojo fue establecido por ley en Brasil en 2017.",
+        "purpose": "Promover la prevención, los cuidados y los derechos, además de la atención a la salud de la piel.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Diciembre. rojo y naranja.\n\nVIH, SIDA, otras ITS y cáncer de piel.\n\nEl rojo identifica acciones sobre VIH, SIDA y otras ITS; El naranja aparece en acciones sobre el cáncer de piel. Diciembre Rojo fue establecido por ley en Brasil en 2017.\n\nPor qué existe la campaña.\n\nPromover la prevención, los cuidados y los derechos, además de la atención a la salud de la piel.",
+      "voice": "es-ES-ElviraNeural",
+      "file": "/assets/audio/es/12.mp3"
+    }
+  },
+  "de": {
+    "1": {
+      "source": {
+        "name": "Januar",
+        "color": "Weiß und Lila",
+        "theme": "Psychische Gesundheit und Lepra",
+        "summary": "Weiß steht für Aktionen zur psychischen Gesundheit. Lila wird auch bei Aktionen zur Aufklärung über Lepra verwendet. Es handelt sich um verschiedene Kampagnen im selben Monat.",
+        "purpose": "Machen Sie emotionale Fürsorge sichtbar und informieren Sie über Lepra.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Januar. Weiß und Lila.\n\nPsychische Gesundheit und Lepra.\n\nWeiß steht für Aktionen zur psychischen Gesundheit. Lila wird auch bei Aktionen zur Aufklärung über Lepra verwendet. Es handelt sich um verschiedene Kampagnen im selben Monat.\n\nWarum es die Kampagne gibt.\n\nMachen Sie emotionale Fürsorge sichtbar und informieren Sie über Lepra.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/01.mp3"
+    },
+    "2": {
+      "source": {
+        "name": "Februar",
+        "color": "Lila und Orange",
+        "theme": "Alzheimer und Leukämie",
+        "summary": "Der konsultierte Kalender assoziiert Lila mit Alzheimer und Orange mit Leukämie. Dieser Abschnitt umfasst nicht alle Februar-Kampagnen.",
+        "purpose": "Fördern Sie Wissen, Überwachung und Unterstützung für Einzelpersonen und Familien.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Februar. Lila und Orange.\n\nAlzheimer und Leukämie.\n\nDer konsultierte Kalender assoziiert Lila mit Alzheimer und Orange mit Leukämie. Dieser Abschnitt umfasst nicht alle Februar-Kampagnen.\n\nWarum es die Kampagne gibt.\n\nFördern Sie Wissen, Überwachung und Unterstützung für Einzelpersonen und Familien.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/02.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "März",
+        "color": "Flieder und Dunkelblau",
+        "theme": "Gebärmutterhals- und Darmkrebs",
+        "summary": "Lila steht für Aufklärung über Gebärmutterhalskrebs; Dunkelblau steht für Aufklärung über Darmkrebs.",
+        "purpose": "Verbreiten Sie Informationen und leiten Sie die Suche nach geeigneter Pflege.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "März. Flieder und Dunkelblau.\n\nGebärmutterhals- und Darmkrebs.\n\nLila steht für Aufklärung über Gebärmutterhalskrebs; Dunkelblau steht für Aufklärung über Darmkrebs.\n\nWarum es die Kampagne gibt.\n\nVerbreiten Sie Informationen und leiten Sie die Suche nach geeigneter Pflege.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "April",
+        "color": "Hellblau und Grün",
+        "theme": "Autismus und Gesundheit am Arbeitsplatz",
+        "summary": "Hellblau erscheint bei Aktionen zur Sensibilisierung für Autismus; grün, bei der Vermeidung von Arbeitsunfällen.",
+        "purpose": "Fördern Sie die Inklusion und machen Sie den Schutz der Gesundheit der Arbeitnehmer sichtbar.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "April. Hellblau und Grün.\n\nAutismus und Gesundheit am Arbeitsplatz.\n\nHellblau erscheint bei Aktionen zur Sensibilisierung für Autismus; grün, bei der Vermeidung von Arbeitsunfällen.\n\nWarum es die Kampagne gibt.\n\nFördern Sie die Inklusion und machen Sie den Schutz der Gesundheit der Arbeitnehmer sichtbar.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/04.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "Juni",
+        "color": "Rot und Orange",
+        "theme": "Blut- und Knochenmarkspende; Anämie und Leukämie",
+        "summary": "Eine Studie über ein universitäres Bildungsprojekt beschreibt den Roten Juni für Blut- und Knochenmarkspenden und den Orangen Juni für Anämie und Leukämie.",
+        "purpose": "Fördern Sie Spenden und Verständnis für hämatologische Erkrankungen.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Juni. Rot und Orange.\n\nBlut- und Knochenmarkspende; Anämie und Leukämie.\n\nEine Studie über ein universitäres Bildungsprojekt beschreibt den Roten Juni für Blut- und Knochenmarkspenden und den Orangen Juni für Anämie und Leukämie.\n\nWarum es die Kampagne gibt.\n\nFördern Sie Spenden und Verständnis für hämatologische Erkrankungen.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/06.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "Mai",
+        "color": "Gelb und Lila",
+        "theme": "Verkehrssicherheit und entzündliche Darmerkrankungen",
+        "summary": "Der Gelbe Mai wurde 2014 in Brasilien ins Leben gerufen, um die Gesellschaft für Verkehrssicherheit zu mobilisieren. Lila steht außerdem für Aufklärung über chronisch-entzündliche Darmerkrankungen.",
+        "purpose": "Verkehrsaufklärung und Aufklärung über Darmbeschwerden fördern.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Mai. Gelb und Lila.\n\nVerkehrssicherheit und entzündliche Darmerkrankungen.\n\nDer Gelbe Mai wurde 2014 in Brasilien ins Leben gerufen, um die Gesellschaft für Verkehrssicherheit zu mobilisieren. Lila steht außerdem für Aufklärung über chronisch-entzündliche Darmerkrankungen.\n\nWarum es die Kampagne gibt.\n\nVerkehrsaufklärung und Aufklärung über Darmbeschwerden fördern.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/05.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "August",
+        "color": "Gold, Flieder und Orange",
+        "theme": "Stillen, Gewalt gegen Frauen und Multiple Sklerose",
+        "summary": "Der konsultierte Kalender assoziiert Gold mit Stillen, Flieder mit Gewalt gegen Frauen und Orange mit Multipler Sklerose.",
+        "purpose": "Machen Sie Stillunterstützung, Frauenschutz und kontinuierliche Betreuung sichtbar.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "August. Gold, Flieder und Orange.\n\nStillen, Gewalt gegen Frauen und Multiple Sklerose.\n\nDer konsultierte Kalender assoziiert Gold mit Stillen, Flieder mit Gewalt gegen Frauen und Orange mit Multipler Sklerose.\n\nWarum es die Kampagne gibt.\n\nMachen Sie Stillunterstützung, Frauenschutz und kontinuierliche Betreuung sichtbar.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/08.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "Juli",
+        "color": "Gelb",
+        "theme": "Virushepatitis",
+        "summary": "Der Gelbe Juli vereint Präventions- und Pflegemaßnahmen gegen Virushepatitis. Die Kampagne wurde 2019 in Brasilien per Gesetz eingeführt.",
+        "purpose": "Förderung von Prävention, Diagnose und Zugang zur Gesundheitsversorgung.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Juli. Gelb.\n\nVirushepatitis.\n\nDer Gelbe Juli vereint Präventions- und Pflegemaßnahmen gegen Virushepatitis. Die Kampagne wurde 2019 in Brasilien per Gesetz eingeführt.\n\nWarum es die Kampagne gibt.\n\nFörderung von Prävention, Diagnose und Zugang zur Gesundheitsversorgung.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/07.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "Oktober",
+        "color": "Rosa",
+        "theme": "Brustkrebs",
+        "summary": "Der Rosa Oktober begann in den 1990er Jahren in den Vereinigten Staaten. Die Kampagne wurde international bekannt und verwendet Rosa bei öffentlichen Aufklärungsaktionen.",
+        "purpose": "Erweitern Sie die Informationen über Brustkrebs und den Zugang zu medizinischer Versorgung.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Oktober. Rosa.\n\nBrustkrebs.\n\nDer Rosa Oktober begann in den 1990er Jahren in den Vereinigten Staaten. Die Kampagne wurde international bekannt und verwendet Rosa bei öffentlichen Aufklärungsaktionen.\n\nWarum es die Kampagne gibt.\n\nErweitern Sie die Informationen über Brustkrebs und den Zugang zu medizinischer Versorgung.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "November",
+        "color": "Blau",
+        "theme": "Männergesundheit, Prostatakrebs und Diabetes",
+        "summary": "Die Farbe Blau taucht in Kampagnen zum Thema Prostata und Diabetes auf. Die Movember-Bewegung begann 2003 in Australien; In Brasilien wurde der Name Novembro Azul laut der konsultierten Rezension im Jahr 2012 eingeführt.",
+        "purpose": "Aufmerksamkeit für die Gesundheit fördern. Untersuchungen sollten sich nach fachlicher Beratung und einer Bewertung von Nutzen und Risiken richten.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "November. Blau.\n\nMännergesundheit, Prostatakrebs und Diabetes.\n\nDie Farbe Blau taucht in Kampagnen zum Thema Prostata und Diabetes auf. Die Movember-Bewegung begann 2003 in Australien; In Brasilien wurde der Name Novembro Azul laut der konsultierten Rezension im Jahr 2012 eingeführt.\n\nWarum es die Kampagne gibt.\n\nAufmerksamkeit für die Gesundheit fördern. Untersuchungen sollten sich nach fachlicher Beratung und einer Bewertung von Nutzen und Risiken richten.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/11.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "Dezember",
+        "color": "Rot und Orange",
+        "theme": "HIV, AIDS, andere sexuell übertragbare Krankheiten und Hautkrebs",
+        "summary": "Rot steht für Aufklärung über HIV, Aids und andere sexuell übertragbare Infektionen; Orange wird bei Aktionen zur Aufklärung über Hautkrebs verwendet. Der Rote Dezember wurde 2017 in Brasilien gesetzlich eingeführt.",
+        "purpose": "Fördern Sie neben der Aufmerksamkeit für die Hautgesundheit auch Prävention, Pflege und Rechte.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Dezember. Rot und Orange.\n\nHIV, AIDS, andere sexuell übertragbare Krankheiten und Hautkrebs.\n\nRot steht für Aufklärung über HIV, Aids und andere sexuell übertragbare Infektionen; Orange wird bei Aktionen zur Aufklärung über Hautkrebs verwendet. Der Rote Dezember wurde 2017 in Brasilien gesetzlich eingeführt.\n\nWarum es die Kampagne gibt.\n\nFördern Sie neben der Aufmerksamkeit für die Hautgesundheit auch Prävention, Pflege und Rechte.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/12.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "September",
+        "color": "Gelb",
+        "theme": "Selbstmord verhindern und das Leben wertschätzen",
+        "summary": "Wissenschaftliche Artikel datieren die landesweite brasilianische Kampagne auf 2015; die Virtuelle Gesundheitsbibliothek (BVS) dokumentiert Aktivitäten seit 2014. Der 10. September ist der Welttag der Suizidprävention, der 2003 von der IASP gemeinsam mit der WHO eingeführt wurde.",
+        "purpose": "Erweitern Sie verantwortungsvolle Informationen, reduzieren Sie Stigmatisierung und erleichtern Sie die Suche nach Hilfe.",
+        "history": [
+          {
+            "year": "1994",
+            "text": "Der symbolische Vorläufer der gelben Schleife ist mit der Mobilisierung von Mike Emmes Familie und Freunden in den Vereinigten Staaten verbunden. Durch die Verteilung von Bändern und Hilfsbotschaften wurde das Symbol sichtbar. Diese Geschichte steht nicht im Zusammenhang mit dem Start der brasilianischen Kampagne.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003",
+            "text": "IASP und WHO haben den Welttag der Suizidprävention ins Leben gerufen, der am 10. September gefeiert wird.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015",
+            "text": "Wissenschaftliche Artikel dokumentieren die nationale Mobilisierung Brasiliens im Jahr 2015 unter Beteiligung von CVV, ABP und CFM. Die VHL erwähnt Aktionen seit 2014. Das Projekt behält diesen Unterschied zwischen den Aufzeichnungen bei, ohne diese Jahre mit dem Ursprung des gelben Bandes zu verwechseln.",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024 bis 2026",
+            "text": "Das internationale Thema lautet „Die Sichtweise auf Suizid verändern“. Ziel ist es, Stigmatisierung durch Verständnis und Unterstützung zu ersetzen.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "Die Öffentlichkeitsarbeit für die Kampagne muss mit Versorgungsmaßnahmen und der Schulung von Fachkräften einhergehen. [4]...Dafür hat die WHO Live Life (Viva a Vida) entwickelt.",
+        "care": [
+          "Sprechen Sie mit jemandem, dem Sie vertrauen, und suchen Sie einen Arzt auf.",
+          "Höre ohne Vorurteile zu und biete an, die Person bei der Suche nach Hilfe zu begleiten.",
+          "Wenn eine unmittelbare Gefahr besteht, suchen Sie einen Notarzt auf. Lassen Sie die Person nicht allein."
+        ]
+      },
+      "transcript": "September. Gelb.\n\nSelbstmord verhindern und das Leben wertschätzen.\n\nWissenschaftliche Artikel datieren die landesweite brasilianische Kampagne auf 2015; die Virtuelle Gesundheitsbibliothek (BVS) dokumentiert Aktivitäten seit 2014. Der 10. September ist der Welttag der Suizidprävention, der 2003 von der IASP gemeinsam mit der WHO eingeführt wurde.\n\nWarum es die Kampagne gibt.\n\nErweitern Sie verantwortungsvolle Informationen, reduzieren Sie Stigmatisierung und erleichtern Sie die Suche nach Hilfe.\n\nEine Geschichte mit verschiedenen Meilensteinen.\n\n1994.\n\nDer symbolische Vorläufer der gelben Schleife ist mit der Mobilisierung von Mike Emmes Familie und Freunden in den Vereinigten Staaten verbunden. Durch die Verteilung von Bändern und Hilfsbotschaften wurde das Symbol sichtbar. Diese Geschichte steht nicht im Zusammenhang mit dem Start der brasilianischen Kampagne.\n\n2003.\n\nIASP und WHO haben den Welttag der Suizidprävention ins Leben gerufen, der am 10. September gefeiert wird.\n\n2015.\n\nWissenschaftliche Artikel dokumentieren die nationale Mobilisierung Brasiliens im Jahr 2015 unter Beteiligung von CVV, ABP und CFM. Die VHL erwähnt Aktionen seit 2014. Das Projekt behält diesen Unterschied zwischen den Aufzeichnungen bei, ohne diese Jahre mit dem Ursprung des gelben Bandes zu verwechseln.\n\n2024 bis 2026.\n\nDas internationale Thema lautet „Die Sichtweise auf Suizid verändern“. Ziel ist es, Stigmatisierung durch Verständnis und Unterstützung zu ersetzen.\n\nWas uns die Wissenschaft zu sagen erlaubt.\n\nDie Öffentlichkeitsarbeit für die Kampagne muss mit Versorgungsmaßnahmen und der Schulung von Fachkräften einhergehen. Dafür hat die WHO Live Life (Viva a Vida) entwickelt.\n\nSo bieten Sie Unterstützung an.\n\nSprechen Sie mit jemandem, dem Sie vertrauen, und suchen Sie einen Arzt auf.\n\nHöre ohne Vorurteile zu und biete an, die Person bei der Suche nach Hilfe zu begleiten.\n\nWenn eine unmittelbare Gefahr besteht, suchen Sie einen Notarzt auf. Lassen Sie die Person nicht allein.",
+      "voice": "de-DE-KatjaNeural",
+      "file": "/assets/audio/de/09.mp3"
+    }
+  },
+  "fr": {
+    "2": {
+      "source": {
+        "name": "Février",
+        "color": "Violet et orange",
+        "theme": "Alzheimer et leucémie",
+        "summary": "Le calendrier consulté associe le violet à la maladie d'Alzheimer et l'orange à la leucémie. Cette section n'inclut pas toutes les campagnes de février.",
+        "purpose": "Stimuler la connaissance, le suivi et l’accompagnement des individus et des familles.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Février. Violet et orange.\n\nAlzheimer et leucémie.\n\nLe calendrier consulté associe le violet à la maladie d'Alzheimer et l'orange à la leucémie. Cette section n'inclut pas toutes les campagnes de février.\n\nPourquoi la campagne existe.\n\nStimuler la connaissance, le suivi et l’accompagnement des individus et des familles.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/02.mp3"
+    },
+    "1": {
+      "source": {
+        "name": "Janvier",
+        "color": "Blanc et violet",
+        "theme": "Santé mentale et lèpre",
+        "summary": "Le blanc représente les actions de sensibilisation à la santé mentale. Le violet est aussi utilisé pour sensibiliser à la lèpre. Ce sont des campagnes différentes organisées le même mois.",
+        "purpose": "Donner de la visibilité aux soins émotionnels et aux informations sur la lèpre.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Janvier. Blanc et violet.\n\nSanté mentale et lèpre.\n\nLe blanc représente les actions de sensibilisation à la santé mentale. Le violet est aussi utilisé pour sensibiliser à la lèpre. Ce sont des campagnes différentes organisées le même mois.\n\nPourquoi la campagne existe.\n\nDonner de la visibilité aux soins émotionnels et aux informations sur la lèpre.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/01.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "Mars",
+        "color": "Lilas et bleu foncé",
+        "theme": "Cancer du col de l'utérus et colorectal",
+        "summary": "Le lilas représente les actions de sensibilisation au cancer du col de l’utérus ; le bleu foncé, celles consacrées au cancer colorectal.",
+        "purpose": "Diffuser l’information et orienter la recherche de soins adaptés.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Mars. Lilas et bleu foncé.\n\nCancer du col de l'utérus et colorectal.\n\nLe lilas représente les actions de sensibilisation au cancer du col de l’utérus ; le bleu foncé, celles consacrées au cancer colorectal.\n\nPourquoi la campagne existe.\n\nDiffuser l’information et orienter la recherche de soins adaptés.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "Avril",
+        "color": "Bleu clair et vert",
+        "theme": "Autisme et santé au travail",
+        "summary": "Le bleu clair apparaît dans les actions de sensibilisation à l'autisme ; vert, dans la prévention des accidents du travail.",
+        "purpose": "Promouvoir l’inclusion et donner de la visibilité à la protection de la santé des travailleurs.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Avril. Bleu clair et vert.\n\nAutisme et santé au travail.\n\nLe bleu clair apparaît dans les actions de sensibilisation à l'autisme ; vert, dans la prévention des accidents du travail.\n\nPourquoi la campagne existe.\n\nPromouvoir l’inclusion et donner de la visibilité à la protection de la santé des travailleurs.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/04.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "Mai",
+        "color": "Jaune et violet",
+        "theme": "Sécurité routière et maladies inflammatoires de l’intestin",
+        "summary": "Le Mai jaune a été lancé au Brésil en 2014 pour mobiliser la société en faveur de la sécurité routière. Le violet représente aussi des actions sur les maladies inflammatoires de l’intestin.",
+        "purpose": "Promouvoir l’éducation routière et l’information sur les affections intestinales.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Mai. Jaune et violet.\n\nSécurité routière et maladies inflammatoires de l’intestin.\n\nLe Mai jaune a été lancé au Brésil en 2014 pour mobiliser la société en faveur de la sécurité routière. Le violet représente aussi des actions sur les maladies inflammatoires de l’intestin.\n\nPourquoi la campagne existe.\n\nPromouvoir l’éducation routière et l’information sur les affections intestinales.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/05.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "Juin",
+        "color": "Rouge et orange",
+        "theme": "Don de sang et de moelle osseuse ; anémie et leucémie",
+        "summary": "Une étude sur un projet universitaire de sensibilisation décrit le Juin rouge pour le don de sang et de moelle osseuse et le Juin orange pour l’anémie et la leucémie.",
+        "purpose": "Encourager le don et la compréhension des conditions hématologiques.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Juin. Rouge et orange.\n\nDon de sang et de moelle osseuse ; anémie et leucémie.\n\nUne étude sur un projet universitaire de sensibilisation décrit le Juin rouge pour le don de sang et de moelle osseuse et le Juin orange pour l’anémie et la leucémie.\n\nPourquoi la campagne existe.\n\nEncourager le don et la compréhension des conditions hématologiques.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/06.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "Juillet",
+        "color": "Jaune",
+        "theme": "Hépatite virale",
+        "summary": "Juillet Jaune regroupe les actions de prévention et de soins des hépatites virales. La campagne a été créée par la loi au Brésil en 2019.",
+        "purpose": "Promouvoir la prévention, le diagnostic et l’accès aux soins.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Juillet. Jaune.\n\nHépatite virale.\n\nJuillet Jaune regroupe les actions de prévention et de soins des hépatites virales. La campagne a été créée par la loi au Brésil en 2019.\n\nPourquoi la campagne existe.\n\nPromouvoir la prévention, le diagnostic et l’accès aux soins.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/07.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "Août",
+        "color": "Or, lilas et orange",
+        "theme": "Allaitement maternel, violences faites aux femmes et sclérose en plaques",
+        "summary": "Le calendrier consulté associe l'or à l'allaitement, le lilas aux violences faites aux femmes et l'orange à la sclérose en plaques.",
+        "purpose": "Donner de la visibilité au soutien à l’allaitement, à la protection des femmes et à la continuité des soins.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Août. Or, lilas et orange.\n\nAllaitement maternel, violences faites aux femmes et sclérose en plaques.\n\nLe calendrier consulté associe l'or à l'allaitement, le lilas aux violences faites aux femmes et l'orange à la sclérose en plaques.\n\nPourquoi la campagne existe.\n\nDonner de la visibilité au soutien à l’allaitement, à la protection des femmes et à la continuité des soins.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/08.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "Octobre",
+        "color": "Rose",
+        "theme": "Cancer du sein",
+        "summary": "L’Octobre rose est né aux États-Unis dans les années 1990. La campagne a acquis une reconnaissance internationale et utilise le rose dans les campagnes de sensibilisation du public.",
+        "purpose": "Développez l’information sur le cancer du sein et l’accès aux soins.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Octobre. Rose.\n\nCancer du sein.\n\nL’Octobre rose est né aux États-Unis dans les années 1990. La campagne a acquis une reconnaissance internationale et utilise le rose dans les campagnes de sensibilisation du public.\n\nPourquoi la campagne existe.\n\nDéveloppez l’information sur le cancer du sein et l’accès aux soins.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "Novembre",
+        "color": "Bleu",
+        "theme": "Santé des hommes, cancer de la prostate et diabète",
+        "summary": "La couleur bleue apparaît dans les campagnes sur la prostate et le diabète. Le mouvement Movember a débuté en Australie en 2003 ; Au Brésil, le nom Novembro Azul a été adopté en 2012, selon la revue consultée.",
+        "purpose": "Encourager les soins de santé. Les examens dépendent des conseils professionnels et de l’évaluation des avantages et des risques.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Novembre. Bleu.\n\nSanté des hommes, cancer de la prostate et diabète.\n\nLa couleur bleue apparaît dans les campagnes sur la prostate et le diabète. Le mouvement Movember a débuté en Australie en 2003 ; Au Brésil, le nom Novembro Azul a été adopté en 2012, selon la revue consultée.\n\nPourquoi la campagne existe.\n\nEncourager les soins de santé. Les examens dépendent des conseils professionnels et de l’évaluation des avantages et des risques.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/11.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "Décembre",
+        "color": "Rouge et orange",
+        "theme": "VIH, SIDA, autres IST et cancer de la peau",
+        "summary": "Le rouge identifie les actions contre le VIH, le SIDA et d'autres IST ; l'orange apparaît dans les actions sur le cancer de la peau. Le Décembre Rouge a été créé par la loi au Brésil en 2017.",
+        "purpose": "Promouvoir la prévention, les soins et les droits, en plus de prêter attention à la santé de la peau.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "Décembre. Rouge et orange.\n\nVIH, SIDA, autres IST et cancer de la peau.\n\nLe rouge identifie les actions contre le VIH, le SIDA et d'autres IST ; l'orange apparaît dans les actions sur le cancer de la peau. Le Décembre Rouge a été créé par la loi au Brésil en 2017.\n\nPourquoi la campagne existe.\n\nPromouvoir la prévention, les soins et les droits, en plus de prêter attention à la santé de la peau.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/12.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "Septembre",
+        "color": "Jaune",
+        "theme": "Prévenir le suicide et valoriser la vie",
+        "summary": "Des articles scientifiques situent la mobilisation nationale brésilienne en 2015 ; la Bibliothèque virtuelle de santé (BVS) mentionne des actions depuis 2014. Le 10 septembre est la Journée mondiale de prévention du suicide, instaurée en 2003 par l’IASP en partenariat avec l’OMS.",
+        "purpose": "Développez l’information responsable, réduisez la stigmatisation et facilitez la recherche d’aide.",
+        "history": [
+          {
+            "year": "1994",
+            "text": "L'antécédent symbolique du ruban jaune est lié à la mobilisation de la famille et des amis de Mike Emme aux Etats-Unis. La distribution de rubans accompagnés de messages d'aide a donné de la visibilité au symbole. Cette histoire ne correspond pas au lancement de la campagne brésilienne.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003",
+            "text": "L'IASP et l'OMS ont institué la Journée mondiale de prévention du suicide, célébrée le 10 septembre.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015",
+            "text": "Des articles scientifiques rapportent une mobilisation nationale brésilienne en 2015, avec la participation du CVV, de l’ABP et du CFM. La Bibliothèque virtuelle de santé (BVS) mentionne des actions depuis 2014. Le projet conserve cette différence entre les sources, sans confondre ces années avec l’origine du ruban jaune.",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024 à 2026",
+            "text": "Le thème international est « Changer le regard sur le suicide ». L’objectif est de remplacer la stigmatisation par la compréhension et le soutien.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "La diffusion de la campagne doit s’accompagner d’actions de soins et de formation professionnelle. [4]...Pour cela, l’OMS a développé Live Life (Viva a Vida).",
+        "care": [
+          "Parlez à une personne de confiance et recherchez un professionnel de la santé.",
+          "Écoutez sans juger et proposez d’accompagner la personne lorsqu’elle cherche à obtenir des soins.",
+          "En cas de danger immédiat, recherchez des soins d'urgence. Ne laissez pas la personne seule."
+        ]
+      },
+      "transcript": "Septembre. Jaune.\n\nPrévenir le suicide et valoriser la vie.\n\nDes articles scientifiques situent la mobilisation nationale brésilienne en 2015 ; la Bibliothèque virtuelle de santé (BVS) mentionne des actions depuis 2014. Le 10 septembre est la Journée mondiale de prévention du suicide, instaurée en 2003 par l’IASP en partenariat avec l’OMS.\n\nPourquoi la campagne existe.\n\nDéveloppez l’information responsable, réduisez la stigmatisation et facilitez la recherche d’aide.\n\nUne histoire avec différentes étapes.\n\n1994.\n\nL'antécédent symbolique du ruban jaune est lié à la mobilisation de la famille et des amis de Mike Emme aux Etats-Unis. La distribution de rubans accompagnés de messages d'aide a donné de la visibilité au symbole. Cette histoire ne correspond pas au lancement de la campagne brésilienne.\n\n2003.\n\nL'IASP et l'OMS ont institué la Journée mondiale de prévention du suicide, célébrée le 10 septembre.\n\n2015.\n\nDes articles scientifiques rapportent une mobilisation nationale brésilienne en 2015, avec la participation du CVV, de l’ABP et du CFM. La Bibliothèque virtuelle de santé (BVS) mentionne des actions depuis 2014. Le projet conserve cette différence entre les sources, sans confondre ces années avec l’origine du ruban jaune.\n\n2024 à 2026.\n\nLe thème international est « Changer le regard sur le suicide ». L’objectif est de remplacer la stigmatisation par la compréhension et le soutien.\n\nCe que la science nous permet de dire.\n\nLa diffusion de la campagne doit s’accompagner d’actions de soins et de formation professionnelle. Pour cela, l’OMS a développé Live Life (Viva a Vida).\n\nComment offrir du soutien.\n\nParlez à une personne de confiance et recherchez un professionnel de la santé.\n\nÉcoutez sans juger et proposez d’accompagner la personne lorsqu’elle cherche à obtenir des soins.\n\nEn cas de danger immédiat, recherchez des soins d'urgence. Ne laissez pas la personne seule.",
+      "voice": "fr-FR-DeniseNeural",
+      "file": "/assets/audio/fr/09.mp3"
+    }
+  },
+  "ja": {
+    "2": {
+      "source": {
+        "name": "2月",
+        "color": "紫とオレンジ",
+        "theme": "アルツハイマー病と白血病",
+        "summary": "参照したカレンダーでは、紫はアルツハイマー病、オレンジは白血病と結び付けられています。ここでは2月のすべてのキャンペーンを紹介しているわけではありません。",
+        "purpose": "理解を深め、継続的なケアと本人や家族への支援を促すことです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "2月. 紫とオレンジ。\n\nアルツハイマー病と白血病。\n\n参照したカレンダーでは、紫はアルツハイマー病、オレンジは白血病と結び付けられています。ここでは2月のすべてのキャンペーンを紹介しているわけではありません。\n\nキャンペーンが存在する理由。\n\n理解を深め、継続的なケアと本人や家族への支援を促すことです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/02.mp3"
+    },
+    "1": {
+      "source": {
+        "name": "1月",
+        "color": "白と紫",
+        "theme": "心の健康とハンセン病",
+        "summary": "白は心の健康に関する啓発活動を表します。紫はハンセン病に関する活動にも使われます。同じ月に行われる、それぞれ異なるキャンペーンです。",
+        "purpose": "心のケアやハンセン病について、より多くの人に知ってもらうことです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "1月. 白と紫。\n\n心の健康とハンセン病。\n\n白は心の健康に関する啓発活動を表します。紫はハンセン病に関する活動にも使われます。同じ月に行われる、それぞれ異なるキャンペーンです。\n\nキャンペーンが存在する理由。\n\n心のケアやハンセン病について、より多くの人に知ってもらうことです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/01.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "3月",
+        "color": "ライラックとダークブルー",
+        "theme": "子宮頸がんと大腸がん",
+        "summary": "薄紫は子宮頸がんに関する啓発活動、濃い青は大腸がんに関する活動を表します。",
+        "purpose": "情報を広め、適切なケアにつながるよう支援することです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "3月. ライラックとダークブルー。\n\n子宮頸がんと大腸がん。\n\n薄紫は子宮頸がんに関する啓発活動、濃い青は大腸がんに関する活動を表します。\n\nキャンペーンが存在する理由。\n\n情報を広め、適切なケアにつながるよう支援することです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "4月",
+        "color": "ライトブルーとグリーン",
+        "theme": "自閉症と働く人の健康",
+        "summary": "水色は自閉症への理解を広める活動に、緑は労働災害を防ぐ活動に使われます。",
+        "purpose": "誰もが参加できる社会を目指し、働く人の健康を守る大切さを伝えることです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "4月. ライトブルーとグリーン。\n\n自閉症と働く人の健康。\n\n水色は自閉症への理解を広める活動に、緑は労働災害を防ぐ活動に使われます。\n\nキャンペーンが存在する理由。\n\n誰もが参加できる社会を目指し、働く人の健康を守る大切さを伝えることです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/04.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "5月",
+        "color": "黄色と紫",
+        "theme": "交通安全と炎症性腸疾患",
+        "summary": "「黄色の5月」は、交通安全への社会の関心を高めるため、2014年にブラジルで始まりました。紫は炎症性腸疾患に関する啓発にも使われます。",
+        "purpose": "交通安全教育と腸の病気に関する情報を広めることです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "5月. 黄色と紫。\n\n交通安全と炎症性腸疾患。\n\n「黄色の5月」は、交通安全への社会の関心を高めるため、2014年にブラジルで始まりました。紫は炎症性腸疾患に関する啓発にも使われます。\n\nキャンペーンが存在する理由。\n\n交通安全教育と腸の病気に関する情報を広めることです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/05.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "6月",
+        "color": "赤とオレンジ",
+        "theme": "献血と骨髄提供、貧血と白血病",
+        "summary": "大学の地域連携活動に関する研究では、献血と骨髄提供を「赤の6月」、貧血と白血病を「オレンジの6月」として紹介しています。",
+        "purpose": "献血や骨髄提供を促し、血液の病気への理解を深めることです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "6月. 赤とオレンジ。\n\n献血と骨髄提供、貧血と白血病。\n\n大学の地域連携活動に関する研究では、献血と骨髄提供を「赤の6月」、貧血と白血病を「オレンジの6月」として紹介しています。\n\nキャンペーンが存在する理由。\n\n献血や骨髄提供を促し、血液の病気への理解を深めることです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/06.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "7月",
+        "color": "黄色",
+        "theme": "ウイルス性肝炎",
+        "summary": "「黄色の7月」は、ウイルス性肝炎の予防とケアに関する活動です。ブラジルでは2019年に法律で定められました。",
+        "purpose": "予防、診断、ケアにつながる情報を広めることです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "7月. 黄色。\n\nウイルス性肝炎。\n\n「黄色の7月」は、ウイルス性肝炎の予防とケアに関する活動です。ブラジルでは2019年に法律で定められました。\n\nキャンペーンが存在する理由。\n\n予防、診断、ケアにつながる情報を広めることです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/07.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "8月",
+        "color": "ゴールド、ライラック、オレンジ",
+        "theme": "母乳育児、女性への暴力、多発性硬化症",
+        "summary": "参照したカレンダーでは、金色は母乳育児、薄紫は女性への暴力、オレンジは多発性硬化症に関する啓発を表します。",
+        "purpose": "母乳育児の支援、女性の保護、継続的なケアの大切さを伝えることです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "8月. ゴールド、ライラック、オレンジ。\n\n母乳育児、女性への暴力、多発性硬化症。\n\n参照したカレンダーでは、金色は母乳育児、薄紫は女性への暴力、オレンジは多発性硬化症に関する啓発を表します。\n\nキャンペーンが存在する理由。\n\n母乳育児の支援、女性の保護、継続的なケアの大切さを伝えることです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/08.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "10月",
+        "color": "ピンク",
+        "theme": "乳がん",
+        "summary": "「ピンクの10月」は1990年代に米国で始まりました。国際的に広がり、啓発活動でピンクが使われています。",
+        "purpose": "乳がんの情報を広め、ケアを受けやすくすることです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "10月. ピンク。\n\n乳がん。\n\n「ピンクの10月」は1990年代に米国で始まりました。国際的に広がり、啓発活動でピンクが使われています。\n\nキャンペーンが存在する理由。\n\n乳がんの情報を広め、ケアを受けやすくすることです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "11月",
+        "color": "ブルー",
+        "theme": "男性の健康、前立腺がん、糖尿病",
+        "summary": "青は前立腺と糖尿病に関する啓発活動に使われます。Movemberは2003年にオーストラリアで始まりました。参照した文献によると、ブラジルでは2012年にNovembro Azulという名称が採用されました。",
+        "purpose": "健康への関心を高めることです。検査は、専門家の助言と利益・リスクの評価に基づいて判断します。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "11月. ブルー。\n\n男性の健康、前立腺がん、糖尿病。\n\n青は前立腺と糖尿病に関する啓発活動に使われます。Movemberは2003年にオーストラリアで始まりました。参照した文献によると、ブラジルでは2012年にNovembro Azulという名称が採用されました。\n\nキャンペーンが存在する理由。\n\n健康への関心を高めることです。検査は、専門家の助言と利益・リスクの評価に基づいて判断します。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/11.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "12月",
+        "color": "赤とオレンジ",
+        "theme": "HIV、エイズ、その他の性感染症、皮膚がん",
+        "summary": "赤はHIV、エイズ、その他の性感染症に関する活動に、オレンジは皮膚がんに関する活動に使われます。「赤の12月」は2017年にブラジルの法律で定められました。",
+        "purpose": "予防、ケア、権利について伝え、皮膚の健康への関心も高めることです。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "12月. 赤とオレンジ。\n\nHIV、エイズ、その他の性感染症、皮膚がん。\n\n赤はHIV、エイズ、その他の性感染症に関する活動に、オレンジは皮膚がんに関する活動に使われます。「赤の12月」は2017年にブラジルの法律で定められました。\n\nキャンペーンが存在する理由。\n\n予防、ケア、権利について伝え、皮膚の健康への関心も高めることです。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/12.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "9月",
+        "color": "黄色",
+        "theme": "自殺予防と命を大切にすること",
+        "summary": "科学論文では、ブラジル全国での活動は2015年に始まったとされています。一方、バーチャルヘルスライブラリー（BVS）は2014年からの活動を記録しています。9月10日は、IASPがWHOと協力して2003年に制定した世界自殺予防デーです。",
+        "purpose": "責任ある情報発信を広め、偏見を減らし、助けを求めやすくすることです。",
+        "history": [
+          {
+            "year": "1994年",
+            "text": "イエローリボンの象徴的な前例は、米国におけるマイク・エメの家族や友人の動員に関連しています。助けのメッセージを添えたリボンの配布により、このシンボルが目に見えるようになりました。この話はブラジルのキャンペーンの開始とは一致しません。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003年",
+            "text": "IASP と WHO は、9 月 10 日に祝う世界自殺予防デーを制定しました。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015年",
+            "text": "科学論文では、CVV、ABP、CFMが参加したブラジル全国の活動を2015年と記録しています。バーチャルヘルスライブラリー（BVS）は2014年からの活動に言及しています。このサイトでは記録の違いをそのまま示し、黄色のリボンの起源とは区別しています。",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024年から2026年",
+            "text": "国際的なテーマは「自殺に関する語り方を変えること」です。偏見ではなく、理解と支援を広めることを目指しています。",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "キャンペーンの広報には、ケアの取り組みと専門職の研修を伴わせる必要があります。[4]...そのために、WHOはLive Life（Viva a Vida）を開発しました。",
+        "care": [
+          "信頼できる人に相談し、医療専門家を探してください。",
+          "相手を責めずに話を聞き、医療機関などに相談するときは付き添うことを申し出ましょう。",
+          "差し迫った危険がある場合は、救急治療を受けてください。その人を一人にしないでください。"
+        ]
+      },
+      "transcript": "9月. 黄色。\n\n自殺予防と命を大切にすること。\n\n科学論文では、ブラジル全国での活動は2015年に始まったとされています。一方、バーチャルヘルスライブラリー（BVS）は2014年からの活動を記録しています。9月10日は、IASPがWHOと協力して2003年に制定した世界自殺予防デーです。\n\nキャンペーンが存在する理由。\n\n責任ある情報発信を広め、偏見を減らし、助けを求めやすくすることです。\n\nさまざまなマイルストーンを持つストーリー。\n\n1994年。\n\nイエローリボンの象徴的な前例は、米国におけるマイク・エメの家族や友人の動員に関連しています。助けのメッセージを添えたリボンの配布により、このシンボルが目に見えるようになりました。この話はブラジルのキャンペーンの開始とは一致しません。\n\n2003年。\n\nIASP と WHO は、9 月 10 日に祝う世界自殺予防デーを制定しました。\n\n2015年。\n\n科学論文では、CVV、ABP、CFMが参加したブラジル全国の活動を2015年と記録しています。バーチャルヘルスライブラリー（BVS）は2014年からの活動に言及しています。このサイトでは記録の違いをそのまま示し、黄色のリボンの起源とは区別しています。\n\n2024年から2026年。\n\n国際的なテーマは「自殺に関する語り方を変えること」です。偏見ではなく、理解と支援を広めることを目指しています。\n\n科学が私たちに言えること。\n\nキャンペーンの広報には、ケアの取り組みと専門職の研修を伴わせる必要があります。. そのために、WHOはLive Life（Viva a Vida）を開発しました。\n\nサポートの提供方法。\n\n信頼できる人に相談し、医療専門家を探してください。\n\n相手を責めずに話を聞き、医療機関などに相談するときは付き添うことを申し出ましょう。\n\n差し迫った危険がある場合は、救急治療を受けてください。その人を一人にしないでください。",
+      "voice": "ja-JP-NanamiNeural",
+      "file": "/assets/audio/ja/09.mp3"
+    }
+  },
+  "zh-CN": {
+    "2": {
+      "source": {
+        "name": "二月",
+        "color": "紫色和橙色",
+        "theme": "阿尔茨海默病与白血病",
+        "summary": "所参考的日历将紫色与阿尔茨海默病、橙色与白血病联系起来。这里并未列出二月的所有宣传活动。",
+        "purpose": "促进知识普及、持续关注，以及对患者和家人的支持。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "二月. 紫色和橙色。\n\n阿尔茨海默病与白血病。\n\n所参考的日历将紫色与阿尔茨海默病、橙色与白血病联系起来。这里并未列出二月的所有宣传活动。\n\n该活动为何存在。\n\n促进知识普及、持续关注，以及对患者和家人的支持。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/02.mp3"
+    },
+    "1": {
+      "source": {
+        "name": "一月",
+        "color": "白色和紫色",
+        "theme": "心理健康与麻风病",
+        "summary": "白色代表心理健康宣传活动。紫色也用于麻风病相关活动。这些是在同一个月开展的不同宣传活动。",
+        "purpose": "提高人们对心理关怀和麻风病相关信息的认识。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "一月. 白色和紫色。\n\n心理健康与麻风病。\n\n白色代表心理健康宣传活动。紫色也用于麻风病相关活动。这些是在同一个月开展的不同宣传活动。\n\n该活动为何存在。\n\n提高人们对心理关怀和麻风病相关信息的认识。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/01.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "三月",
+        "color": "淡紫色和深蓝色",
+        "theme": "宫颈癌与结直肠癌",
+        "summary": "淡紫色代表宫颈癌宣传活动，深蓝色代表结直肠癌宣传活动。",
+        "purpose": "传播信息，引导人们寻求适当的医疗照护。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "三月. 淡紫色和深蓝色。\n\n宫颈癌与结直肠癌。\n\n淡紫色代表宫颈癌宣传活动，深蓝色代表结直肠癌宣传活动。\n\n该活动为何存在。\n\n传播信息，引导人们寻求适当的医疗照护。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "四月",
+        "color": "浅蓝色和绿色",
+        "theme": "自闭症与职业健康",
+        "summary": "浅蓝色用于自闭症认知宣传活动，绿色用于预防工伤的活动。",
+        "purpose": "促进包容，提高人们对劳动者健康保护的认识。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "四月. 浅蓝色和绿色。\n\n自闭症与职业健康。\n\n浅蓝色用于自闭症认知宣传活动，绿色用于预防工伤的活动。\n\n该活动为何存在。\n\n促进包容，提高人们对劳动者健康保护的认识。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/04.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "五月",
+        "color": "黄色和紫色",
+        "theme": "道路安全与炎症性肠病",
+        "summary": "“黄色五月”活动于2014年在巴西发起，旨在动员社会关注道路安全。紫色也用于炎症性肠病相关宣传。",
+        "purpose": "推广交通安全教育和肠道疾病相关知识。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "五月. 黄色和紫色。\n\n道路安全与炎症性肠病。\n\n“黄色五月”活动于2014年在巴西发起，旨在动员社会关注道路安全。紫色也用于炎症性肠病相关宣传。\n\n该活动为何存在。\n\n推广交通安全教育和肠道疾病相关知识。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/05.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "六月",
+        "color": "红色和橙色",
+        "theme": "献血与骨髓捐献、贫血与白血病",
+        "summary": "一项大学社会服务研究将“红色六月”用于献血和骨髓捐献宣传，将“橙色六月”用于贫血和白血病宣传。",
+        "purpose": "鼓励捐献，并增进对血液疾病的理解。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "六月. 红色和橙色。\n\n献血与骨髓捐献、贫血与白血病。\n\n一项大学社会服务研究将“红色六月”用于献血和骨髓捐献宣传，将“橙色六月”用于贫血和白血病宣传。\n\n该活动为何存在。\n\n鼓励捐献，并增进对血液疾病的理解。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/06.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "七月",
+        "color": "黄色",
+        "theme": "病毒性肝炎",
+        "summary": "“黄色七月”汇集了病毒性肝炎的预防和照护活动。巴西于2019年通过法律确立了这项活动。",
+        "purpose": "宣传预防、诊断和获得照护的相关信息。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "七月. 黄色。\n\n病毒性肝炎。\n\n“黄色七月”汇集了病毒性肝炎的预防和照护活动。巴西于2019年通过法律确立了这项活动。\n\n该活动为何存在。\n\n宣传预防、诊断和获得照护的相关信息。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/07.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "八月",
+        "color": "金色、淡紫色和橙色",
+        "theme": "母乳喂养、针对女性的暴力与多发性硬化症",
+        "summary": "所参考的日历将金色与母乳喂养、淡紫色与针对女性的暴力、橙色与多发性硬化症相关宣传联系起来。",
+        "purpose": "提高人们对母乳喂养支持、女性保护和持续照护的认识。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "八月. 金色、淡紫色和橙色。\n\n母乳喂养、针对女性的暴力与多发性硬化症。\n\n所参考的日历将金色与母乳喂养、淡紫色与针对女性的暴力、橙色与多发性硬化症相关宣传联系起来。\n\n该活动为何存在。\n\n提高人们对母乳喂养支持、女性保护和持续照护的认识。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/08.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "十月",
+        "color": "粉色",
+        "theme": "乳腺癌",
+        "summary": "“粉色十月”始于20世纪90年代的美国。这项活动后来在国际上广泛开展，并在公众认知宣传中使用粉色。",
+        "purpose": "普及乳腺癌相关信息，并促进获得医疗照护。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "十月. 粉色。\n\n乳腺癌。\n\n“粉色十月”始于20世纪90年代的美国。这项活动后来在国际上广泛开展，并在公众认知宣传中使用粉色。\n\n该活动为何存在。\n\n普及乳腺癌相关信息，并促进获得医疗照护。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "十一月",
+        "color": "蓝色",
+        "theme": "男性健康、前列腺癌与糖尿病",
+        "summary": "蓝色用于前列腺和糖尿病相关宣传。Movember运动于2003年在澳大利亚发起。根据所参考的综述，巴西于2012年采用了Novembro Azul这一名称。",
+        "purpose": "鼓励关注健康。是否进行检查需要专业指导，并评估其益处和风险。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "十一月. 蓝色。\n\n男性健康、前列腺癌与糖尿病。\n\n蓝色用于前列腺和糖尿病相关宣传。Movember运动于2003年在澳大利亚发起。根据所参考的综述，巴西于2012年采用了Novembro Azul这一名称。\n\n该活动为何存在。\n\n鼓励关注健康。是否进行检查需要专业指导，并评估其益处和风险。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/11.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "十二月",
+        "color": "红色和橙色",
+        "theme": "艾滋病毒、艾滋病、其他性传播感染与皮肤癌",
+        "summary": "红色用于艾滋病毒、艾滋病及其他性传播感染相关宣传，橙色用于皮肤癌相关宣传。巴西于2017年通过法律确立了“红色十二月”活动。",
+        "purpose": "宣传预防、照护和权利，同时关注皮肤健康。",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "十二月. 红色和橙色。\n\n艾滋病毒、艾滋病、其他性传播感染与皮肤癌。\n\n红色用于艾滋病毒、艾滋病及其他性传播感染相关宣传，橙色用于皮肤癌相关宣传。巴西于2017年通过法律确立了“红色十二月”活动。\n\n该活动为何存在。\n\n宣传预防、照护和权利，同时关注皮肤健康。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/12.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "九月",
+        "color": "黄色",
+        "theme": "预防自杀与珍视生命",
+        "summary": "科学文章将巴西全国性活动的开始时间记为2015年，而虚拟健康图书馆（BVS）记录了自2014年起的活动。9月10日是世界预防自杀日，由IASP与WHO合作于2003年设立。",
+        "purpose": "传播负责任的信息，减少污名，让寻求帮助更容易。",
+        "history": [
+          {
+            "year": "1994年",
+            "text": "黄丝带的象征意义与迈克·埃米在美国的家人和朋友的动员有关。伴随着帮助信息的丝带的分发使这个符号变得可见。此故事与巴西战役的发起无关。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003年",
+            "text": "IASP 和 WHO 设立了世界预防自杀日，并于 9 月 10 日进行庆祝。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015年",
+            "text": "科学文章记录了2015年巴西全国性活动，CVV、ABP和CFM参与其中。虚拟健康图书馆（BVS）提到了自2014年起的活动。本项目保留了不同记录之间的差异，不将这些年份与黄色丝带的起源混淆。",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024年至2026年",
+            "text": "国际主题是“改变关于自杀的叙事”。重点是以理解和支持取代污名。",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "宣传活动需要与关怀措施和专业人员培训相结合。[4]……为此，世界卫生组织制定了Live Life（Viva a Vida）。",
+        "care": [
+          "与您信任的人交谈并寻找医疗保健专业人员。",
+          "不加评判地倾听，并主动提出陪伴对方寻求医疗帮助。",
+          "如果存在直接危险，请寻求紧急护理。不要让这个人独自一人。"
+        ]
+      },
+      "transcript": "九月. 黄色。\n\n预防自杀与珍视生命。\n\n科学文章将巴西全国性活动的开始时间记为2015年，而虚拟健康图书馆（BVS）记录了自2014年起的活动。9月10日是世界预防自杀日，由IASP与WHO合作于2003年设立。\n\n该活动为何存在。\n\n传播负责任的信息，减少污名，让寻求帮助更容易。\n\n具有不同里程碑的故事。\n\n1994年。\n\n黄丝带的象征意义与迈克·埃米在美国的家人和朋友的动员有关。伴随着帮助信息的丝带的分发使这个符号变得可见。此故事与巴西战役的发起无关。\n\n2003年。\n\nIASP 和 WHO 设立了世界预防自杀日，并于 9 月 10 日进行庆祝。\n\n2015年。\n\n科学文章记录了2015年巴西全国性活动，CVV、ABP和CFM参与其中。虚拟健康图书馆（BVS）提到了自2014年起的活动。本项目保留了不同记录之间的差异，不将这些年份与黄色丝带的起源混淆。\n\n2024年至2026年。\n\n国际主题是“改变关于自杀的叙事”。重点是以理解和支持取代污名。\n\n科学允许我们说什么。\n\n宣传活动需要与关怀措施和专业人员培训相结合。. 为此，世界卫生组织制定了Live Life（Viva a Vida）。\n\n如何提供支持。\n\n与您信任的人交谈并寻找医疗保健专业人员。\n\n不加评判地倾听，并主动提出陪伴对方寻求医疗帮助。\n\n如果存在直接危险，请寻求紧急护理。不要让这个人独自一人。",
+      "voice": "zh-CN-XiaoxiaoNeural",
+      "file": "/assets/audio/zh-CN/09.mp3"
+    }
+  },
+  "ko": {
+    "1": {
+      "source": {
+        "name": "1월",
+        "color": "흰색과 보라색",
+        "theme": "마음 건강과 한센병",
+        "summary": "흰색은 마음 건강에 관한 활동을 나타냅니다. 보라색은 한센병 관련 활동에도 사용됩니다. 같은 달에 진행되는 서로 다른 캠페인입니다.",
+        "purpose": "정서적 돌봄과 한센병에 관한 정보를 널리 알리는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "1월. 흰색과 보라색.\n\n마음 건강과 한센병.\n\n흰색은 마음 건강에 관한 활동을 나타냅니다. 보라색은 한센병 관련 활동에도 사용됩니다. 같은 달에 진행되는 서로 다른 캠페인입니다.\n\n캠페인이 존재하는 이유.\n\n정서적 돌봄과 한센병에 관한 정보를 널리 알리는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/01.mp3"
+    },
+    "2": {
+      "source": {
+        "name": "2월",
+        "color": "보라색과 오렌지색",
+        "theme": "알츠하이머병과 백혈병",
+        "summary": "참고한 달력에서는 보라색을 알츠하이머병, 주황색을 백혈병과 연결합니다. 여기에서 2월의 모든 캠페인을 다루는 것은 아닙니다.",
+        "purpose": "이해와 지속적인 돌봄을 촉진하고 당사자와 가족을 지원하는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "2월. 보라색과 오렌지색.\n\n알츠하이머병과 백혈병.\n\n참고한 달력에서는 보라색을 알츠하이머병, 주황색을 백혈병과 연결합니다. 여기에서 2월의 모든 캠페인을 다루는 것은 아닙니다.\n\n캠페인이 존재하는 이유.\n\n이해와 지속적인 돌봄을 촉진하고 당사자와 가족을 지원하는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/02.mp3"
+    },
+    "3": {
+      "source": {
+        "name": "3월",
+        "color": "라일락과 진한 파란색",
+        "theme": "자궁경부암과 대장암",
+        "summary": "연보라색은 자궁경부암 관련 활동을, 진한 파란색은 대장암 관련 활동을 나타냅니다.",
+        "purpose": "정보를 알리고 적절한 의료 서비스를 찾을 수 있도록 안내하는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "3월. 라일락과 진한 파란색.\n\n자궁경부암과 대장암.\n\n연보라색은 자궁경부암 관련 활동을, 진한 파란색은 대장암 관련 활동을 나타냅니다.\n\n캠페인이 존재하는 이유.\n\n정보를 알리고 적절한 의료 서비스를 찾을 수 있도록 안내하는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/03.mp3"
+    },
+    "4": {
+      "source": {
+        "name": "4월",
+        "color": "하늘색과 녹색",
+        "theme": "자폐증과 노동자의 건강",
+        "summary": "하늘색은 자폐증에 대한 이해를 높이는 활동에, 녹색은 산업재해를 예방하는 활동에 사용됩니다.",
+        "purpose": "포용을 촉진하고 노동자의 건강을 보호하는 일의 중요성을 알리는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "4월. 하늘색과 녹색.\n\n자폐증과 노동자의 건강.\n\n하늘색은 자폐증에 대한 이해를 높이는 활동에, 녹색은 산업재해를 예방하는 활동에 사용됩니다.\n\n캠페인이 존재하는 이유.\n\n포용을 촉진하고 노동자의 건강을 보호하는 일의 중요성을 알리는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/04.mp3"
+    },
+    "6": {
+      "source": {
+        "name": "6월",
+        "color": "레드와 오렌지",
+        "theme": "헌혈과 골수 기증, 빈혈과 백혈병",
+        "summary": "대학의 지역사회 활동에 관한 연구에서는 헌혈과 골수 기증을 빨간 6월로, 빈혈과 백혈병을 주황 6월로 설명합니다.",
+        "purpose": "기증을 장려하고 혈액질환에 대한 이해를 높이는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "6월. 레드와 오렌지.\n\n헌혈과 골수 기증, 빈혈과 백혈병.\n\n대학의 지역사회 활동에 관한 연구에서는 헌혈과 골수 기증을 빨간 6월로, 빈혈과 백혈병을 주황 6월로 설명합니다.\n\n캠페인이 존재하는 이유.\n\n기증을 장려하고 혈액질환에 대한 이해를 높이는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/06.mp3"
+    },
+    "5": {
+      "source": {
+        "name": "5월",
+        "color": "노란색과 보라색",
+        "theme": "교통안전과 염증성 장질환",
+        "summary": "노란 5월 캠페인은 교통안전에 대한 사회적 관심을 높이기 위해 2014년 브라질에서 시작되었습니다. 보라색은 염증성 장질환 관련 활동에도 사용됩니다.",
+        "purpose": "교통안전 교육과 장질환 관련 정보를 알리는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "5월. 노란색과 보라색.\n\n교통안전과 염증성 장질환.\n\n노란 5월 캠페인은 교통안전에 대한 사회적 관심을 높이기 위해 2014년 브라질에서 시작되었습니다. 보라색은 염증성 장질환 관련 활동에도 사용됩니다.\n\n캠페인이 존재하는 이유.\n\n교통안전 교육과 장질환 관련 정보를 알리는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/05.mp3"
+    },
+    "8": {
+      "source": {
+        "name": "8월",
+        "color": "골드, 라일락, 오렌지",
+        "theme": "모유 수유, 여성에 대한 폭력, 다발성 경화증",
+        "summary": "참고한 달력에서는 금색을 모유 수유, 연보라색을 여성에 대한 폭력, 주황색을 다발성 경화증 관련 활동과 연결합니다.",
+        "purpose": "모유 수유 지원, 여성 보호, 지속적인 돌봄의 중요성을 알리는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "8월. 골드, 라일락, 오렌지.\n\n모유 수유, 여성에 대한 폭력, 다발성 경화증.\n\n참고한 달력에서는 금색을 모유 수유, 연보라색을 여성에 대한 폭력, 주황색을 다발성 경화증 관련 활동과 연결합니다.\n\n캠페인이 존재하는 이유.\n\n모유 수유 지원, 여성 보호, 지속적인 돌봄의 중요성을 알리는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/08.mp3"
+    },
+    "7": {
+      "source": {
+        "name": "7월",
+        "color": "노란색",
+        "theme": "바이러스성 간염",
+        "summary": "노란 7월은 바이러스성 간염의 예방과 돌봄에 관한 활동입니다. 이 캠페인은 2019년 브라질에서 법으로 정해졌습니다.",
+        "purpose": "예방과 진단에 관한 정보를 알리고 의료 서비스를 이용할 수 있도록 돕는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "7월. 노란색.\n\n바이러스성 간염.\n\n노란 7월은 바이러스성 간염의 예방과 돌봄에 관한 활동입니다. 이 캠페인은 2019년 브라질에서 법으로 정해졌습니다.\n\n캠페인이 존재하는 이유.\n\n예방과 진단에 관한 정보를 알리고 의료 서비스를 이용할 수 있도록 돕는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/07.mp3"
+    },
+    "10": {
+      "source": {
+        "name": "10월",
+        "color": "핑크",
+        "theme": "유방암",
+        "summary": "분홍 10월 캠페인은 1990년대 미국에서 시작되었습니다. 이후 국제적으로 알려졌으며, 인식 개선 활동에서 분홍색을 사용합니다.",
+        "purpose": "유방암 정보를 널리 알리고 의료 서비스를 이용하기 쉽게 하는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "10월. 핑크.\n\n유방암.\n\n분홍 10월 캠페인은 1990년대 미국에서 시작되었습니다. 이후 국제적으로 알려졌으며, 인식 개선 활동에서 분홍색을 사용합니다.\n\n캠페인이 존재하는 이유.\n\n유방암 정보를 널리 알리고 의료 서비스를 이용하기 쉽게 하는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/10.mp3"
+    },
+    "11": {
+      "source": {
+        "name": "11월",
+        "color": "블루",
+        "theme": "남성 건강, 전립선암, 당뇨병",
+        "summary": "파란색은 전립선과 당뇨병 관련 캠페인에 사용됩니다. Movember 운동은 2003년 호주에서 시작되었습니다. 참고한 문헌에 따르면 브라질에서는 2012년에 Novembro Azul이라는 이름을 사용하기 시작했습니다.",
+        "purpose": "건강에 관심을 갖도록 장려하는 것입니다. 검사는 전문가의 안내와 이점 및 위험 평가에 따라 판단합니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "11월. 블루.\n\n남성 건강, 전립선암, 당뇨병.\n\n파란색은 전립선과 당뇨병 관련 캠페인에 사용됩니다. Movember 운동은 2003년 호주에서 시작되었습니다. 참고한 문헌에 따르면 브라질에서는 2012년에 Novembro Azul이라는 이름을 사용하기 시작했습니다.\n\n캠페인이 존재하는 이유.\n\n건강에 관심을 갖도록 장려하는 것입니다. 검사는 전문가의 안내와 이점 및 위험 평가에 따라 판단합니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/11.mp3"
+    },
+    "12": {
+      "source": {
+        "name": "12월",
+        "color": "레드와 오렌지",
+        "theme": "HIV, 에이즈, 기타 성매개감염, 피부암",
+        "summary": "빨간색은 HIV, 에이즈와 기타 성매개감염 관련 활동에, 주황색은 피부암 관련 활동에 사용됩니다. 빨간 12월 캠페인은 2017년 브라질에서 법으로 정해졌습니다.",
+        "purpose": "예방과 돌봄, 권리에 관한 정보를 알리고 피부 건강에도 관심을 갖도록 하는 것입니다.",
+        "history": null,
+        "evidence_note": null,
+        "care": null
+      },
+      "transcript": "12월. 레드와 오렌지.\n\nHIV, 에이즈, 기타 성매개감염, 피부암.\n\n빨간색은 HIV, 에이즈와 기타 성매개감염 관련 활동에, 주황색은 피부암 관련 활동에 사용됩니다. 빨간 12월 캠페인은 2017년 브라질에서 법으로 정해졌습니다.\n\n캠페인이 존재하는 이유.\n\n예방과 돌봄, 권리에 관한 정보를 알리고 피부 건강에도 관심을 갖도록 하는 것입니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/12.mp3"
+    },
+    "9": {
+      "source": {
+        "name": "9월",
+        "color": "노란색",
+        "theme": "자살 예방과 생명의 소중함",
+        "summary": "학술 논문은 브라질 전국 캠페인의 시작을 2015년으로 기록하며, 가상 보건 도서관(BVS)은 2014년부터의 활동을 기록합니다. 9월 10일은 IASP가 WHO와 협력해 2003년에 정한 세계 자살 예방의 날입니다.",
+        "purpose": "책임 있는 정보를 널리 알리고 낙인을 줄이며 도움을 구하기 쉽게 하는 것입니다.",
+        "history": [
+          {
+            "year": "1994년",
+            "text": "노란리본의 상징적 선행은 마이크 에미의 가족과 친구들이 미국에서 동원된 것과 연결된다. 도움의 메시지와 함께 리본을 배포하여 상징에 대한 가시성을 제공했습니다. 이 이야기는 브라질 캠페인의 시작과 일치하지 않습니다.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "year": "2003년",
+            "text": "IASP와 WHO는 9월 10일을 세계 자살 예방의 날로 지정했습니다.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "year": "2015년",
+            "text": "학술 논문은 CVV, ABP, CFM이 참여한 브라질 전국 활동을 2015년으로 기록합니다. 가상 보건 도서관(BVS)은 2014년부터의 활동을 언급합니다. 이 사이트는 자료 사이의 차이를 그대로 보여 주며, 이 연도를 노란 리본의 기원과 혼동하지 않습니다.",
+            "source_ids": [
+              3,
+              4,
+              15
+            ]
+          },
+          {
+            "year": "2024년부터 2026년까지",
+            "text": "국제 주제는 자살에 관한 이야기의 방향을 바꾸는 것입니다. 낙인을 이해와 지원으로 바꾸는 데 초점을 맞춥니다.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "evidence_note": "캠페인 홍보는 돌봄 활동과 전문 인력 교육을 함께 진행해야 합니다. [4]...이를 위해 WHO는 Live Life(Viva a Vida)를 개발했습니다.",
+        "care": [
+          "믿을 수 있는 사람과 이야기하고 의료 전문가를 찾으십시오.",
+          "판단하지 말고 이야기를 듣고, 도움을 받으러 갈 때 함께 가겠다고 제안하세요。",
+          "즉각적인 위험이 있는 경우 응급 치료를 받으십시오. 그 사람을 혼자 두지 마십시오."
+        ]
+      },
+      "transcript": "9월. 노란색.\n\n자살 예방과 생명의 소중함.\n\n학술 논문은 브라질 전국 캠페인의 시작을 2015년으로 기록하며, 가상 보건 도서관(BVS)은 2014년부터의 활동을 기록합니다. 9월 10일은 IASP가 WHO와 협력해 2003년에 정한 세계 자살 예방의 날입니다.\n\n캠페인이 존재하는 이유.\n\n책임 있는 정보를 널리 알리고 낙인을 줄이며 도움을 구하기 쉽게 하는 것입니다.\n\n다양한 이정표가 있는 이야기.\n\n1994년.\n\n노란리본의 상징적 선행은 마이크 에미의 가족과 친구들이 미국에서 동원된 것과 연결된다. 도움의 메시지와 함께 리본을 배포하여 상징에 대한 가시성을 제공했습니다. 이 이야기는 브라질 캠페인의 시작과 일치하지 않습니다.\n\n2003년.\n\nIASP와 WHO는 9월 10일을 세계 자살 예방의 날로 지정했습니다.\n\n2015년.\n\n학술 논문은 CVV, ABP, CFM이 참여한 브라질 전국 활동을 2015년으로 기록합니다. 가상 보건 도서관(BVS)은 2014년부터의 활동을 언급합니다. 이 사이트는 자료 사이의 차이를 그대로 보여 주며, 이 연도를 노란 리본의 기원과 혼동하지 않습니다.\n\n2024년부터 2026년까지.\n\n국제 주제는 자살에 관한 이야기의 방향을 바꾸는 것입니다. 낙인을 이해와 지원으로 바꾸는 데 초점을 맞춥니다.\n\n과학이 우리에게 말할 수 있는 것.\n\n캠페인 홍보는 돌봄 활동과 전문 인력 교육을 함께 진행해야 합니다. 이를 위해 WHO는 Live Life(Viva a Vida)를 개발했습니다.\n\n지원을 제공하는 방법.\n\n믿을 수 있는 사람과 이야기하고 의료 전문가를 찾으십시오.\n\n판단하지 말고 이야기를 듣고, 도움을 받으러 갈 때 함께 가겠다고 제안하세요.\n\n즉각적인 위험이 있는 경우 응급 치료를 받으십시오. 그 사람을 혼자 두지 마십시오.",
+      "voice": "ko-KR-SunHiNeural",
+      "file": "/assets/audio/ko/09.mp3"
+    }
+  }
+}
