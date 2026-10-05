@@ -187,6 +187,8 @@ const monthSmoke = (() => {
       const breadth = length * frameWidth / frameHeight;
       // Keep white behind each month's colors, including August's third bottom stream.
       drawWhite(width * (palette[2] ? .22 : .5), height * 1.08, height * (.78 + expansion * .22));
+      // An additional white plume enters diagonally from the upper-left corner.
+      drawWhite(0, 0, Math.hypot(width / 2, height / 2) * (1.3 + expansion * .3));
       // Extra streams spread to the edges instead of magnifying a blurry copy.
       const positions = height > width * 1.2 ? [-.02, .28, .58, .88, 1.18] : [.08, 1.12];
       for (const position of positions) {
