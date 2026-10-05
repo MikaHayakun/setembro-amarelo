@@ -1,6 +1,23 @@
 # Setembro Amarelo
 
-Projeto em preparação. Ainda não há código de aplicação nem tecnologia definida.
+Plataforma educativa em português com interface HTML/CSS/JavaScript, API em Python e banco SQLite. O material recebido está em `Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/`; o documento de referência está em `Projeto_Setembro_Amarelo_2026.pdf`.
+
+## Executar
+
+Requisito: Python 3.9 ou superior. A aplicação usa apenas a biblioteca padrão, sem dependências externas a instalar.
+
+A partir desta pasta:
+
+```bash
+cd Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo
+python3 backend/server.py
+```
+
+Abra http://127.0.0.1:8000 no navegador. Para encerrar, pressione Ctrl+C no terminal do servidor. Se a porta estiver ocupada, use `python3 backend/server.py --port 8001` e abra a porta correspondente. A página deve ser aberta pelo servidor para consultar a API.
+
+Na pasta da aplicação, execute os testes com `python3 -m unittest discover -s tests -v`. Eles usam um banco temporário. A verificação opcional de sintaxe com Node.js é `node --check frontend/app.js`.
+
+O [README da aplicação](Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/README.md) descreve a API, a jornada de consulta e a manutenção do conteúdo.
 
 ## Histórico de alterações
 
@@ -18,4 +35,4 @@ Usamos Git para registrar etapas concluídas e permitir revisão ou restauraçã
 
 Faça alterações focadas na necessidade atual. Ao substituir uma implementação, remova o código antigo e suas referências depois de confirmar que não são mais necessários. Evite cópias de versões antigas dentro do projeto: o Git guarda o histórico.
 
-Registre aqui as instruções de instalação, execução e validação assim que a tecnologia do projeto for definida.
+O código e os documentos recebidos foram preservados no commit `6150f28`. O banco SQLite fornecido também integra essa versão de referência. Caches e arquivos temporários ficam fora do histórico.
