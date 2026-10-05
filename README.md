@@ -35,4 +35,4 @@ Usamos Git para registrar etapas concluídas e permitir revisão ou restauraçã
 
 Faça alterações focadas na necessidade atual. Ao substituir uma implementação, remova o código antigo e suas referências depois de confirmar que não são mais necessários. Evite cópias de versões antigas dentro do projeto: o Git guarda o histórico.
 
-O código e os documentos recebidos foram preservados no commit `6150f28`. O banco SQLite fornecido também integra essa versão de referência. Caches e arquivos temporários ficam fora do histórico.
+O código recebido e o banco SQLite fornecido integram a versão de referência no Git. Os PDFs e a imagem original do emblema são materiais locais e ficam fora do versionamento. Ao preparar outra cópia do projeto, forneça o emblema localmente em `Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/frontend/assets/emblema-setembro-amarelo.png`. Caches e arquivos temporários também ficam fora do histórico.

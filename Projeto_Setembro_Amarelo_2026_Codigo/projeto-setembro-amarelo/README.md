@@ -27,6 +27,7 @@ O botão “Ouvir texto” é complementar. Depende do suporte do navegador e da
 ## Estrutura
 
 - `frontend/`: HTML, CSS e JavaScript.
+- `frontend/assets/emblema-setembro-amarelo.png`: emblema original fornecido localmente, fora do versionamento.
 - `backend/server.py`: servidor HTTP e API de leitura.
 - `database/schema.sql`: estrutura relacional.
 - `database/content.json`: conteúdo de referência e 16 fontes.
@@ -57,4 +58,4 @@ As cores variam entre campanhas e países. As fontes registram marcos brasileiro
 
 ## Entrega e publicação
 
-O código e o banco executável estão neste pacote. O documento do projeto está em `docs/`, em DOCX e PDF, e também é entregue separadamente. As descrições das telas atendem à alternativa prevista no material de orientação. O roteiro do vídeo de até 60 segundos está em `docs/roteiro-pitch.md`; o vídeo precisa ser gravado com o aplicativo aberto. O repositório público deve ser criado na conta da equipe, com link no README e commits reais de cada integrante. Nenhum repositório remoto ou vídeo foi apresentado como já publicado.
+O código e o banco executável estão neste pacote. O documento do projeto está em `docs/`, em DOCX e PDF, e também é entregue separadamente. Os PDFs e o emblema original são mantidos apenas localmente, fora dos commits; outra cópia do repositório precisa receber o emblema em `frontend/assets/emblema-setembro-amarelo.png` para exibi-lo. As descrições das telas atendem à alternativa prevista no material de orientação. O roteiro do vídeo de até 60 segundos está em `docs/roteiro-pitch.md`; o vídeo precisa ser gravado com o aplicativo aberto. O repositório público deve ser criado na conta da equipe, com link no README e commits reais de cada integrante. Nenhum repositório remoto ou vídeo foi apresentado como já publicado.

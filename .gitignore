@@ -9,6 +9,10 @@
 *.pem
 *.key
 
+# Materiais locais que não devem ser publicados no repositório
+*.pdf
+/Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/frontend/assets/emblema-setembro-amarelo.png
+
 # Dependências e ambientes locais
 node_modules/
 .venv/

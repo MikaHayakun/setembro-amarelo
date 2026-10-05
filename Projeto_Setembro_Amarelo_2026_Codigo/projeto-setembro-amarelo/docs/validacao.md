@@ -37,6 +37,6 @@ Ambiente desta execução: Python 3.13.3 e Node.js 24.15.0.
 - `node --check frontend/app.js` passou sem erros de sintaxe.
 - A consulta somente de leitura ao banco fornecido retornou integridade `ok`, 12 campanhas e 16 fontes.
 - O servidor foi iniciado em `http://127.0.0.1:8000`. A página HTML, `/api/health` e `/api/campaigns/9` responderam corretamente; o conteúdo de Setembro retornou quatro marcos históricos e sete fontes.
-- O material original foi registrado no Git local no commit `6150f28`. Nenhum repositório remoto foi publicado.
+- O código original foi registrado no Git local. Os PDFs e o emblema original foram excluídos do versionamento e do histórico por solicitação do responsável. Nenhum repositório remoto foi publicado.
 
 Esta execução confirma funcionamento local e testes automatizados. A revisão em navegador gráfico, com leitor de tela e reprodução de voz continua pendente.
