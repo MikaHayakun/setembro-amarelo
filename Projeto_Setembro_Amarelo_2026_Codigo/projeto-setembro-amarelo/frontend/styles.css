@@ -111,7 +111,6 @@ header {
 h1, h2, h3 { font-family: var(--heading-font); text-wrap: balance; }
 h1 {
   margin: 0 0 var(--space-lg);
-  overflow-wrap: anywhere;
   font-size: clamp(2.75rem, 2rem + 3.3vw, 4.875rem);
   font-weight: 700;
   line-height: .99;
