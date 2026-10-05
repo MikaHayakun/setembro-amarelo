@@ -1,0 +1,331 @@
+{
+  "reviewed_on": "2026-10-05",
+  "sources": [
+    {
+      "id": 1,
+      "institution": "OMS",
+      "title": "Suicide",
+      "year": "2026",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/suicide",
+      "reference": "WORLD HEALTH ORGANIZATION. Suicide. Geneva: WHO, 28 ago. 2026."
+    },
+    {
+      "id": 2,
+      "institution": "OMS",
+      "title": "World Suicide Prevention Day 2026",
+      "year": "2026",
+      "url": "https://www.who.int/campaigns/world-suicide-prevention-day/2026",
+      "reference": "WORLD HEALTH ORGANIZATION. World Suicide Prevention Day 2026. Geneva: WHO, 2026."
+    },
+    {
+      "id": 3,
+      "institution": "SciELO",
+      "title": "A desesperança do jovem e o suicídio como solução",
+      "year": "2020",
+      "url": "https://www.scielo.br/j/se/a/rLfXhwgd7qgpBzMSrjwFXmj/?lang=pt",
+      "reference": "PENSO, Maria Aparecida; SENA, Denise Pereira Alves de. A desesperança do jovem e o suicídio como solução. Sociedade e Estado, v. 35, n. 1, 2020. DOI: 10.1590/s0102-6992-202035010004."
+    },
+    {
+      "id": 4,
+      "institution": "SciELO e PubMed",
+      "title": "Analysis of the impact of the Brazilian Suicide Prevention Campaign Yellow September an ecological study",
+      "year": "2024",
+      "url": "https://www.scielo.br/j/trends/a/yJycBVf8RJKwDpNYnCv5jnB/?lang=en",
+      "reference": "CRUZ, Walter Gabriel Neves et al. Analysis of the impact of the Brazilian Suicide Prevention Campaign \"Yellow September\": an ecological study. Trends in Psychiatry and Psychotherapy, v. 46, 2024. DOI: 10.47626/2237-6089-2022-0564."
+    },
+    {
+      "id": 5,
+      "institution": "Biblioteca Virtual em Saúde",
+      "title": "Cadernos de Vigilância em Saúde de Populações Expostas a Agrotóxicos módulo 4",
+      "year": "2026",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/cadernos_vspea_acoes_basicas_m4.pdf",
+      "reference": "BRASIL. Ministério da Saúde. Cadernos de Vigilância em Saúde de Populações Expostas a Agrotóxicos: ações básicas para a operacionalização da VSPEA: execução: módulo 4. Brasília, DF: Ministério da Saúde, 2026. p. 31."
+    },
+    {
+      "id": 6,
+      "institution": "SciELO",
+      "title": "Maio amarelo um movimento ativo para prevenir lesões no trânsito",
+      "year": "2015",
+      "url": "https://www.scielo.br/j/rcbc/a/x37FTFpcqRxrD5kCDMhvpnM/?lang=pt",
+      "reference": "FRAGA, Gustavo Pereira et al. Maio amarelo: um movimento ativo para prevenir lesões no trânsito. Revista do Colégio Brasileiro de Cirurgiões, v. 42, n. 4, 2015. DOI: 10.1590/0100-69912015004001."
+    },
+    {
+      "id": 7,
+      "institution": "SciELO",
+      "title": "Letramento funcional em saúde experiência dos estudantes e percepção dos usuários da atenção primária",
+      "year": "2021",
+      "url": "https://www.scielo.br/j/rbem/a/BR7RK3YTTxJMpMNmFGkjb5g/?lang=pt",
+      "reference": "LUSTOSA, Sasha Botelho et al. Letramento funcional em saúde: experiência dos estudantes e percepção dos usuários da atenção primária. Revista Brasileira de Educação Médica, v. 45, n. 4, 2021. DOI: 10.1590/1981-5271v45.4-20210294."
+    },
+    {
+      "id": 8,
+      "institution": "Biblioteca Virtual em Saúde",
+      "title": "Julho Amarelo mês de luta contra as hepatites virais 2026",
+      "year": "2026",
+      "url": "https://bvsms.saude.gov.br/julho-amarelo-mes-de-luta-contra-as-hepatites-virais-2026/",
+      "reference": "BRASIL. Ministério da Saúde. Julho Amarelo: mês de luta contra as hepatites virais 2026. Brasília, DF: Biblioteca Virtual em Saúde, 2026."
+    },
+    {
+      "id": 9,
+      "institution": "SciELO",
+      "title": "Outubro Rosa",
+      "year": "2017",
+      "url": "https://www.scielo.br/j/ape/a/HcrYKxQsxZcQQbGSmw4RFCQ/?format=html&lang=pt",
+      "reference": "GUTIÉRREZ, Maria Gaby Rivero de; ALMEIDA, Ana Maria de. Outubro Rosa. Acta Paulista de Enfermagem, v. 30, n. 5, 2017. DOI: 10.1590/1982-0194201700065."
+    },
+    {
+      "id": 10,
+      "institution": "SciELO",
+      "title": "Um novembro não tão azul debatendo rastreamento de câncer de próstata e saúde do homem",
+      "year": "2018",
+      "url": "https://www.scielo.br/j/icse/a/TrYYNXDvDGM4zXbv5CwmX6D/?lang=pt",
+      "reference": "MODESTO, Antônio Augusto Dall'Agnol et al. Um novembro não tão azul: debatendo rastreamento de câncer de próstata e saúde do homem. Interface: Comunicação, Saúde, Educação, v. 22, n. 64, 2018. DOI: 10.1590/1807-57622016.0288."
+    },
+    {
+      "id": 11,
+      "institution": "Biblioteca Virtual em Saúde",
+      "title": "Dezembro Vermelho campanha nacional de prevenção ao HIV Aids e outras IST",
+      "year": "s.d.",
+      "url": "https://bvsms.saude.gov.br/dezembro-vermelho-campanha-nacional-de-prevencao-ao-hiv-aids-e-outras-infeccoes-sexualmente-transmissiveis/",
+      "reference": "BRASIL. Ministério da Saúde. Dezembro Vermelho: campanha nacional de prevenção ao HIV/Aids e outras infecções sexualmente transmissíveis. Brasília, DF: Biblioteca Virtual em Saúde, [s.d.]."
+    },
+    {
+      "id": 12,
+      "institution": "OMS",
+      "title": "Preventing suicide a resource for media professionals update 2023",
+      "year": "2023",
+      "url": "https://www.who.int/publications/i/item/9789240076846",
+      "reference": "WORLD HEALTH ORGANIZATION. Preventing suicide: a resource for media professionals, update 2023. Geneva: WHO, 2023."
+    },
+    {
+      "id": 13,
+      "institution": "OMS",
+      "title": "Suicide questions and answers",
+      "year": "2026",
+      "url": "https://www.who.int/news-room/questions-and-answers/item/suicide",
+      "reference": "WORLD HEALTH ORGANIZATION. Suicide: questions and answers. Geneva: WHO, 31 ago. 2026."
+    },
+    {
+      "id": 14,
+      "institution": "OMS",
+      "title": "LIVE LIFE an implementation guide for suicide prevention in countries",
+      "year": "2021",
+      "url": "https://www.who.int/publications/i/item/9789240026629",
+      "reference": "WORLD HEALTH ORGANIZATION. LIVE LIFE: an implementation guide for suicide prevention in countries. Geneva: WHO, 2021."
+    },
+    {
+      "id": 15,
+      "institution": "Biblioteca Virtual em Saúde",
+      "title": "Mudar a Comunicação sobre o Suicídio Dia Mundial de Prevenção ao Suicídio 2026",
+      "year": "2026",
+      "url": "https://bvsms.saude.gov.br/mudar-a-comunicacao-sobre-o-suicidio-10-9-dia-mundial-de-prevencao-ao-suicidio-2026/",
+      "reference": "BRASIL. Ministério da Saúde. “Mudar a Comunicação sobre o Suicídio”: 10/9 – Dia Mundial de Prevenção ao Suicídio 2026. Brasília, DF: Biblioteca Virtual em Saúde, 2026."
+    },
+    {
+      "id": 16,
+      "institution": "Biblioteca Virtual em Saúde",
+      "title": "Dia Mundial de Prevenção ao Suicídio 2025 Se precisar peça ajuda",
+      "year": "2025",
+      "url": "https://bvsms.saude.gov.br/dia-mundial-de-prevencao-ao-suicidio-2025-se-precisar-peca-ajuda/",
+      "reference": "BRASIL. Ministério da Saúde. Dia Mundial de Prevenção ao Suicídio 2025: “Se precisar, peça ajuda”. Brasília, DF: Biblioteca Virtual em Saúde, 2025."
+    }
+  ],
+  "campaigns": [
+    {
+      "month": 1,
+      "name": "Janeiro",
+      "color": "Branco e roxo",
+      "hex": "#dad5ed",
+      "theme": "Saúde mental e hanseníase",
+      "summary": "Branco identifica ações de saúde mental. Roxo também aparece em ações sobre hanseníase. São campanhas diferentes no mesmo mês.",
+      "purpose": "Dar visibilidade ao cuidado emocional e às informações sobre hanseníase.",
+      "source_ids": [
+        5,
+        7
+      ]
+    },
+    {
+      "month": 2,
+      "name": "Fevereiro",
+      "color": "Roxo e laranja",
+      "hex": "#8654a6",
+      "theme": "Alzheimer e leucemia",
+      "summary": "O calendário consultado associa o roxo ao Alzheimer e o laranja à leucemia. Este recorte não reúne todas as campanhas de fevereiro.",
+      "purpose": "Estimular conhecimento, acompanhamento e apoio a pessoas e famílias.",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "month": 3,
+      "name": "Março",
+      "color": "Lilás e azul escuro",
+      "hex": "#6a67b0",
+      "theme": "Câncer do colo do útero e colorretal",
+      "summary": "Lilás identifica ações sobre câncer do colo do útero; azul escuro, sobre câncer colorretal.",
+      "purpose": "Divulgar informação e orientar a busca de cuidado adequado.",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "month": 4,
+      "name": "Abril",
+      "color": "Azul claro e verde",
+      "hex": "#4b9989",
+      "theme": "Autismo e saúde no trabalho",
+      "summary": "O azul claro aparece nas ações de conscientização sobre autismo; o verde, na prevenção de acidentes no trabalho.",
+      "purpose": "Promover inclusão e dar visibilidade à proteção da saúde dos trabalhadores.",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "month": 5,
+      "name": "Maio",
+      "color": "Amarelo e roxo",
+      "hex": "#c4a02f",
+      "theme": "Segurança no trânsito e doenças inflamatórias intestinais",
+      "summary": "O Maio Amarelo foi lançado no Brasil em 2014 para mobilizar a sociedade pela segurança viária. O roxo também identifica ações sobre doenças inflamatórias intestinais.",
+      "purpose": "Promover educação para o trânsito e informação sobre condições intestinais.",
+      "source_ids": [
+        6,
+        5
+      ]
+    },
+    {
+      "month": 6,
+      "name": "Junho",
+      "color": "Vermelho e laranja",
+      "hex": "#b64d53",
+      "theme": "Doação de sangue e medula óssea; anemia e leucemia",
+      "summary": "Um estudo de extensão universitária descreve Junho Vermelho para doação de sangue e medula óssea e Junho Laranja para anemia e leucemia.",
+      "purpose": "Incentivar a doação e a compreensão de condições hematológicas.",
+      "source_ids": [
+        7
+      ]
+    },
+    {
+      "month": 7,
+      "name": "Julho",
+      "color": "Amarelo",
+      "hex": "#c4a02f",
+      "theme": "Hepatites virais",
+      "summary": "Julho Amarelo reúne ações de prevenção e atenção às hepatites virais. A campanha foi instituída em lei no Brasil em 2019.",
+      "purpose": "Divulgar prevenção, diagnóstico e acesso ao cuidado.",
+      "source_ids": [
+        8
+      ]
+    },
+    {
+      "month": 8,
+      "name": "Agosto",
+      "color": "Dourado, lilás e laranja",
+      "hex": "#ad863b",
+      "theme": "Amamentação, violência contra a mulher e esclerose múltipla",
+      "summary": "O calendário consultado associa dourado à amamentação, lilás à violência contra a mulher e laranja à esclerose múltipla.",
+      "purpose": "Dar visibilidade ao apoio à amamentação, à proteção das mulheres e ao cuidado continuado.",
+      "source_ids": [
+        5
+      ]
+    },
+    {
+      "month": 9,
+      "name": "Setembro",
+      "color": "Amarelo",
+      "hex": "#b48a16",
+      "theme": "Prevenção do suicídio e valorização da vida",
+      "summary": "Artigos científicos situam a mobilização nacional brasileira em 2015; a BVS registra ações desde 2014. O dia 10 de setembro é o Dia Mundial de Prevenção do Suicídio, estabelecido em 2003 pela IASP em parceria com a OMS.",
+      "purpose": "Ampliar informação responsável, reduzir o estigma e facilitar a busca de ajuda.",
+      "source_ids": [
+        2,
+        3,
+        4,
+        12,
+        13,
+        15,
+        16
+      ],
+      "history": [
+        {
+          "year": "1994",
+          "text": "O antecedente simbólico do laço amarelo está ligado à mobilização da família e de amigos de Mike Emme nos Estados Unidos. A distribuição de fitas acompanhadas de mensagens de ajuda deu visibilidade ao símbolo. Essa história não corresponde ao lançamento da campanha brasileira.",
+          "source_ids": [
+            3
+          ]
+        },
+        {
+          "year": "2003",
+          "text": "IASP e OMS estabeleceram o Dia Mundial de Prevenção do Suicídio, celebrado em 10 de setembro.",
+          "source_ids": [
+            2
+          ]
+        },
+        {
+          "year": "2015",
+          "text": "Artigos científicos registram a mobilização nacional brasileira em 2015, com participação do CVV, da ABP e do CFM. A BVS menciona ações desde 2014. O projeto mantém essa diferença entre os registros, sem confundir esses anos com a origem do laço amarelo.",
+          "source_ids": [
+            3,
+            4,
+            15
+          ]
+        },
+        {
+          "year": "2024 a 2026",
+          "text": "O tema internacional é Changing the narrative on suicide, aqui apresentado em português como Mudar a narrativa sobre o suicídio. O foco é substituir o estigma por compreensão e apoio.",
+          "source_ids": [
+            2
+          ]
+        }
+      ],
+      "evidence_note": "Estudo ecológico sobre 2011 a 2019 não encontrou mudança estatisticamente significativa da tendência nacional de mortalidade após a campanha. Isso não prova que conversar seja inútil nem estabelece causa para as mortes. A divulgação precisa acompanhar ações de cuidado e formação profissional. [4]",
+      "care": [
+        "Converse com alguém de confiança e procure um profissional de saúde.",
+        "Ouça sem julgamento e ofereça companhia para buscar atendimento.",
+        "Se houver perigo imediato, procure atendimento de urgência. Não deixe a pessoa sozinha."
+      ],
+      "care_source_ids": [
+        13
+      ]
+    },
+    {
+      "month": 10,
+      "name": "Outubro",
+      "color": "Rosa",
+      "hex": "#be668f",
+      "theme": "Câncer de mama",
+      "summary": "O Outubro Rosa começou nos Estados Unidos na década de 1990. A campanha ganhou projeção internacional e usa o rosa em ações públicas de conscientização.",
+      "purpose": "Ampliar informação sobre câncer de mama e acesso ao cuidado.",
+      "source_ids": [
+        9,
+        5
+      ]
+    },
+    {
+      "month": 11,
+      "name": "Novembro",
+      "color": "Azul",
+      "hex": "#4974a7",
+      "theme": "Saúde do homem, câncer de próstata e diabetes",
+      "summary": "A cor azul aparece em campanhas sobre próstata e diabetes. O movimento Movember começou na Austrália em 2003; no Brasil, a denominação Novembro Azul foi adotada em 2012, segundo a revisão consultada.",
+      "purpose": "Estimular atenção à saúde. Exames dependem de orientação profissional e avaliação de benefícios e riscos.",
+      "source_ids": [
+        10,
+        5
+      ]
+    },
+    {
+      "month": 12,
+      "name": "Dezembro",
+      "color": "Vermelho e laranja",
+      "hex": "#b45742",
+      "theme": "HIV, Aids, outras IST e câncer de pele",
+      "summary": "Vermelho identifica ações sobre HIV, Aids e outras IST; laranja aparece nas ações sobre câncer de pele. Dezembro Vermelho foi instituído em lei no Brasil em 2017.",
+      "purpose": "Divulgar prevenção, cuidado e direitos, além da atenção à saúde da pele.",
+      "source_ids": [
+        11,
+        5
+      ]
+    }
+  ]
+}

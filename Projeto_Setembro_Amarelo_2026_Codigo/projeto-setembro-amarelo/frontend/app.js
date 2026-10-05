@@ -1,0 +1,108 @@
+'use strict';
+const container = document.getElementById('campaign');
+let currentText = '';
+let requestSequence = 0;
+function element(tag, text, className) {
+  const e = document.createElement(tag);
+  if (text !== undefined) e.textContent = text;
+  if (className) e.className = className;
+  return e;
+}
+function paragraph(text, parent) { parent.append(element('p', text)); }
+function sectionTitle(text, parent) { parent.append(element('h3', text)); }
+function refs(ids) { return ids.map(id => `[${id}]`).join(' '); }
+async function json(url) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error('Não foi possível carregar o conteúdo.');
+  return response.json();
+}
+function cancelSpeech() { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); }
+async function showMonth(month, moveFocus = false) {
+  const sequence = ++requestSequence;
+  cancelSpeech();
+  container.setAttribute('aria-busy', 'true');
+  container.replaceChildren(element('p', 'Carregando o conteúdo...'));
+  document.querySelectorAll('[data-month]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.month) === month)));
+  try {
+    const c = await json(`/api/campaigns/${month}`);
+    if (sequence !== requestSequence) return;
+    container.replaceChildren();
+    container.append(element('p', c.color, 'eyebrow'));
+    const title = element('h2', `${c.name} ${c.color.toLowerCase()}`);
+    title.tabIndex = -1; container.append(title);
+    paragraph(c.theme, container);
+    paragraph(`${c.summary} ${refs(c.sources.map(s => s.id))}`, container);
+    sectionTitle('Por que a campanha existe', container);
+    paragraph(c.purpose, container);
+    if (c.history) {
+      sectionTitle('Uma história com marcos diferentes', container);
+      const list = element('ol', undefined, 'timeline');
+      c.history.forEach(item => {
+        const li = element('li'); li.append(element('strong', item.year));
+        paragraph(`${item.text} ${refs(item.source_ids)}`, li); list.append(li);
+      });
+      container.append(list);
+      sectionTitle('O que a ciência permite afirmar', container);
+      paragraph(c.evidence_note, container);
+      sectionTitle('Como oferecer apoio', container);
+      const ul = element('ul'); c.care.forEach(t => ul.append(element('li', t))); container.append(ul);
+      paragraph(`Orientações gerais da OMS. ${refs(c.care_source_ids)}`, container);
+      const help = element('a', 'Ver canais de ajuda no Brasil', 'primary-link'); help.href = '#ajuda'; container.append(help);
+    }
+    const tools = element('div', undefined, 'tools');
+    const speak = element('button', 'Ouvir texto'); speak.type = 'button';
+    const stop = element('button', 'Parar leitura'); stop.type = 'button';
+    const status = element('span'); status.setAttribute('role', 'status');
+    currentText = `${c.name}. ${c.theme}. ${c.summary}. ${c.purpose}. ` +
+      (c.history ? c.history.map(i => `${i.year}. ${i.text}`).join(' ') + ' ' + c.evidence_note + ' ' + c.care.join(' ') : '');
+    speak.addEventListener('click', () => {
+      cancelSpeech();
+      if (!('speechSynthesis' in window)) { status.textContent = 'A leitura por voz não está disponível neste navegador.'; return; }
+      const voices = window.speechSynthesis.getVoices();
+      const voice = voices.find(v => /^pt-BR$/i.test(v.lang)) || voices.find(v => /^pt/i.test(v.lang));
+      if (!voice) { status.textContent = 'Não há voz em português disponível neste navegador. O texto continua disponível para leitura.'; return; }
+      const utterance = new SpeechSynthesisUtterance(currentText.replace(/\[\d+\]/g, ''));
+      utterance.lang = voice.lang; utterance.voice = voice; utterance.rate = 0.95;
+      utterance.onend = () => { status.textContent = 'Leitura concluída.'; };
+      utterance.onerror = () => { status.textContent = 'A voz não pôde ser reproduzida.'; };
+      status.textContent = 'Lendo o texto...'; window.speechSynthesis.speak(utterance);
+    });
+    stop.addEventListener('click', () => { cancelSpeech(); status.textContent = 'Leitura interrompida.'; });
+    tools.append(speak, stop, status); container.append(tools);
+    sectionTitle('Fontes para consultar', container);
+    const sources = element('ul', undefined, 'sources');
+    c.sources.forEach(s => {
+      const li = element('li');
+      const a = element('a', `[${s.id}] ${s.institution} · ${s.title} (${s.year})`);
+      a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; li.append(a); sources.append(li);
+    });
+    container.append(sources);
+    paragraph(`Conteúdo revisado em ${c.reviewed_on.split('-').reverse().join('/')}.`, container);
+    if (moveFocus) title.focus({preventScroll: true});
+  } catch (error) {
+    if (sequence !== requestSequence) return;
+    container.replaceChildren(element('p', 'O conteúdo não pôde ser carregado. Os canais de ajuda continuam disponíveis abaixo.'));
+    const retry = element('button', 'Tentar novamente'); retry.type = 'button';
+    retry.addEventListener('click', () => showMonth(month)); container.append(retry);
+  } finally {
+    if (sequence === requestSequence) container.setAttribute('aria-busy', 'false');
+  }
+}
+async function init() {
+  try {
+    const campaigns = await json('/api/campaigns');
+    campaigns.forEach(c => {
+      const button = element('button'); button.type = 'button'; button.dataset.month = c.month;
+      button.append(element('span', c.name), element('small', c.color));
+      button.setAttribute('aria-pressed', 'false');
+      button.addEventListener('click', () => showMonth(c.month, true));
+      document.getElementById('months').append(button);
+    });
+    await showMonth(9);
+  } catch (error) {
+    container.setAttribute('aria-busy', 'false');
+    container.replaceChildren(element('p', 'O servidor não respondeu. Reinicie o projeto e recarregue a página.'));
+  }
+}
+window.addEventListener('beforeunload', cancelSpeech);
+init();
