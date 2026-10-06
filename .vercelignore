@@ -3,6 +3,7 @@
 **/*.mp4
 **/*.mov
 **/*.webm
+!Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/frontend/assets/smoke/folds-stream-v1.mp4
 .git
 .cache
 .codex

@@ -6,6 +6,7 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[3]
 APP = 'Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/'
 EMBLEM = APP + 'frontend/assets/emblema-setembro-amarelo.png'
+PUBLIC_MEDIA = {EMBLEM, APP + 'frontend/assets/smoke/folds-stream-v1.mp4'}
 ROOT_FILES = {'.gitignore', '.vercelignore', 'README.md', 'vercel.json'}
 EXTENSIONS = {'.py', '.js', '.html', '.css', '.json', '.sql', '.md', '.txt', '.woff2', '.mp3', '.webp'}
 PRIVATE_EXTENSIONS = {'.pdf', '.docx', '.mp4', '.mov', '.webm', '.png', '.sqlite3'}
@@ -16,7 +17,7 @@ def git(*args, cwd=ROOT, **kwargs):
 
 
 def allowed(name):
-    if name in ROOT_FILES or name == EMBLEM:
+    if name in ROOT_FILES or name in PUBLIC_MEDIA:
         return True
     if not name.startswith(APP):
         return False
@@ -46,14 +47,15 @@ def prepare():
     private_objects = set()
     for row in git('rev-list', '--objects', 'main').decode().splitlines():
         parts = row.split(' ', 1)
-        if len(parts) == 2 and parts[1] != EMBLEM and Path(parts[1]).suffix.lower() in PRIVATE_EXTENSIONS:
+        if len(parts) == 2 and parts[1] not in PUBLIC_MEDIA and Path(parts[1]).suffix.lower() in PRIVATE_EXTENSIONS:
             private_objects.add(parts[0])
     for name in git('ls-files', '--others', '--ignored', '--exclude-standard').decode().splitlines():
         path = ROOT / name
-        if name != EMBLEM and path.is_file() and path.suffix.lower() in PRIVATE_EXTENSIONS:
+        if name not in PUBLIC_MEDIA and path.is_file() and path.suffix.lower() in PRIVATE_EXTENSIONS:
             private_objects.add(git('hash-object', str(path)).decode().strip())
-    # Cópias geradas do único PNG autorizado podem existir em dist/ ou caches locais.
-    private_objects.discard(git('rev-parse', 'main:' + EMBLEM).decode().strip())
+    # Cópias dos recursos públicos autorizados podem existir em dist/ ou caches.
+    for name in PUBLIC_MEDIA:
+        private_objects.discard(git('rev-parse', 'main:' + name).decode().strip())
     if public_objects & private_objects:
         raise RuntimeError('Um objeto de material privado entrou no histórico exportado. Não publique.')
     historical_paths = set(git('log', '--all', '--format=', '--name-only', cwd=output).decode().splitlines()) - {''}

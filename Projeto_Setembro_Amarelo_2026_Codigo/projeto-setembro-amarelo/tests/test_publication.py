@@ -23,16 +23,22 @@ class PublicationTest(unittest.TestCase):
 
     def test_private_materials_and_original_animation_are_absent(self):
         forbidden = {'.pdf', '.docx', '.mp4', '.mov', '.webm', '.png', '.sqlite3'}
+        allowed_media = {'assets/emblema-setembro-amarelo.png', 'assets/smoke/folds-stream-v1.mp4'}
         for path in self.output.rglob('*'):
-            if path.relative_to(self.output).as_posix() != 'assets/emblema-setembro-amarelo.png':
+            if path.relative_to(self.output).as_posix() not in allowed_media:
                 self.assertNotIn(path.suffix.lower(), forbidden, str(path))
         html = (self.output / 'index.html').read_text()
         self.assertIn('src="/assets/emblema-setembro-amarelo.png"', html)
         self.assertIn('intro-art', html)
         self.assertNotIn('intro--public', html)
         smoke = (self.output / 'smoke.js').read_text()
-        self.assertNotIn('.mp4', smoke)
-        self.assertNotIn('createElement(\'video\')', smoke)
+        self.assertNotIn('pinterest-savepin', smoke)
+        self.assertNotIn('WhatsApp', smoke)
+        mask = json.loads((self.output / 'assets/smoke/manifest.json').read_text())
+        self.assertEqual(mask['stream']['file'], 'folds-stream-v1.mp4')
+        self.assertEqual(mask['stream']['channels'], 'lighting-density-grayscale')
+        self.assertEqual((self.output / 'assets/smoke' / mask['stream']['file']).stat().st_size,
+                         mask['stream']['bytes'])
         self.assertIn('mikaweiai.com.br', html)
         self.assertIn('findahelpline.com', html)
         self.assertIn('data-content="static"', html)

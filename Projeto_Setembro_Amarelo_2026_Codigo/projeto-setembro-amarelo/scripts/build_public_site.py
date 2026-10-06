@@ -35,6 +35,10 @@ def build(output):
         files.extend(f'assets/audio/{lang}/{month:02}.mp3' for month in range(1, 13))
     smoke = json.loads((FRONTEND / 'assets/smoke/manifest.json').read_text(encoding='utf-8'))
     files.append('assets/smoke/manifest.json')
+    if smoke.get('stream'):
+        if smoke['stream']['file'] != 'folds-stream-v1.mp4':
+            raise ValueError('Arquivo inesperado de máscara processada.')
+        files.append('assets/smoke/' + smoke['stream']['file'])
     for name in smoke['sheets']:
         if not re.fullmatch(r'folds-\d{3}\.webp', name):
             raise ValueError('Nome inesperado de imagem processada.')

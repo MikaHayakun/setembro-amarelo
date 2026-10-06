@@ -1,6 +1,6 @@
 'use strict';
 
-// Public version: lossless processed masks preserve the approved moving folds.
+// Public version: processed masks preserve the approved moving folds.
 // No original video, original colors or background are served.
 const monthSmoke = (() => {
   const colors = {
@@ -29,12 +29,48 @@ const monthSmoke = (() => {
 
   let frameManifest = null;
   let frameFiles = null;
-  async function openFrames() {
+  function getFrameInfo() {
     frameManifest ||= fetch('/assets/smoke/manifest.json').then(response => {
       if (!response.ok) throw new Error('Animation unavailable');
       return response.json();
     }).catch(error => { frameManifest = null; throw error; });
-    const info = await frameManifest;
+    return frameManifest;
+  }
+  async function openStream(info, duration, state) {
+    if (!info.stream) return null;
+    const video = document.createElement('video');
+    if (!video.canPlayType?.(info.stream.mime)) return null;
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = 'auto';
+    // Loading a new source restores playbackRate from defaultPlaybackRate.
+    video.defaultPlaybackRate = info.duration / duration;
+    video.playbackRate = info.duration / duration;
+    let disposed = false;
+    function dispose() {
+      if (disposed) return;
+      disposed = true;
+      video.pause(); video.removeAttribute('src'); video.load();
+    }
+    state.cancelLoad = dispose;
+    video.addEventListener('waiting', () => {
+      if (active === state) state.canvas.style.animationPlayState = 'paused';
+    });
+    video.addEventListener('playing', () => {
+      if (active === state) state.canvas.style.animationPlayState = 'running';
+    });
+    video.addEventListener('ended', () => { if (active === state) stop(); });
+    video.addEventListener('error', () => { if (active === state && state.start !== null) stop(); });
+    video.src = '/assets/smoke/' + info.stream.file;
+    try { await video.play(); }
+    catch (error) { dispose(); return null; }
+    if (disposed || active !== state) { dispose(); return null; }
+    state.cancelLoad = null;
+    return {...info, stream: true, dispose,
+      elapsed: () => video.currentTime * duration / info.duration,
+      get: () => video.readyState >= 2 ? {image: video, x: 0, y: 0, width: info.width * 2} : null};
+  }
+  async function openFrames(info) {
     // Buffer compressed images before starting the timer so a slow connection cannot
     // drop frames or shorten the approved animation. Decode only nearby sheets.
     frameFiles ||= (async () => {
@@ -90,6 +126,7 @@ const monthSmoke = (() => {
     if (!active) return;
     cancelAnimationFrame(active.frame);
     clearTimeout(active.timeout);
+    if (active.cancelLoad) active.cancelLoad();
     if (active.reader) active.reader.dispose();
     active.canvas.remove();
     active = null;
@@ -117,12 +154,16 @@ const monthSmoke = (() => {
     const emitterContext = emitter ? emitter.getContext('2d') : null;
     if (!sourceContext || !tintContext || !whiteContext || (emitter && !emitterContext)) return;
     const sides = [colors[palette[0]], colors[palette[1] || palette[0]]];
-    const state = {canvas, reader: null, frame: 0, timeout: 0, start: null, width: 0, height: 0};
+    const state = {canvas, reader: null, cancelLoad: null, frame: 0, timeout: 0, start: null, width: 0, height: 0};
     active = state;
     // Load processed images only after activation; original material stays private.
     let reader;
     try {
-      reader = await openFrames();
+      const info = await getFrameInfo();
+      if (active !== state) return;
+      reader = await openStream(info, duration, state);
+      if (active !== state) { reader?.dispose(); return; }
+      reader ||= await openFrames(info);
     } catch (error) {
       if (active === state) stop();
       return;
@@ -130,7 +171,8 @@ const monthSmoke = (() => {
     if (active !== state) { reader.dispose(); return; }
     state.reader = reader;
     const frameHeight = source.height = tinted.height = reader.height;
-    const frameWidth = source.width = tinted.width = reader.width;
+    const frameWidth = tinted.width = reader.width;
+    const sourceWidth = source.width = frameWidth * (reader.stream === true ? 2 : 1);
     if (emitter) { emitter.width = frameWidth; emitter.height = frameHeight; }
     white.width = frameWidth; white.height = frameHeight;
     const pixels = tintContext.createImageData(frameWidth, frameHeight);
@@ -148,7 +190,7 @@ const monthSmoke = (() => {
     function draw(now) {
       if (active !== state) return;
       // A queued animation frame can precede the async image load by a few ms.
-      const elapsed = Math.max(0, (now - state.start) / 1000);
+      const elapsed = Math.max(0, reader.elapsed ? reader.elapsed() : (now - state.start) / 1000);
       if (elapsed >= duration) { stop(); return; }
       const width = innerWidth, height = innerHeight;
       if (state.width !== width || state.height !== height) {
@@ -158,13 +200,13 @@ const monthSmoke = (() => {
         canvas.height = Math.round(height * ratio);
         context.setTransform(ratio, 0, 0, ratio, 0, 0);
       }
-      // Process only new lossless frames, at native resolution on every screen.
+      // Process only new frames, at native resolution on every screen.
       const frameIndex = Math.min(reader.frames - 1, Math.floor(elapsed * reader.duration / duration * reader.fps));
       const picture = reader.get(frameIndex);
       if (frameIndex !== lastFrame && picture) {
         lastFrame = frameIndex;
-        sourceContext.drawImage(picture.image, picture.x, picture.y, frameWidth, frameHeight, 0, 0, frameWidth, frameHeight);
-        const input = sourceContext.getImageData(0, 0, frameWidth, frameHeight).data;
+        sourceContext.drawImage(picture.image, picture.x, picture.y, picture.width || frameWidth, frameHeight, 0, 0, sourceWidth, frameHeight);
+        const input = sourceContext.getImageData(0, 0, sourceWidth, frameHeight).data;
         for (let y = 0; y < frameHeight; y++) {
           const mix = rowMix[y];
           const row = y * frameWidth * 4;
@@ -172,8 +214,9 @@ const monthSmoke = (() => {
           for (let x = 0; x < frameWidth; x++) {
             const offset = x * 4;
             const index = row + offset;
-            // R stores the exact sharpened lighting, G stores chroma for density.
-            const chroma = input[index + 1];
+            const inputIndex = y * sourceWidth * 4 + offset;
+            // The stream holds separate gray planes; WebP fallback stores R/G.
+            const chroma = input[inputIndex + (reader.stream === true ? frameWidth * 4 : 1)];
             const alpha = density[chroma];
             if (!alpha) {
               pixels.data[index + 3] = 0;
@@ -181,7 +224,7 @@ const monthSmoke = (() => {
               whitePixels.data[index + 3] = 0;
               continue;
             }
-            const sharpened = input[index];
+            const sharpened = input[inputIndex];
             for (let channel = 0; channel < 3; channel++) {
               const toneIndex = sharpened * 3 + channel;
               pixels.data[index + channel] = (tones[0][toneIndex] * (1 - mix) + tones[1][toneIndex] * mix);
@@ -270,7 +313,8 @@ const monthSmoke = (() => {
       }
       state.frame = requestAnimationFrame(draw);
     }
-    state.timeout = setTimeout(stop, duration * 1000);
+    // Stream playback drives the clock, preserving all frames during buffering.
+    if (reader.stream !== true) state.timeout = setTimeout(stop, duration * 1000);
     state.frame = requestAnimationFrame(draw);
   }
 
