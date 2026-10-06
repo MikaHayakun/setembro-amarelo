@@ -11,6 +11,10 @@
 
 # Materiais locais que não devem ser publicados no repositório
 *.pdf
+*.docx
+*.mp4
+*.mov
+*.webm
 /Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/frontend/assets/emblema-setembro-amarelo.png
 
 # Dependências e ambientes locais
@@ -25,6 +29,7 @@ dist/
 build/
 coverage/
 .cache/
+.vercel/
 *.log
 
 # Arquivos do sistema e temporários

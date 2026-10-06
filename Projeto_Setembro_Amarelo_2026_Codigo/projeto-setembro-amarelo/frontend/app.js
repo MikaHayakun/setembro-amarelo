@@ -46,6 +46,9 @@ function addSeptemberButtons(root) {
   });
 }
 async function json(url) {
+  if (document.documentElement.dataset.content === 'static' && url.startsWith('/api/')) {
+    url = url.replace('/api/', '/data/') + '.json';
+  }
   const response = await fetch(url);
   if (!response.ok) throw new Error('Não foi possível carregar o conteúdo.');
   return response.json();
@@ -156,7 +159,8 @@ function applyLocale() {
   document.querySelectorAll('[data-i18n]').forEach(node => {
     node.textContent = locale.ui[node.dataset.i18n];
   });
-  document.querySelector('.intro-emblem').alt = locale.ui.emblemAlt;
+  const emblem = document.querySelector('.intro-emblem');
+  if (emblem) emblem.alt = locale.ui.emblemAlt;
   document.getElementById('campanhas').setAttribute('aria-label', locale.ui.campaignsLabel);
   document.querySelector('.calendar').setAttribute('aria-label', locale.ui.monthsLabel);
   addSeptemberButtons(document.querySelector('header'));

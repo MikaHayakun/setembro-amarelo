@@ -108,9 +108,12 @@ class IntegrationTest(unittest.TestCase):
             self.assertEqual(self.fetch(path)[0], 200)
         video_path = ROOT / 'frontend/assets/pinterest-savepin-onl.mp4'
         status, video, headers = self.fetch('/assets/pinterest-savepin-onl.mp4')
-        self.assertEqual(status, 200)
-        self.assertEqual(headers['Content-Type'], 'video/mp4')
-        self.assertEqual(video, video_path.read_bytes())
+        if video_path.is_file():
+            self.assertEqual(status, 200)
+            self.assertEqual(headers['Content-Type'], 'video/mp4')
+            self.assertEqual(video, video_path.read_bytes())
+        else:
+            self.assertEqual(status, 503)
         for font in ['bricolage-grotesque.woff2', 'cuidado-sans.woff2']:
             status, data, headers = self.fetch('/assets/fonts/' + font)
             self.assertEqual(status, 200)

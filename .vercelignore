@@ -1,0 +1,15 @@
+**/*.pdf
+**/*.docx
+**/*.mp4
+**/*.mov
+**/*.webm
+**/emblema-setembro-amarelo.png
+.git
+.cache
+.codex
+.agents
+.aws
+.env*
+**/__pycache__
+**/node_modules
+**/*.sqlite3

@@ -6,6 +6,10 @@ Plataforma educativa em português sobre a história do Setembro Amarelo, preven
 
 Preencher com os nomes reais dos integrantes antes da entrega acadêmica. O pacote não atribui contribuições ou commits a pessoas que não foram identificadas.
 
+## Versão pública
+
+Veja o [README principal](../../README.md) para compilar e executar a saída estática usada na Vercel. Os documentos originais, vídeos originais e emblema não estão disponíveis na hospedagem nem no histórico público. A versão privada abaixo mantém a animação original e seus materiais neste computador.
+
 ## Executar no Ubuntu
 
 Requisito: Python 3.9 ou superior e um navegador. Não há pacotes Python externos a instalar.
@@ -24,9 +28,9 @@ A página inicia em Setembro. O usuário lê a síntese e os marcos históricos,
 
 O botão de seleção de cada mês no calendário inicia a fumaça. Por clique, toque ou teclado, as cores indicadas entram pelas laterais, encontram-se no centro e se dissipam em 10 segundos. Meses com uma cor usam essa mesma cor dos dois lados; em Agosto, a terceira cor entra pelo rodapé. Todos os meses recebem também uma fumaça branca pelo rodapé, como referência ao cuidado com a saúde mental durante todo o ano. Os onze meses além de Setembro recebem mais uma entrada branca pelo canto superior esquerdo, em direção ao centro, atrás das cores da campanha. Em Agosto, a entrada branca do rodapé fica deslocada para preservar a terceira cor existente. Janeiro mantém sua fumaça branca original e recebe essas entradas adicionais.
 
-Setembro tem uma animação específica: quatro fumaças amarelas entram pelos quatro cantos, acompanhadas de três fumaças brancas intensas que entram pelas duas laterais e pelo rodapé. Todas avançam para o centro e se dissipam em 12 segundos. As fumaças brancas usam as mesmas dobras do vídeo, com sombras cinza suaves e maior densidade em Setembro. Toda ocorrência visível da palavra “Setembro” funciona como botão para esse efeito, incluindo o cabeçalho, os títulos, os textos e os nomes das fontes. Esses botões repetem a animação sem trocar o conteúdo selecionado. As referências com essa palavra mantêm um link separado “Abrir fonte”.
+Setembro tem uma animação específica: quatro fumaças amarelas entram pelos quatro cantos, acompanhadas de três fumaças brancas intensas que entram pelas duas laterais e pelo rodapé. Todas avançam para o centro e se dissipam em 12 segundos. As fumaças brancas usam as mesmas dobras da referência, com sombras cinza suaves e maior densidade em Setembro. Toda ocorrência visível da palavra “Setembro” funciona como botão para esse efeito, incluindo o cabeçalho, os títulos, os textos e os nomes das fontes. Esses botões repetem a animação sem trocar o conteúdo selecionado. As referências com essa palavra mantêm um link separado “Abrir fonte”.
 
-A abertura da página não inicia a animação. Um novo acionamento substitui o efeito anterior e reinicia a duração sem bloquear a navegação. A preferência do dispositivo por movimento reduzido desativa o efeito decorativo, mantendo os botões e o conteúdo. A fumaça é desenhada localmente em Canvas a partir do novo vídeo autorizado, com fundo branco removido e cores substituídas pelas cores da campanha. O vídeo só é carregado após acionar um efeito, fica sem áudio e não exige bibliotecas externas.
+A abertura da página não inicia a animação. Um novo acionamento substitui o efeito anterior e reinicia a duração sem bloquear a navegação. A preferência do dispositivo por movimento reduzido desativa o efeito decorativo, mantendo os botões e o conteúdo. Na cópia privada, a fumaça é desenhada localmente em Canvas a partir do vídeo de referência, com fundo branco removido e cores substituídas pelas cores da campanha. O vídeo só é carregado após acionar um efeito, fica sem áudio e não exige bibliotecas externas.
 
 A animação preserva a proporção e os 704 × 992 pixels do vídeo em todas as telas. A iluminação registrada é mantida na recoloração, com uma correção leve de contraste local; as cópias translúcidas entram apenas durante a dispersão. O Canvas usa amostragem em maior resolução, até 3840 × 2160 pixels conforme o tamanho da janela. Esse limite descreve a área de renderização; o material original permanece em 704 × 992 pixels. As fumaças alcançam as bordas da área visível e perdem opacidade até desaparecer.
 
@@ -44,7 +48,12 @@ O servidor não coleta relatos pessoais nem grava histórico de navegação. Lin
 - `frontend/assets/audio/`: 96 narrações MP3 e um manifesto que as associa ao texto correspondente.
 - `scripts/generate_narration.py`: geração editorial dos áudios; não é necessária para executar o site.
 - `frontend/assets/emblema-setembro-amarelo.png`: emblema original fornecido localmente, fora do versionamento.
-- `frontend/assets/pinterest-savepin-onl.mp4`: nova referência de fumaça fornecida e autorizada para versionamento pelo responsável. Sua imagem fornece as dobras em movimento da animação.
+- `frontend/assets/pinterest-savepin-onl.mp4`: referência original privada, fora do repositório público e da hospedagem.
+- `frontend/assets/smoke/`: imagens WebP processadas sem perdas, com iluminação e densidade da fumaça, autorizadas para publicação.
+- `frontend/smoke-public.js`: usa essas imagens e mantém os cálculos de cores e posicionamento da versão aprovada.
+- `scripts/build_public_site.py`: compila a publicação estática por uma lista de arquivos permitidos.
+- `scripts/prepare_public_repository.py`: exporta o histórico público sem materiais privados.
+- `scripts/generate_smoke_frames.py`: etapa editorial local, exige ffmpeg, NumPy e Pillow; não é necessária na Vercel.
 - `frontend/assets/fonts/`: fontes variáveis locais e suas licenças. Os títulos usam Bricolage Grotesque; o texto usa Cuidado Sans, versão reduzida e renomeada de Source Sans 3. Não há carregamento externo de fontes.
 - `backend/server.py`: servidor HTTP e API de leitura.
 - `database/schema.sql`: estrutura relacional.
@@ -85,4 +94,8 @@ As cores variam entre campanhas e países. As fontes registram marcos brasileiro
 
 ## Entrega e publicação
 
-O código e o banco executável estão neste pacote. O documento do projeto está em `docs/`, em DOCX e PDF, e também é entregue separadamente. Os PDFs e o emblema original são mantidos apenas localmente, fora dos commits; outra cópia do repositório precisa receber o emblema em `frontend/assets/emblema-setembro-amarelo.png` para exibi-lo. As descrições das telas atendem à alternativa prevista no material de orientação. O roteiro do vídeo de até 60 segundos está em `docs/roteiro-pitch.md`; o vídeo precisa ser gravado com o aplicativo aberto. O repositório público deve ser criado na conta da equipe, com link no README e commits reais de cada integrante. Nenhum repositório remoto ou vídeo foi apresentado como já publicado.
+Os PDFs, DOCX, emblema e vídeos originais ficam somente na cópia privada. A versão pública funciona sem esses materiais: o emblema é omitido e o link de apoio permanece na introdução e em Setembro. As imagens processadas autorizadas mantêm as dobras, a resolução e o movimento da fumaça aprovada, com as mesmas cores, durações e posições. A transferência das imagens pode exigir mais tempo no primeiro acionamento que o vídeo local; não se reduz sua resolução para compensar esse custo. Os cálculos de recoloração e composição permanecem iguais aos originais.
+
+O roteiro está em `docs/roteiro-pitch.md`; o vídeo da apresentação precisa ser gravado separadamente. A API Python e SQLite permanecem disponíveis para a demonstração privada; na hospedagem, os meses e fontes são JSON gerados da carga editorial `database/content.json`. As rotas de leitura `/api/` são reescritas para esses arquivos; entradas inválidas retornam 404 na hospedagem. O servidor local conserva sua validação com 400 para mês inválido.
+
+O código da aplicação não coleta relatos ou dados de saúde. A infraestrutura da hospedagem pode manter registros técnicos de acesso próprios. As narrações e os textos são públicos e continuam servidos pelo próprio site.
