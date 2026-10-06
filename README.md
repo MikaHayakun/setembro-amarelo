@@ -1,5 +1,9 @@
 # Setembro Amarelo
 
+Site: https://setembro-amarelo-dun.vercel.app
+
+Repositório público: https://github.com/MikaHayakun/setembro-amarelo
+
 Plataforma educativa com português como padrão e versões em inglês, espanhol, alemão, francês, japonês, chinês simplificado e coreano. Usa interface HTML/CSS/JavaScript, API em Python e banco SQLite. O código está em `Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/`. Os documentos e vídeos originais e a imagem do emblema permanecem somente na cópia privada.
 
 ## Executar a versão pública
@@ -62,4 +66,4 @@ Depois de revisar e registrar uma alteração local, execute:
 python3 Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/scripts/prepare_public_repository.py
 ```
 
-O comando cria um novo checkout em `.cache/public-repositories/<commit>`, com o histórico filtrado, e verifica que nenhum objeto dos materiais privados foi incluído. Publique somente esse checkout no repositório público. O comando não modifica o histórico privado nem apaga os materiais locais. Para atualizar a hospedagem manualmente, gere `dist/` e envie somente essa saída; para implantação pelo GitHub, importe exclusivamente o repositório público filtrado na Vercel.
+O comando cria um novo checkout em `.cache/public-repositories/<commit>`, com o histórico filtrado, e verifica que nenhum objeto dos materiais privados foi incluído. Publique somente esse checkout no repositório público. O comando não modifica o histórico privado nem apaga os materiais locais. Para atualizar a hospedagem manualmente, gere `dist/` e envie somente essa saída; o repositório público filtrado já está conectado à Vercel, e novos commits enviados ao seu ramo `main` iniciam a implantação automaticamente. Envie somente o ramo `main` exportado; nunca adicione um remoto público ao histórico privado deste computador.
