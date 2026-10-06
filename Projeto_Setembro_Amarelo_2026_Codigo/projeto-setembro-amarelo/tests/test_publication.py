@@ -24,10 +24,12 @@ class PublicationTest(unittest.TestCase):
     def test_private_materials_and_original_animation_are_absent(self):
         forbidden = {'.pdf', '.docx', '.mp4', '.mov', '.webm', '.png', '.sqlite3'}
         for path in self.output.rglob('*'):
-            self.assertNotIn(path.suffix.lower(), forbidden, str(path))
+            if path.relative_to(self.output).as_posix() != 'assets/emblema-setembro-amarelo.png':
+                self.assertNotIn(path.suffix.lower(), forbidden, str(path))
         html = (self.output / 'index.html').read_text()
-        self.assertNotIn('emblema-setembro-amarelo', html)
-        self.assertNotIn('intro-art', html)
+        self.assertIn('src="/assets/emblema-setembro-amarelo.png"', html)
+        self.assertIn('intro-art', html)
+        self.assertNotIn('intro--public', html)
         smoke = (self.output / 'smoke.js').read_text()
         self.assertNotIn('.mp4', smoke)
         self.assertNotIn('createElement(\'video\')', smoke)

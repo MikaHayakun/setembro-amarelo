@@ -103,8 +103,6 @@ header {
 .intro-emblem { display: block; width: 100%; height: auto; }
 .intro-art figcaption { max-width: 100%; text-align: center; }
 .intro-content { min-width: 0; }
-.intro--public { grid-template-columns: 1fr; }
-.intro--public .support-link { margin-top: var(--space-lg); }
 .eyebrow {
   margin: 0 0 var(--space-md);
   color: var(--gold);

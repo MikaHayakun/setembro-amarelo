@@ -8,7 +8,7 @@ Preencher com os nomes reais dos integrantes antes da entrega acadêmica. O paco
 
 ## Versão pública
 
-Veja o [README principal](../../README.md) para compilar e executar a saída estática usada na Vercel. Os documentos originais, vídeos originais e emblema não estão disponíveis na hospedagem nem no histórico público. A versão privada abaixo mantém a animação original e seus materiais neste computador.
+Veja o [README principal](../../README.md) para compilar e executar a saída estática usada na Vercel. Os documentos originais e vídeos originais não estão disponíveis na hospedagem nem no histórico público. O emblema foi autorizado para ambos e mantém o layout original. A versão privada abaixo mantém a animação original e seus materiais neste computador.
 
 ## Executar no Ubuntu
 
@@ -47,7 +47,7 @@ O servidor não coleta relatos pessoais nem grava histórico de navegação. Lin
 - `frontend/locales/`: textos e interface dos oito idiomas, em JSON.
 - `frontend/assets/audio/`: 96 narrações MP3 e um manifesto que as associa ao texto correspondente.
 - `scripts/generate_narration.py`: geração editorial dos áudios; não é necessária para executar o site.
-- `frontend/assets/emblema-setembro-amarelo.png`: emblema original fornecido localmente, fora do versionamento.
+- `frontend/assets/emblema-setembro-amarelo.png`: emblema autorizado para hospedagem e versionamento em 5 de outubro de 2026.
 - `frontend/assets/pinterest-savepin-onl.mp4`: referência original privada, fora do repositório público e da hospedagem.
 - `frontend/assets/smoke/`: imagens WebP processadas sem perdas, com iluminação e densidade da fumaça, autorizadas para publicação.
 - `frontend/smoke-public.js`: usa essas imagens e mantém os cálculos de cores e posicionamento da versão aprovada.
@@ -84,7 +84,7 @@ Execute também `node --test tests/test_narration.js` para verificar o comportam
 
 Revise os arquivos em `frontend/locales/` ao alterar o conteúdo editorial. O português é a referência; mantenha os IDs das fontes e os endereços dos links. Para regenerar os áudios, use um ambiente Python isolado com `edge-tts==7.2.8` e execute `python3 scripts/generate_narration.py`. Para somente um idioma: `python3 scripts/generate_narration.py --languages pt-BR`. Essa etapa exige internet e envia apenas o texto editorial público ao serviço de voz; a aplicação entregue não precisa dessa ferramenta. O gerador aproveita gravações cujo texto não mudou. Revise o manifesto e os MP3 com os textos e inclua os arquivos de áudio no commit editorial.
 
-As vozes usadas são Francisca (pt-BR), Jenny (en), Elvira (es), Katja (de), Denise (fr), Nanami (ja), Xiaoxiao (zh-CN) e SunHi (ko). A geração usa a ferramenta [edge-tts](https://github.com/rany2/edge-tts), com ritmo 8% mais lento que o padrão. Os arquivos MP3 são materiais públicos do site; modelos de voz, ambientes Python, credenciais, PDFs e o emblema original não entram no repositório.
+As vozes usadas são Francisca (pt-BR), Jenny (en), Elvira (es), Katja (de), Denise (fr), Nanami (ja), Xiaoxiao (zh-CN) e SunHi (ko). A geração usa a ferramenta [edge-tts](https://github.com/rany2/edge-tts), com ritmo 8% mais lento que o padrão. Os arquivos MP3 são materiais públicos do site; modelos de voz, ambientes Python, credenciais, PDFs, DOCX e vídeos originais não entram no repositório.
 
 ## Atualização editorial
 
@@ -94,7 +94,7 @@ As cores variam entre campanhas e países. As fontes registram marcos brasileiro
 
 ## Entrega e publicação
 
-Os PDFs, DOCX, emblema e vídeos originais ficam somente na cópia privada. A versão pública funciona sem esses materiais: o emblema é omitido e o link de apoio permanece na introdução e em Setembro. As imagens processadas autorizadas mantêm as dobras, a resolução e o movimento da fumaça aprovada, com as mesmas cores, durações e posições. A transferência das imagens pode exigir mais tempo no primeiro acionamento que o vídeo local; não se reduz sua resolução para compensar esse custo. Os cálculos de recoloração e composição permanecem iguais aos originais.
+Os PDFs, DOCX e vídeos originais ficam somente na cópia privada. O emblema foi autorizado para publicação e commits; a versão pública mantém o cartão branco original à esquerda, com o link de apoio centralizado abaixo da imagem, e conserva o link de apoio em Setembro. As imagens processadas autorizadas mantêm as dobras, a resolução e o movimento da fumaça aprovada, com as mesmas cores, durações e posições. A transferência das imagens pode exigir mais tempo no primeiro acionamento que o vídeo local; não se reduz sua resolução para compensar esse custo. Os cálculos de recoloração e composição permanecem iguais aos originais.
 
 O roteiro está em `docs/roteiro-pitch.md`; o vídeo da apresentação precisa ser gravado separadamente. A API Python e SQLite permanecem disponíveis para a demonstração privada; na hospedagem, os meses e fontes são JSON gerados da carga editorial `database/content.json`. As rotas de leitura `/api/` são reescritas para esses arquivos; entradas inválidas retornam 404 na hospedagem. O servidor local conserva sua validação com 400 para mês inválido.
 

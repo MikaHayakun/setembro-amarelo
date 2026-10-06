@@ -15,7 +15,6 @@
 *.mp4
 *.mov
 *.webm
-/Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/frontend/assets/emblema-setembro-amarelo.png
 
 # Dependências e ambientes locais
 node_modules/

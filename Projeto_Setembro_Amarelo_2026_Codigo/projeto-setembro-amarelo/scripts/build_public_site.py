@@ -27,6 +27,7 @@ def build(output):
     output.mkdir(parents=True)
     marker.write_text('Somente conteúdo público gerado.\n', encoding='utf-8')
     files = ['styles.css', 'app.js', 'narration.js', 'assets/audio/manifest.json',
+             'assets/emblema-setembro-amarelo.png',
              'assets/fonts/bricolage-grotesque.woff2', 'assets/fonts/cuidado-sans.woff2',
              'assets/fonts/BricolageGrotesque-OFL.txt', 'assets/fonts/SourceSans3-OFL.txt']
     for lang in LANGUAGES:
@@ -44,14 +45,7 @@ def build(output):
         shutil.copyfile(FRONTEND / filename, target)
     shutil.copyfile(FRONTEND / 'smoke-public.js', output / 'smoke.js')
     html = (FRONTEND / 'index.html').read_text(encoding='utf-8')
-    figure = re.search(r'<figure class="intro-art">.*?</figure>', html, re.S)
-    if not figure:
-        raise ValueError('Cartão local do emblema não encontrado.')
-    suggestion = re.search(r'<a class="support-link".*?</a>', figure[0], re.S)[0]
-    html = html[:figure.start()] + html[figure.end():]
     html = html.replace('<html lang="pt-BR">', '<html lang="pt-BR" data-content="static">', 1)
-    html = html.replace('class="intro"', 'class="intro intro--public"', 1)
-    html = html.replace('</p></div>\n</section>', '</p>' + suggestion + '</div>\n</section>', 1)
     (output / 'index.html').write_text(html, encoding='utf-8')
     content = json.loads((ROOT / 'database/content.json').read_text(encoding='utf-8'))
     sources = {s['id']: s for s in content['sources']}
@@ -66,7 +60,7 @@ def build(output):
     write_json(output / 'data/campaigns.json', months)
     write_json(output / 'data/sources.json', content['sources'])
     write_json(output / 'data/health.json', {'status': 'ok', 'campaigns': len(months), 'mode': 'static'})
-    print(f'Publicação gerada em {output}: 12 meses, 8 idiomas e 96 áudios; sem materiais originais.')
+    print(f'Publicação gerada em {output}: 12 meses, 8 idiomas e 96 áudios; emblema autorizado; sem documentos ou vídeos originais.')
     return output
 
 

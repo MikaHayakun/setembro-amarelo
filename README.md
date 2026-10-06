@@ -4,7 +4,7 @@ Site: https://setembro-amarelo-dun.vercel.app
 
 Repositório público: https://github.com/MikaHayakun/setembro-amarelo
 
-Plataforma educativa com português como padrão e versões em inglês, espanhol, alemão, francês, japonês, chinês simplificado e coreano. Usa interface HTML/CSS/JavaScript, API em Python e banco SQLite. O código está em `Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/`. Os documentos e vídeos originais e a imagem do emblema permanecem somente na cópia privada.
+Plataforma educativa com português como padrão e versões em inglês, espanhol, alemão, francês, japonês, chinês simplificado e coreano. Usa interface HTML/CSS/JavaScript, API em Python e banco SQLite. O código está em `Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/`. Os documentos e vídeos originais permanecem somente na cópia privada. O emblema foi autorizado para o site e os commits.
 
 ## Executar a versão pública
 
@@ -15,7 +15,7 @@ python3 Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/scripts/bu
 python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
-Abra http://127.0.0.1:8000. Esta é a versão usada na Vercel: conteúdo estático, oito idiomas, 96 narrações e fumaça com imagens processadas sem perdas. Não contém o emblema, PDFs, DOCX, banco SQLite ou vídeos originais. O seletor de mês e os botões de Setembro preservam as cores, posições e durações da animação aprovada. As imagens processadas preservam 704 × 992 pixels e os 30 quadros por segundo da referência; a renderização continua limitada a 3840 × 2160 conforme a janela. Não há aumento artificial da resolução da referência.
+Abra http://127.0.0.1:8000. Esta é a versão usada na Vercel: conteúdo estático, oito idiomas, 96 narrações e fumaça com imagens processadas sem perdas. Mantém o emblema e o layout original. Não contém PDFs, DOCX, banco SQLite ou vídeos originais. O seletor de mês e os botões de Setembro preservam as cores, posições e durações da animação aprovada. As imagens processadas preservam 704 × 992 pixels e os 30 quadros por segundo da referência; a renderização continua limitada a 3840 × 2160 conforme a janela. Não há aumento artificial da resolução da referência.
 
 Os quadros processados foram autorizados para publicação. Eles contêm apenas iluminação e densidade para reconstruir a fumaça, sem as cores, o fundo ou o áudio originais. O arquivo original não é necessário para compilar a versão pública. As imagens são maiores que o vídeo comprimido e o primeiro acionamento depende da conexão; as ativações seguintes usam os recursos em cache.
 
@@ -54,7 +54,7 @@ Usamos Git para registrar etapas concluídas e permitir revisão ou restauraçã
 
 Faça alterações focadas na necessidade atual. Ao substituir uma implementação, remova o código antigo e suas referências depois de confirmar que não são mais necessários. Evite cópias de versões antigas dentro do projeto: o Git guarda o histórico.
 
-O histórico privado permanece neste computador. O histórico público é exportado com uma lista de arquivos permitidos, excluindo documentos originais, vídeos originais, emblema, banco SQLite, configurações locais e credenciais em todas as etapas. Ao preparar outra cópia do projeto, forneça o emblema localmente em `Projeto_Setembro_Amarelo_2026_Codigo/projeto-setembro-amarelo/frontend/assets/emblema-setembro-amarelo.png`. Caches e arquivos temporários também ficam fora do histórico.
+O histórico privado permanece neste computador. O histórico público é exportado com uma lista de arquivos permitidos, excluindo documentos originais, vídeos originais, banco SQLite, configurações locais e credenciais em todas as etapas. O emblema acompanha os commits por autorização expressa do responsável em 5 de outubro de 2026. Caches e arquivos temporários também ficam fora do histórico.
 
 ## Publicar e atualizar
 
