@@ -60,7 +60,10 @@
     "audioLoading": "Cargando audio...",
     "audioError": "No se puede reproducir audio. Intenta escuchar de nuevo.",
     "audioUnavailable": "El audio de este contenido aún no está disponible. El texto permanece accesible para su lector de pantalla.",
-    "languageChanged": "Idioma cambiado."
+    "languageChanged": "Idioma cambiado.",
+    "internationalTitle": "Apoyo internacional",
+    "internationalText": "Selecciona un país en Find A Helpline para encontrar servicios de apoyo emocional. Los idiomas, horarios y formas de contacto varían según el servicio.",
+    "internationalLink": "Encontrar ayuda en otros países"
   },
   "campaigns": {
     "1": {

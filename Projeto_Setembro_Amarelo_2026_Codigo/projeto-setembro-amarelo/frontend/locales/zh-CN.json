@@ -60,7 +60,10 @@
     "audioLoading": "正在加载音频...",
     "audioError": "无法播放音频。尝试再听一次。",
     "audioUnavailable": "此内容的音频尚不可用。您的屏幕阅读器仍然可以访问该文本。",
-    "languageChanged": "已切换语言。"
+    "languageChanged": "已切换语言。",
+    "internationalTitle": "国际支持",
+    "internationalText": "在 Find A Helpline 选择国家，即可查找情绪支持服务。服务语言、开放时间和联系方式因服务而异。",
+    "internationalLink": "查找其他国家的求助渠道"
   },
   "campaigns": {
     "1": {

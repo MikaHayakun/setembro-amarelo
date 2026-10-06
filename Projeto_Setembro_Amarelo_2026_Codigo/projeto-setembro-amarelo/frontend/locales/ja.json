@@ -60,7 +60,10 @@
     "audioLoading": "オーディオを読み込んでいます...",
     "audioError": "オーディオを再生できません。もう一度聞いてみてください。",
     "audioUnavailable": "このコンテンツの音声はまだ利用できません。テキストはスクリーン リーダーから引き続きアクセスできます。",
-    "languageChanged": "表示言語を変更しました。"
+    "languageChanged": "表示言語を変更しました。",
+    "internationalTitle": "海外の相談窓口",
+    "internationalText": "Find A Helpline で国を選ぶと、心の悩みを相談できる窓口を探せます。対応言語、受付時間、連絡方法は窓口によって異なります。",
+    "internationalLink": "他の国の相談窓口を探す"
   },
   "campaigns": {
     "1": {
