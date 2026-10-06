@@ -226,13 +226,13 @@ html:lang(ja), html:lang(zh), html:lang(ko) { word-break: normal; overflow-wrap:
 .help > p { max-width: 66ch; }
 .help-options { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2xl); margin-block: var(--space-2xl); }
 .international-help { grid-column: 1 / -1; }
-.international-help p { max-width: 66ch; }
+.help-context { font-size: 1rem; }
+.help-context p, .international-help p { max-width: 66ch; }
 .help-options section { padding-top: var(--space-lg); border-top: 1px solid #789481; }
 .help-options h3 { margin: 0 0 var(--space-md); font-size: 1.75rem; }
 .help a { color: #e9f0e5; }
 .help-options a { display: inline-flex; align-items: center; gap: var(--space-sm); min-height: 48px; padding: var(--space-sm) var(--space-lg); color: var(--ink); background: var(--yellow); border-radius: 2rem; font-weight: 700; text-decoration: none; }
 .help-options a:hover { background: #ffe58a; }
-.help > p:last-of-type, .help > a { font-size: 1rem; }
 .help a:focus-visible { outline-color: var(--yellow); }
 .privacy { display: grid; grid-template-columns: 16rem minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); padding-block: var(--space-section); }
 .privacy h2 { font-size: 1.5rem; }
