@@ -159,7 +159,6 @@ function applyLocale() {
   document.querySelector('.intro-emblem').alt = locale.ui.emblemAlt;
   document.getElementById('campanhas').setAttribute('aria-label', locale.ui.campaignsLabel);
   document.querySelector('.calendar').setAttribute('aria-label', locale.ui.monthsLabel);
-  document.querySelector('.persistent-support').setAttribute('aria-label', locale.ui.whereHelp);
   addSeptemberButtons(document.querySelector('header'));
   addSeptemberButtons(document.querySelector('.intro'));
 }
@@ -214,10 +213,6 @@ async function init() {
     }
   });
 }
-const supportBar = document.querySelector('.persistent-support');
-new ResizeObserver(() => {
-  document.documentElement.style.setProperty('--support-height', `${supportBar.getBoundingClientRect().height}px`);
-}).observe(supportBar);
 window.addEventListener('pagehide', cancelReading);
 document.addEventListener('click', event => {
   if (event.target.closest('.september-trigger')) monthSmoke.play('Amarelo', 9);
