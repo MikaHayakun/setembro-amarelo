@@ -63,10 +63,11 @@ header, main, footer {
   margin-inline: auto;
 }
 header {
-  padding-block: var(--space-xl);
-  border-bottom: 1px solid var(--line);
+  padding: clamp(2rem, 4vw, 4rem);
+  background: var(--green);
+  border-radius: 1.5rem;
 }
-.brand { width: 100%; color: var(--ink); line-height: 1.2; }
+.brand { color: #fff; line-height: 1.2; }
 .brand strong {
   display: block;
   text-align: center;
@@ -74,10 +75,11 @@ header {
   font-weight: 700;
   text-wrap: balance;
 }
-.brand .september-trigger {
+.brand .september-trigger, .brand .brand-september {
   color: #f5ce2a;
   text-decoration-color: currentColor;
 }
+.brand .september-trigger:focus-visible { outline-color: var(--yellow); }
 .intro {
   display: grid;
   grid-template-columns: minmax(180px, 1fr) minmax(0, 1.3fr);
@@ -246,7 +248,7 @@ footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
   .timeline li { grid-template-columns: 1fr; gap: var(--space-xs); }
 }
 @media (max-width: 700px) {
-  header { padding-block: var(--space-lg); }
+  header { padding: var(--space-lg); }
   .intro { grid-template-columns: 1fr; gap: var(--space-xl); padding: var(--space-lg); margin-top: var(--space-lg); }
   .intro-art { max-width: 22rem; padding: var(--space-md); }
   h1 { font-size: clamp(2.125rem, 1.5rem + 3.8vw, 3.5rem); }
