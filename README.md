@@ -32,7 +32,7 @@ python3 backend/server.py
 
 Abra http://127.0.0.1:8000 no navegador. Para encerrar, pressione Ctrl+C no terminal do servidor. Se a porta estiver ocupada, use `python3 backend/server.py --port 8001` e abra a porta correspondente. A página deve ser aberta pelo servidor para consultar a API.
 
-Na pasta da aplicação, execute os testes com `python3 -m unittest discover -s tests -v`. Eles usam um banco temporário e verificam também os idiomas e os 96 áudios. Os controles de narração podem ser verificados com `node tests/test_narration.js`. A verificação opcional de sintaxe com Node.js é `node --check frontend/app.js`.
+Na pasta da aplicação, execute os testes com `python3 -m unittest discover -s tests -v`. Eles usam um banco temporário e verificam também os idiomas e os 96 áudios. Os controles de narração podem ser verificados com `node --test tests/test_narration.js tests/test_smoke_public.js`. A verificação opcional de sintaxe com Node.js é `node --check frontend/app.js`.
 
 Escolha o idioma no seletor no início da página. “Ouvir texto” usa áudios locais com voz neural; há pausa, retomada, parada e ajuste de velocidade. As traduções e os MP3 são recursos públicos do site e acompanham o Git. A execução não exige serviços de tradução ou voz externos.
 

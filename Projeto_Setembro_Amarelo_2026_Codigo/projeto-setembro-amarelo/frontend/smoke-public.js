@@ -55,7 +55,7 @@ const monthSmoke = (() => {
     const sheets = new Map();
     let disposed = false;
     function load(index) {
-      if (index >= info.sheets.length || disposed) return Promise.resolve(null);
+      if (index < 0 || index >= info.sheets.length || disposed) return Promise.resolve(null);
       if (sheets.has(index)) return sheets.get(index).promise;
       const image = new Image();
       const entry = {image, ready: false, promise: null, url: URL.createObjectURL(files[index])};
@@ -147,7 +147,8 @@ const monthSmoke = (() => {
     let lastFrame = -1;
     function draw(now) {
       if (active !== state) return;
-      const elapsed = (now - state.start) / 1000;
+      // A queued animation frame can precede the async image load by a few ms.
+      const elapsed = Math.max(0, (now - state.start) / 1000);
       if (elapsed >= duration) { stop(); return; }
       const width = innerWidth, height = innerHeight;
       if (state.width !== width || state.height !== height) {
