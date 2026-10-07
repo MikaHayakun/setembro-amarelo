@@ -19,7 +19,7 @@ Abra http://127.0.0.1:8000. Esta é a versão usada na Vercel: conteúdo estáti
 
 Os quadros processados foram autorizados para publicação. Eles contêm apenas iluminação e densidade para reconstruir a fumaça, sem as cores, o fundo ou o áudio originais. O arquivo original não é necessário para compilar a versão pública. A máscara `folds-stream-v1.mp4`, de cerca de 8,2 MiB, permite iniciar com o primeiro trecho recebido, enquanto o restante carrega. Usa H.264 com compressão de alta qualidade, sem reduzir resolução ou quadros por segundo. As imagens WebP sem perdas continuam disponíveis como alternativa para navegadores que não reproduzem esse formato. A fumaça só inicia após um clique; uma interrupção da conexão pausa a reprodução e a dissipação para preservar os 10 segundos, ou 12 segundos em Setembro, de animação ativa.
 
-Para regenerar as máscaras na cópia privada, execute `scripts/generate_smoke_frames.py` na pasta da aplicação, com FFmpeg, Pillow e NumPy instalados. A geração publica apenas as máscaras derivadas. O vídeo original permanece bloqueado por `.gitignore`, `.vercelignore` e pela exportação do histórico.
+Para regenerar as máscaras na cópia privada, execute `scripts/generate_smoke_frames.py` na pasta da aplicação, com FFmpeg, Pillow e NumPy instalados. A geração pública apenas as máscaras derivadas. O vídeo original permanece bloqueado por `.gitignore`, `.vercelignore` e pela exportação do histórico.
 
 ## Executar a versão privada local
 
