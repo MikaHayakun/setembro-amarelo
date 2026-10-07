@@ -242,6 +242,8 @@ html:lang(ja), html:lang(zh), html:lang(ko) { word-break: normal; overflow-wrap:
 footer { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-xl); border-top: 1px solid var(--line); padding-block: var(--space-lg); color: var(--muted); font-size: .875rem; }
 footer p { margin: 0; }
 footer a { flex-shrink: 0; min-height: 44px; padding-block: var(--space-xs); }
+.footer-credits { display: flex; flex-direction: column; gap: .25rem; font-size: .875rem; line-height: 1.5; }
+footer .footer-credits a { display: inline; flex-shrink: 1; min-height: 0; padding: 0; }
 @media (max-width: 960px) {
   .intro { grid-template-columns: minmax(140px, .75fr) minmax(0, 1.25fr); gap: var(--space-xl); }
   .layout, .privacy { grid-template-columns: 13rem minmax(0, 1fr); gap: var(--space-xl); }
