@@ -78,6 +78,7 @@ class IntegrationTest(unittest.TestCase):
             status, campaign, _ = self.fetch(f'/api/campaigns/{month}')
             self.assertEqual(status, 200)
             self.assertEqual(campaign['month'], month)
+            self.assertEqual(campaign['reviewed_on'], '2026-10-16')
             self.assertTrue(campaign['sources'])
             self.assertTrue({s['id'] for s in campaign['sources']} <= all_sources)
         september = self.fetch('/api/campaigns/9')[1]

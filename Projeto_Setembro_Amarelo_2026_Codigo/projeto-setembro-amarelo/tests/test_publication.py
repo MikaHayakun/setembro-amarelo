@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('publication', ROOT / 'scripts/build_public_site.py')
@@ -57,12 +58,24 @@ class PublicationTest(unittest.TestCase):
                 self.assertGreater((self.output / recording['file'].lstrip('/')).stat().st_size, 1000)
 
     def test_published_review_dates_preserve_month_overrides(self):
-        for month in (2, 9):
+        for month in range(1, 13):
             campaign = json.loads((self.output / f'data/campaigns/{month}.json').read_text())
             self.assertEqual(campaign['reviewed_on'], '2026-10-16')
-        march = json.loads((self.output / 'data/campaigns/3.json').read_text())
-        self.assertEqual(march['reviewed_on'], '2026-10-05')
         self.assertIn('Conteúdo revisado em 16/10/2026.', (self.output / 'index.html').read_text())
+        # A later review of one month must survive the public build independently.
+        with tempfile.TemporaryDirectory() as folder:
+            temporary = Path(folder)
+            (temporary / 'database').mkdir()
+            content = json.loads((ROOT / 'database/content.json').read_text())
+            february = next(c for c in content['campaigns'] if c['month'] == 2)
+            february['reviewed_on'] = '2026-10-15'
+            (temporary / 'database/content.json').write_text(json.dumps(content))
+            with patch.object(publication, 'ROOT', temporary):
+                output = publication.build(temporary / 'site')
+            campaign = json.loads((output / 'data/campaigns/2.json').read_text())
+            self.assertEqual(campaign['reviewed_on'], '2026-10-15')
+            march = json.loads((output / 'data/campaigns/3.json').read_text())
+            self.assertEqual(march['reviewed_on'], '2026-10-16')
 
     def test_existing_unrelated_directory_is_preserved(self):
         with tempfile.TemporaryDirectory() as folder:
