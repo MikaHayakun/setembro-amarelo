@@ -29,16 +29,17 @@ const monthSmoke = (() => {
     if (!active) return;
     cancelAnimationFrame(active.frame);
     clearTimeout(active.timeout);
-    active.video.pause();
-    active.video.removeAttribute('src');
-    active.video.load();
+    active.dispose();
     active.canvas.remove();
     active = null;
   }
 
   async function play(colorLabel, month) {
     stop();
-    if (reducedMotion.matches || document.hidden) return;
+    // The local server does not serve processed sheets: leave the page still in
+    // webviews that can expose the private reference in a separate player.
+    if (reducedMotion.matches || document.hidden ||
+        /TikTok|musical_ly|BytedanceWebview|aweme|\btrill\b/i.test(navigator.userAgent)) return;
     const corners = Number(month) === 9;
     const duration = corners ? 12 : 10;
     const palette = corners ? ['amarelo'] : colorLabel.toLocaleLowerCase('pt-BR').split(/,\s*|\s+e\s+/);
@@ -51,8 +52,12 @@ const monthSmoke = (() => {
     const video = document.createElement('video');
     video.muted = true;
     video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.disablePictureInPicture = true;
+    video.disableRemotePlayback = true;
     video.preload = 'auto';
-    video.playbackRate = 12.5 / duration;
+    video.defaultPlaybackRate = video.playbackRate = 12.5 / duration;
     video.src = '/assets/pinterest-savepin-onl.mp4';
     const source = document.createElement('canvas');
     const sourceContext = source.getContext('2d', {willReadFrequently: true});
@@ -64,9 +69,32 @@ const monthSmoke = (() => {
     const emitterContext = emitter ? emitter.getContext('2d') : null;
     if (!sourceContext || !tintContext || !whiteContext || (emitter && !emitterContext)) return;
     const sides = [colors[palette[0]], colors[palette[1] || palette[0]]];
-    const state = {canvas, video, frame: 0, timeout: 0, start: null, width: 0, height: 0};
+    const state = {canvas, dispose, frame: 0, timeout: 0, start: null, width: 0, height: 0};
     active = state;
-    video.addEventListener('error', () => { if (active === state) stop(); }, {once: true});
+    let disposed = false;
+    const externalPlayback = () => video.webkitDisplayingFullscreen ||
+      (video.webkitPresentationMode && video.webkitPresentationMode !== 'inline') ||
+      document.fullscreenElement === video || document.pictureInPictureElement === video;
+    function onPresentation(event) {
+      if (disposed || active !== state) return;
+      if (event.type === 'webkitbeginfullscreen' || event.type === 'enterpictureinpicture' || externalPlayback()) stop();
+    }
+    const presentationEvents = ['webkitbeginfullscreen', 'webkitpresentationmodechanged', 'enterpictureinpicture'];
+    for (const event of presentationEvents) video.addEventListener(event, onPresentation);
+    document.addEventListener('fullscreenchange', onPresentation);
+    function dispose() {
+      if (disposed) return;
+      disposed = true;
+      for (const event of presentationEvents) video.removeEventListener(event, onPresentation);
+      document.removeEventListener('fullscreenchange', onPresentation);
+      video.pause();
+      if (video.webkitDisplayingFullscreen) video.webkitExitFullscreen?.();
+      if (video.webkitPresentationMode && video.webkitPresentationMode !== 'inline') video.webkitSetPresentationMode?.('inline');
+      if (document.fullscreenElement === video) document.exitFullscreen?.()?.catch(() => {});
+      if (document.pictureInPictureElement === video) document.exitPictureInPicture?.()?.catch(() => {});
+      video.removeAttribute('src'); video.load();
+    }
+    video.addEventListener('error', () => { if (!disposed && active === state) stop(); }, {once: true});
     // Count the visible duration only after the reference is ready to play.
     try {
       await video.play();
@@ -75,6 +103,7 @@ const monthSmoke = (() => {
       return;
     }
     if (active !== state) return;
+    if (externalPlayback()) { stop(); return; }
     const frameHeight = source.height = tinted.height = video.videoHeight;
     const frameWidth = source.width = tinted.width = Math.round(frameHeight * video.videoWidth / video.videoHeight);
     if (emitter) { emitter.width = frameWidth; emitter.height = frameHeight; }
