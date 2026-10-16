@@ -57,12 +57,23 @@ class PublicationTest(unittest.TestCase):
                 self.assertEqual(recording['source'], {k: c.get(k) for k in recording['source']})
                 self.assertGreater((self.output / recording['file'].lstrip('/')).stat().st_size, 1000)
 
-    def test_published_review_dates_preserve_month_overrides(self):
+    def test_january_has_mental_health_references_and_its_review_date(self):
+        january = json.loads((self.output / 'data/campaigns/1.json').read_text())
+        self.assertEqual([s['id'] for s in january['sources']], [17, 18])
+        self.assertEqual(january['reviewed_on'], '2026-10-16')
+        self.assertEqual(january['sources'][0]['url'],
+                         'https://revistasaude.editoraiberoamericana.com/saude/pt_BR/article/view/1/3')
+        self.assertIn('10.47519/risi.v1i00.1', january['sources'][0]['reference'])
+        september = json.loads((self.output / 'data/campaigns/9.json').read_text())
+        self.assertEqual(september['reviewed_on'], '2026-10-16')
+
+    def test_published_review_dates_match_the_project_review(self):
         for month in range(1, 13):
             campaign = json.loads((self.output / f'data/campaigns/{month}.json').read_text())
             self.assertEqual(campaign['reviewed_on'], '2026-10-16')
         self.assertIn('Conteúdo revisado em 16/10/2026.', (self.output / 'index.html').read_text())
-        # A later review of one month must survive the public build independently.
+
+    def test_public_build_preserves_a_month_specific_review_date(self):
         with tempfile.TemporaryDirectory() as folder:
             temporary = Path(folder)
             (temporary / 'database').mkdir()

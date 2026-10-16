@@ -7,10 +7,16 @@ const vm = require('node:vm');
 
 const flush = () => new Promise(resolve => setImmediate(resolve));
 
-function browser({script = 'smoke-public.js', pending = false, reduced = false,
+function createSmokeBrowser({script = 'smoke-public.js', pending = false, reduced = false,
   userAgent = 'Mozilla/5.0 Safari/605.1.15', manualImages = false,
   stream = true, onPlay = () => {}} = {}) {
-  const frames = [], videos = [], canvases = [], fetched = [], painted = [], images = [], draws = [];
+  const frames = [];
+  const videos = [];
+  const canvases = [];
+  const fetched = [];
+  const painted = [];
+  const images = [];
+  const draws = [];
   function eventTarget(object = {}) {
     const events = new Map();
     return Object.assign(object, {
@@ -90,19 +96,19 @@ function browser({script = 'smoke-public.js', pending = false, reduced = false,
 }
 
 test('renders when the first frame timestamp precedes the completed image load', async () => {
-  const b = browser({stream: false});
-  await b.context.smoke.play('Amarelo', 9);
-  assert.equal(b.frames.length, 1);
-  assert.doesNotThrow(() => b.frames[0](999));
-  assert.ok(b.painted.some(data => data[3] > 200), 'The first sheet supplies smoke density');
-  assert.equal(b.frames.length, 2);
+  const browser = createSmokeBrowser({stream: false});
+  await browser.context.smoke.play('Amarelo', 9);
+  assert.equal(browser.frames.length, 1);
+  assert.doesNotThrow(() => browser.frames[0](999));
+  assert.ok(browser.painted.some(data => data[3] > 200), 'The first sheet supplies smoke density');
+  assert.equal(browser.frames.length, 2);
 });
 
 test('starts from the initial media buffer, paints both mask planes and follows media time', async () => {
-  const b = browser();
-  assert.equal(b.videos.length, 0);
-  await b.context.smoke.play('Amarelo', 9);
-  const video = b.videos[0];
+  const browser = createSmokeBrowser();
+  assert.equal(browser.videos.length, 0);
+  await browser.context.smoke.play('Amarelo', 9);
+  const video = browser.videos[0];
   assert.equal(video.src, '/assets/smoke/folds-stream-v1.mp4');
   assert.equal(video.muted, true);
   assert.equal(video.playsInline, true);
@@ -110,212 +116,212 @@ test('starts from the initial media buffer, paints both mask planes and follows 
   assert.equal(video.disablePictureInPicture, true);
   assert.equal(video.defaultPlaybackRate, 12.5 / 12);
   assert.equal(video.playbackRate, 12.5 / 12);
-  assert.equal(b.images.length, 0, 'Normal stream playback does not download sheets');
-  b.frames[0](999);
-  assert.ok(b.painted.some(data => data[3] > 200), 'The density plane produces opaque smoke');
+  assert.equal(browser.images.length, 0, 'Normal stream playback does not download sheets');
+  browser.frames[0](999);
+  assert.ok(browser.painted.some(data => data[3] > 200), 'The density plane produces opaque smoke');
   video.dispatch('waiting');
-  assert.equal(b.canvases[0].style.animationPlayState, 'paused');
+  assert.equal(browser.canvases[0].style.animationPlayState, 'paused');
   video.currentTime = 2;
-  b.frames[1](100000);
-  assert.equal(b.canvases[0].removed, undefined, 'Buffering must not truncate the animation on wall time');
+  browser.frames[1](100000);
+  assert.equal(browser.canvases[0].removed, undefined, 'Buffering must not truncate the animation on wall time');
   video.dispatch('playing');
-  assert.equal(b.canvases[0].style.animationPlayState, 'running');
+  assert.equal(browser.canvases[0].style.animationPlayState, 'running');
   video.dispatch('ended');
-  assert.equal(b.canvases[0].removed, true);
+  assert.equal(browser.canvases[0].removed, true);
   assert.equal(video.paused, true);
   assert.equal(video.listeners('webkitbeginfullscreen'), 0);
-  assert.equal(b.document.listeners('fullscreenchange'), 0);
+  assert.equal(browser.document.listeners('fullscreenchange'), 0);
 });
 
 test('changing months cancels the previous media request and keeps only the current overlay', async () => {
-  const b = browser();
-  await b.context.smoke.play('Amarelo', 9);
-  await b.context.smoke.play('Branco e roxo', 1);
-  assert.equal(b.videos[0].paused, true);
-  assert.equal(b.videos[0].src, '');
-  assert.equal(b.canvases[0].removed, true);
-  assert.equal(b.videos[1].playbackRate, 12.5 / 10);
-  assert.equal(b.canvases.filter(canvas => !canvas.removed).length, 1);
-  assert.equal(b.fetched.length, 1, 'The manifest is reused');
-  b.videos[0].dispatch('webkitbeginfullscreen');
-  assert.equal(b.canvases[1].removed, undefined, 'Obsolete events cannot restart playback');
+  const browser = createSmokeBrowser();
+  await browser.context.smoke.play('Amarelo', 9);
+  await browser.context.smoke.play('Branco e roxo', 1);
+  assert.equal(browser.videos[0].paused, true);
+  assert.equal(browser.videos[0].src, '');
+  assert.equal(browser.canvases[0].removed, true);
+  assert.equal(browser.videos[1].playbackRate, 12.5 / 10);
+  assert.equal(browser.canvases.filter(canvas => !canvas.removed).length, 1);
+  assert.equal(browser.fetched.length, 1, 'The manifest is reused');
+  browser.videos[0].dispatch('webkitbeginfullscreen');
+  assert.equal(browser.canvases[1].removed, undefined, 'Obsolete events cannot restart playback');
 });
 
 test('canceled initial playback never downloads frames as a fallback', async () => {
-  const b = browser({pending: true});
-  const first = b.context.smoke.play('Amarelo', 9);
+  const browser = createSmokeBrowser({pending: true});
+  const first = browser.context.smoke.play('Amarelo', 9);
   await flush();
-  const second = b.context.smoke.play('Branco e roxo', 1);
+  const second = browser.context.smoke.play('Branco e roxo', 1);
   await first;
-  assert.equal(b.videos[0].paused, true);
+  assert.equal(browser.videos[0].paused, true);
   await flush();
-  b.document.hidden = true;
-  b.document.dispatch('visibilitychange');
+  browser.document.hidden = true;
+  browser.document.dispatch('visibilitychange');
   await second;
-  assert.equal(b.fetched.length, 1);
-  assert.equal(b.images.length, 0);
-  assert.equal(b.canvases.length, 0);
+  assert.equal(browser.fetched.length, 1);
+  assert.equal(browser.images.length, 0);
+  assert.equal(browser.canvases.length, 0);
 });
 
 test('reduced motion prevents media requests and overlays', async () => {
-  const b = browser({reduced: true});
-  await b.context.smoke.play('Amarelo', 9);
-  assert.equal(b.fetched.length, 0);
-  assert.equal(b.videos.length, 0);
-  assert.equal(b.canvases.length, 0);
+  const browser = createSmokeBrowser({reduced: true});
+  await browser.context.smoke.play('Amarelo', 9);
+  assert.equal(browser.fetched.length, 0);
+  assert.equal(browser.videos.length, 0);
+  assert.equal(browser.canvases.length, 0);
 });
 
 for (const userAgent of ['Mozilla/5.0 TikTok/37.0', 'Mozilla/5.0 musical_ly_2023703040',
   'Mozilla/5.0 BytedanceWebview aweme/370000', 'Mozilla/5.0 trill/370000']) {
   test(`uses progressive canvas sheets without creating a video in ${userAgent}`, async () => {
-    const b = browser({userAgent});
-    await b.context.smoke.play('Amarelo', 9);
-    assert.equal(b.videos.length, 0, 'No auxiliary video can reach the native player');
-    assert.equal(b.images.length, 1, 'Only the first sheet is needed to start');
-    b.frames[0](1000);
+    const browser = createSmokeBrowser({userAgent});
+    await browser.context.smoke.play('Amarelo', 9);
+    assert.equal(browser.videos.length, 0, 'No auxiliary video can reach the native player');
+    assert.equal(browser.images.length, 1, 'Only the first sheet is needed to start');
+    browser.frames[0](1000);
     await flush();
-    assert.equal(b.images.length, 4, 'Prefetch remains bounded');
-    assert.ok(b.painted.some(data => data[3] > 200 && data[0] > data[2]), 'Smoke is tinted yellow');
+    assert.equal(browser.images.length, 4, 'Prefetch remains bounded');
+    assert.ok(browser.painted.some(data => data[3] > 200 && data[0] > data[2]), 'Smoke is tinted yellow');
   });
 }
 
 test('falls back when play resolves successfully but the video is already fullscreen', async () => {
-  const b = browser({onPlay(video) { video.webkitDisplayingFullscreen = true; }});
-  await b.context.smoke.play('Amarelo', 9);
-  assert.equal(b.videos[0].played, true);
-  assert.equal(b.videos[0].paused, true);
-  assert.equal(b.videos[0].src, '');
-  assert.equal(b.videos[0].exitedFullscreen, true);
-  assert.equal(b.images.length, 1);
-  b.frames[0](1000);
-  assert.ok(b.painted.some(data => data[3] > 200 && data[0] > data[2]));
+  const browser = createSmokeBrowser({onPlay(video) { video.webkitDisplayingFullscreen = true; }});
+  await browser.context.smoke.play('Amarelo', 9);
+  assert.equal(browser.videos[0].played, true);
+  assert.equal(browser.videos[0].paused, true);
+  assert.equal(browser.videos[0].src, '');
+  assert.equal(browser.videos[0].exitedFullscreen, true);
+  assert.equal(browser.images.length, 1);
+  browser.frames[0](1000);
+  assert.ok(browser.painted.some(data => data[3] > 200 && data[0] > data[2]));
 });
 
 for (const mode of ['webkitbeginfullscreen', 'webkitpresentationmodechanged', 'fullscreenchange', 'enterpictureinpicture']) {
   test(`switches to sheets when ${mode} occurs after successful playback`, async () => {
-    const b = browser();
-    await b.context.smoke.play('Amarelo', 9);
-    const video = b.videos[0];
+    const browser = createSmokeBrowser();
+    await browser.context.smoke.play('Amarelo', 9);
+    const video = browser.videos[0];
     if (mode === 'webkitbeginfullscreen') video.webkitDisplayingFullscreen = true;
     if (mode === 'webkitpresentationmodechanged') video.webkitPresentationMode = 'fullscreen';
-    if (mode === 'fullscreenchange') b.document.fullscreenElement = video;
-    if (mode === 'enterpictureinpicture') b.document.pictureInPictureElement = video;
-    (mode === 'fullscreenchange' ? b.document : video).dispatch(mode);
+    if (mode === 'fullscreenchange') browser.document.fullscreenElement = video;
+    if (mode === 'enterpictureinpicture') browser.document.pictureInPictureElement = video;
+    (mode === 'fullscreenchange' ? browser.document : video).dispatch(mode);
     await flush();
-    assert.equal(b.videos.length, 1, 'Fallback cannot start another video');
+    assert.equal(browser.videos.length, 1, 'Fallback cannot start another video');
     assert.equal(video.src, '');
     assert.equal(video.paused, true);
-    assert.equal(b.canvases[0].removed, true);
-    assert.equal(b.canvases.filter(canvas => !canvas.removed).length, 1);
-    assert.equal(b.images.length, 1);
-    b.frames.at(-1)(1000);
-    assert.ok(b.painted.some(data => data[3] > 200 && data[0] > data[2]));
+    assert.equal(browser.canvases[0].removed, true);
+    assert.equal(browser.canvases.filter(canvas => !canvas.removed).length, 1);
+    assert.equal(browser.images.length, 1);
+    browser.frames.at(-1)(1000);
+    assert.ok(browser.painted.some(data => data[3] > 200 && data[0] > data[2]));
   });
 }
 
 test('handles native fullscreen starting before play resolves', async () => {
-  const b = browser({onPlay(video) { video.dispatch('webkitbeginfullscreen'); }});
-  await b.context.smoke.play('Amarelo', 9);
+  const browser = createSmokeBrowser({onPlay(video) { video.dispatch('webkitbeginfullscreen'); }});
+  await browser.context.smoke.play('Amarelo', 9);
   await flush();
-  assert.equal(b.videos[0].src, '');
-  assert.equal(b.canvases.length, 1);
-  assert.equal(b.images.length, 1);
+  assert.equal(browser.videos[0].src, '');
+  assert.equal(browser.canvases.length, 1);
+  assert.equal(browser.images.length, 1);
 });
 
 test('buffers missing sheets without consuming the animation or downloading the pack', async () => {
-  const b = browser({stream: false, manualImages: true});
-  const playing = b.context.smoke.play('Amarelo', 9);
+  const browser = createSmokeBrowser({stream: false, manualImages: true});
+  const playing = browser.context.smoke.play('Amarelo', 9);
   await flush();
-  assert.equal(b.images.length, 1);
-  b.images[0].onload();
+  assert.equal(browser.images.length, 1);
+  browser.images[0].onload();
   await playing;
-  b.frames.at(-1)(1000);
-  assert.equal(b.images.length, 4);
-  const count = b.painted.length;
-  b.frames.at(-1)(1140); // Sheet 1 is not ready.
-  assert.equal(b.canvases[0].style.animationPlayState, 'paused');
-  assert.equal(b.painted.length, count);
-  b.frames.at(-1)(2000);
-  b.frames.at(-1)(12000);
-  assert.equal(b.canvases[0].removed, undefined, 'Waiting cannot exhaust the visible duration');
-  b.images[1].onload();
-  b.frames.at(-1)(12140);
-  assert.equal(b.canvases[0].style.animationPlayState, 'running');
-  assert.ok(b.draws.some(draw => draw.image === b.images[1]), 'Playback resumes from the missing sheet');
-  assert.ok(b.images.length < 8);
+  browser.frames.at(-1)(1000);
+  assert.equal(browser.images.length, 4);
+  const count = browser.painted.length;
+  browser.frames.at(-1)(1140); // Sheet 1 is not ready.
+  assert.equal(browser.canvases[0].style.animationPlayState, 'paused');
+  assert.equal(browser.painted.length, count);
+  browser.frames.at(-1)(2000);
+  browser.frames.at(-1)(12000);
+  assert.equal(browser.canvases[0].removed, undefined, 'Waiting cannot exhaust the visible duration');
+  browser.images[1].onload();
+  browser.frames.at(-1)(12140);
+  assert.equal(browser.canvases[0].style.animationPlayState, 'running');
+  assert.ok(browser.draws.some(draw => draw.image === browser.images[1]), 'Playback resumes from the missing sheet');
+  assert.ok(browser.images.length < 8);
 });
 
 test('changing months cancels a pending first sheet and ignores its late completion', async () => {
-  const b = browser({stream: false, manualImages: true});
-  const first = b.context.smoke.play('Amarelo', 9);
+  const browser = createSmokeBrowser({stream: false, manualImages: true});
+  const first = browser.context.smoke.play('Amarelo', 9);
   await flush();
-  const staleLoad = b.images[0].onload;
-  const second = b.context.smoke.play('Branco e roxo', 1);
+  const staleLoad = browser.images[0].onload;
+  const second = browser.context.smoke.play('Branco e roxo', 1);
   await first;
   await flush();
-  assert.equal(b.images[0].src, '');
-  assert.equal(b.images[0].onload, null);
+  assert.equal(browser.images[0].src, '');
+  assert.equal(browser.images[0].onload, null);
   staleLoad();
-  assert.equal(b.canvases.length, 0);
-  b.images[1].onload();
+  assert.equal(browser.canvases.length, 0);
+  browser.images[1].onload();
   await second;
-  assert.equal(b.canvases.length, 1);
+  assert.equal(browser.canvases.length, 1);
 });
 
 test('a failed sheet stops and releases loaded and pending images', async () => {
-  const b = browser({stream: false, manualImages: true});
-  const playing = b.context.smoke.play('Amarelo', 9);
+  const browser = createSmokeBrowser({stream: false, manualImages: true});
+  const playing = browser.context.smoke.play('Amarelo', 9);
   await flush();
-  b.images[0].onload();
+  browser.images[0].onload();
   await playing;
-  b.frames[0](1000);
-  b.images[1].onerror();
+  browser.frames[0](1000);
+  browser.images[1].onerror();
   await flush();
-  assert.equal(b.canvases[0].removed, true);
-  assert.ok(b.images.every(image => image.src === '' && image.onload === null));
+  assert.equal(browser.canvases[0].removed, true);
+  assert.ok(browser.images.every(image => image.src === '' && image.onload === null));
 });
 
 test('releases old sheets while progressing through the animation', async () => {
-  const b = browser({stream: false});
-  await b.context.smoke.play('Amarelo', 9);
+  const browser = createSmokeBrowser({stream: false});
+  await browser.context.smoke.play('Amarelo', 9);
   for (let sheet = 0; sheet < 12; sheet++) {
-    b.frames.at(-1)(1000 + sheet * 140);
+    browser.frames.at(-1)(1000 + sheet * 140);
     await flush();
   }
-  assert.ok(b.images.filter(image => image.src).length <= 5, 'Only current, previous and three upcoming sheets stay decoded');
-  assert.equal(b.images[0].src, '');
-  b.document.hidden = true;
-  b.document.dispatch('visibilitychange');
-  assert.ok(b.images.every(image => image.src === ''));
+  assert.ok(browser.images.filter(image => image.src).length <= 5, 'Only current, previous and three upcoming sheets stay decoded');
+  assert.equal(browser.images[0].src, '');
+  browser.document.hidden = true;
+  browser.document.dispatch('visibilitychange');
+  assert.ok(browser.images.every(image => image.src === ''));
 });
 
 test('local version blocks the auxiliary video in TikTok without requesting unavailable sheets', async () => {
-  const b = browser({script: 'smoke.js', userAgent: 'Mozilla/5.0 TikTok/37.0'});
-  await b.context.smoke.play('Amarelo', 9);
-  assert.equal(b.videos.length, 0);
-  assert.equal(b.images.length, 0);
-  assert.equal(b.fetched.length, 0);
-  assert.equal(b.canvases.length, 0);
+  const browser = createSmokeBrowser({script: 'smoke.js', userAgent: 'Mozilla/5.0 TikTok/37.0'});
+  await browser.context.smoke.play('Amarelo', 9);
+  assert.equal(browser.videos.length, 0);
+  assert.equal(browser.images.length, 0);
+  assert.equal(browser.fetched.length, 0);
+  assert.equal(browser.canvases.length, 0);
 });
 
 test('local version preserves inline playback and stops if native fullscreen is requested', async () => {
-  const b = browser({script: 'smoke.js'});
-  await b.context.smoke.play('Amarelo', 9);
-  assert.equal(b.videos[0].src, '/assets/pinterest-savepin-onl.mp4');
-  assert.equal(b.videos[0].playbackRate, 12.5 / 12);
-  b.frames[0](1000);
-  assert.ok(b.painted.some(data => data[3] > 200));
-  b.videos[0].webkitDisplayingFullscreen = true;
-  b.videos[0].dispatch('webkitbeginfullscreen');
-  assert.equal(b.videos[0].src, '');
-  assert.equal(b.videos[0].exitedFullscreen, true);
-  assert.equal(b.canvases[0].removed, true);
-  assert.equal(b.document.listeners('fullscreenchange'), 0);
+  const browser = createSmokeBrowser({script: 'smoke.js'});
+  await browser.context.smoke.play('Amarelo', 9);
+  assert.equal(browser.videos[0].src, '/assets/pinterest-savepin-onl.mp4');
+  assert.equal(browser.videos[0].playbackRate, 12.5 / 12);
+  browser.frames[0](1000);
+  assert.ok(browser.painted.some(data => data[3] > 200));
+  browser.videos[0].webkitDisplayingFullscreen = true;
+  browser.videos[0].dispatch('webkitbeginfullscreen');
+  assert.equal(browser.videos[0].src, '');
+  assert.equal(browser.videos[0].exitedFullscreen, true);
+  assert.equal(browser.canvases[0].removed, true);
+  assert.equal(browser.document.listeners('fullscreenchange'), 0);
 });
 
 test('local version detects external presentation even when play succeeds without an event', async () => {
-  const b = browser({script: 'smoke.js', onPlay(video) { video.webkitDisplayingFullscreen = true; }});
-  await b.context.smoke.play('Amarelo', 9);
-  assert.equal(b.videos[0].src, '');
-  assert.equal(b.canvases.length, 0);
+  const browser = createSmokeBrowser({script: 'smoke.js', onPlay(video) { video.webkitDisplayingFullscreen = true; }});
+  await browser.context.smoke.play('Amarelo', 9);
+  assert.equal(browser.videos[0].src, '');
+  assert.equal(browser.canvases.length, 0);
 });

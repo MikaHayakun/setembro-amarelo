@@ -54,6 +54,16 @@ async function json(url) {
   return response.json();
 }
 function cancelReading() { narrator?.dispose(); narrator = null; }
+function centerSelectedMonth() {
+  const months = document.getElementById('months');
+  const selected = months.querySelector('[aria-pressed="true"]');
+  if (selected && months.scrollWidth > months.clientWidth) {
+    months.scrollLeft += selected.getBoundingClientRect().left - months.getBoundingClientRect().left -
+      (months.clientWidth - selected.offsetWidth) / 2;
+  }
+}
+const monthResizeObserver = new ResizeObserver(centerSelectedMonth);
+monthResizeObserver.observe(document.getElementById('months'));
 async function showMonth(month, moveFocus = false) {
   selectedMonth = month;
   const sequence = ++requestSequence;
@@ -61,11 +71,7 @@ async function showMonth(month, moveFocus = false) {
   container.setAttribute('aria-busy', 'true');
   container.replaceChildren(element('p', locale.ui.loading));
   document.querySelectorAll('[data-month]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.month) === month)));
-  const months = document.getElementById('months');
-  const selected = months.querySelector('[aria-pressed="true"]');
-  if (selected && months.scrollWidth > months.clientWidth) {
-    months.scrollLeft = selected.offsetLeft - months.offsetLeft - (months.clientWidth - selected.offsetWidth) / 2;
-  }
+  centerSelectedMonth();
   try {
     const original = await json(`/api/campaigns/${month}`);
     const c = locale.lang === 'pt-BR' ? original : {...original, ...locale.campaigns[String(month)]};

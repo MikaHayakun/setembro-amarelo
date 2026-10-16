@@ -73,7 +73,7 @@ class IntegrationTest(unittest.TestCase):
 
     def test_02_every_month_has_resolvable_sources(self):
         all_sources = {s['id'] for s in self.fetch('/api/sources')[1]}
-        self.assertEqual(len(all_sources), 17)
+        self.assertEqual(len(all_sources), 19)
         for month in range(1, 13):
             status, campaign, _ = self.fetch(f'/api/campaigns/{month}')
             self.assertEqual(status, 200)
@@ -81,7 +81,12 @@ class IntegrationTest(unittest.TestCase):
             self.assertEqual(campaign['reviewed_on'], '2026-10-16')
             self.assertTrue(campaign['sources'])
             self.assertTrue({s['id'] for s in campaign['sources']} <= all_sources)
+        january = self.fetch('/api/campaigns/1')[1]
+        self.assertEqual([s['id'] for s in january['sources']], [17, 18])
+        self.assertEqual(january['reviewed_on'], '2026-10-16')
+        self.assertIn('10.47519/risi.v1i00.1', january['sources'][0]['reference'])
         september = self.fetch('/api/campaigns/9')[1]
+        self.assertEqual(september['reviewed_on'], '2026-10-16')
         self.assertEqual([h['year'] for h in september['history']], ['1994', '2003', '2015', '2024 a 2026'])
         self.assertTrue(september['evidence_note'])
 

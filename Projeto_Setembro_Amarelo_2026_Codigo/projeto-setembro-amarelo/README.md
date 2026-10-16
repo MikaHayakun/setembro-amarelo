@@ -57,8 +57,8 @@ O servidor não coleta relatos pessoais nem grava histórico de navegação. Lin
 - `frontend/assets/fonts/`: fontes variáveis locais e suas licenças. Os títulos usam Bricolage Grotesque; o texto usa Cuidado Sans, versão reduzida e renomeada de Source Sans 3. Não há carregamento externo de fontes.
 - `backend/server.py`: servidor HTTP e API de leitura.
 - `database/schema.sql`: estrutura relacional.
-- `database/content.json`: conteúdo de referência e 16 fontes.
-- `database/campaigns.sqlite3`: banco persistente com 12 meses.
+- `database/content.json`: conteúdo de referência e 19 fontes.
+- `database/campaigns.sqlite3`: banco persistente local com 12 meses, gerado pelo servidor e não versionado.
 - `tests/test_api.py`: nove testes de integração, incluindo idiomas, correspondência dos textos e entrega dos 96 áudios.
 - `tests/test_narration.js`: verificações dos controles, de cancelamento e de gravações desatualizadas.
 - `docs/`: roteiro do pitch, descrição das telas e relatório de validação.
@@ -76,7 +76,7 @@ Mês inválido retorna HTTP 400, recurso inexistente retorna 404 e POST retorna 
 
 ## Testes
 
-Execute `python3 -m unittest discover -s tests -v`. Os testes iniciam um servidor real com um banco temporário; não alteram o banco distribuído. A validação realizada cobre HTTP, conteúdo, relações e persistência. A revisão visual em navegador e o teste com leitor de tela devem ser feitos no dispositivo da apresentação.
+Execute `python3 -m unittest discover -s tests -v`. Os testes iniciam um servidor real com um banco temporário; não alteram o banco local. A validação realizada cobre HTTP, conteúdo, relações e persistência. A revisão visual em navegador e o teste com leitor de tela devem ser feitos no dispositivo da apresentação.
 
 Execute também `node --test tests/test_narration.js` para verificar o comportamento dos controles. Esses testes não substituem uma avaliação da compreensão auditiva nem um teste com leitor de tela e pessoas usuárias no dispositivo final.
 

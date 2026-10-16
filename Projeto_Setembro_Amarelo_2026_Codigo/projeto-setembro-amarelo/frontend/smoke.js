@@ -72,27 +72,41 @@ const monthSmoke = (() => {
     const state = {canvas, dispose, frame: 0, timeout: 0, start: null, width: 0, height: 0};
     active = state;
     let disposed = false;
-    const externalPlayback = () => video.webkitDisplayingFullscreen ||
+    const isExternalPlayback = () => video.webkitDisplayingFullscreen ||
       (video.webkitPresentationMode && video.webkitPresentationMode !== 'inline') ||
       document.fullscreenElement === video || document.pictureInPictureElement === video;
-    function onPresentation(event) {
+    function onPresentationChange(event) {
       if (disposed || active !== state) return;
-      if (event.type === 'webkitbeginfullscreen' || event.type === 'enterpictureinpicture' || externalPlayback()) stop();
+      const nativePlayerStarted = event.type === 'webkitbeginfullscreen' || event.type === 'enterpictureinpicture';
+      if (nativePlayerStarted || isExternalPlayback()) stop();
     }
-    const presentationEvents = ['webkitbeginfullscreen', 'webkitpresentationmodechanged', 'enterpictureinpicture'];
-    for (const event of presentationEvents) video.addEventListener(event, onPresentation);
-    document.addEventListener('fullscreenchange', onPresentation);
+    const nativePlayerEvents = [
+      'webkitbeginfullscreen', 'webkitpresentationmodechanged', 'enterpictureinpicture'
+    ];
+    for (const event of nativePlayerEvents) {
+      video.addEventListener(event, onPresentationChange);
+    }
+    document.addEventListener('fullscreenchange', onPresentationChange);
     function dispose() {
       if (disposed) return;
       disposed = true;
-      for (const event of presentationEvents) video.removeEventListener(event, onPresentation);
-      document.removeEventListener('fullscreenchange', onPresentation);
+      for (const event of nativePlayerEvents) {
+        video.removeEventListener(event, onPresentationChange);
+      }
+      document.removeEventListener('fullscreenchange', onPresentationChange);
       video.pause();
       if (video.webkitDisplayingFullscreen) video.webkitExitFullscreen?.();
-      if (video.webkitPresentationMode && video.webkitPresentationMode !== 'inline') video.webkitSetPresentationMode?.('inline');
-      if (document.fullscreenElement === video) document.exitFullscreen?.()?.catch(() => {});
-      if (document.pictureInPictureElement === video) document.exitPictureInPicture?.()?.catch(() => {});
-      video.removeAttribute('src'); video.load();
+      if (video.webkitPresentationMode && video.webkitPresentationMode !== 'inline') {
+        video.webkitSetPresentationMode?.('inline');
+      }
+      if (document.fullscreenElement === video) {
+        document.exitFullscreen?.()?.catch(() => {});
+      }
+      if (document.pictureInPictureElement === video) {
+        document.exitPictureInPicture?.()?.catch(() => {});
+      }
+      video.removeAttribute('src');
+      video.load();
     }
     video.addEventListener('error', () => { if (!disposed && active === state) stop(); }, {once: true});
     // Count the visible duration only after the reference is ready to play.
@@ -103,7 +117,7 @@ const monthSmoke = (() => {
       return;
     }
     if (active !== state) return;
-    if (externalPlayback()) { stop(); return; }
+    if (isExternalPlayback()) { stop(); return; }
     const frameHeight = source.height = tinted.height = video.videoHeight;
     const frameWidth = source.width = tinted.width = Math.round(frameHeight * video.videoWidth / video.videoHeight);
     if (emitter) { emitter.width = frameWidth; emitter.height = frameHeight; }
