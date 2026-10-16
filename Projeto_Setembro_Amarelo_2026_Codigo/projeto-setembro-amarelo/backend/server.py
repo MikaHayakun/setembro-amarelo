@@ -34,10 +34,10 @@ def initialize():
                                (s['id'], s['institution'], s['title'], s['year'], s['url'], s['reference']))
         for c in content['campaigns']:
             details = {k: v for k, v in c.items() if k not in {
-                'month', 'name', 'color', 'hex', 'theme', 'summary', 'purpose', 'source_ids'}}
+                'month', 'name', 'color', 'hex', 'theme', 'summary', 'purpose', 'source_ids', 'reviewed_on'}}
             connection.execute('INSERT INTO campaign VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 (c['month'], c['name'], c['color'], c['hex'], c['theme'], c['summary'],
-                 c['purpose'], json.dumps(details, ensure_ascii=False), content['reviewed_on']))
+                 c['purpose'], json.dumps(details, ensure_ascii=False), c.get('reviewed_on', content['reviewed_on'])))
             connection.executemany('INSERT INTO campaign_source VALUES (?, ?)',
                                   [(c['month'], sid) for sid in c['source_ids']])
 

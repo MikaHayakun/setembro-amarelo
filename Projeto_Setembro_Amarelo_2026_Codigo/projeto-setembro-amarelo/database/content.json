@@ -128,6 +128,14 @@
       "year": "2025",
       "url": "https://bvsms.saude.gov.br/dia-mundial-de-prevencao-ao-suicidio-2025-se-precisar-peca-ajuda/",
       "reference": "BRASIL. Ministério da Saúde. Dia Mundial de Prevenção ao Suicídio 2025: “Se precisar, peça ajuda”. Brasília, DF: Biblioteca Virtual em Saúde, 2025."
+    },
+    {
+      "id": 19,
+      "institution": "Alzheimer’s Disease International (ADI)",
+      "title": "World Alzheimer Report 2026: A new era in dementia clinical trials",
+      "year": "2026",
+      "url": "https://www.alzint.org/resource/world-alzheimer-report-2026/",
+      "reference": "ALZHEIMER’S DISEASE INTERNATIONAL. World Alzheimer Report 2026: A new era in dementia clinical trials. London: Alzheimer’s Disease International, set. 2026. Acesso em: 16 out. 2026."
     }
   ],
   "campaigns": [
@@ -153,8 +161,10 @@
       "summary": "O calendário consultado associa o roxo ao Alzheimer e o laranja à leucemia. Este recorte não reúne todas as campanhas de fevereiro.",
       "purpose": "Estimular conhecimento, acompanhamento e apoio a pessoas e famílias.",
       "source_ids": [
-        5
-      ]
+        5,
+        19
+      ],
+      "reviewed_on": "2026-10-16"
     },
     {
       "month": 3,
@@ -290,7 +300,8 @@
       ],
       "care_source_ids": [
         13
-      ]
+      ],
+      "reviewed_on": "2026-10-16"
     },
     {
       "month": 10,
