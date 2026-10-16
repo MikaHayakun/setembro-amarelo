@@ -57,7 +57,7 @@ def build(output):
     for campaign in content['campaigns']:
         c = dict(campaign)
         ids = c.pop('source_ids')
-        c['reviewed_on'] = content['reviewed_on']
+        c['reviewed_on'] = c.get('reviewed_on', content['reviewed_on'])
         c['sources'] = [sources[sid] for sid in sorted(ids)]
         write_json(output / 'data/campaigns' / f"{c['month']}.json", c)
         months.append({key: c[key] for key in ('month', 'name', 'color', 'theme')})
