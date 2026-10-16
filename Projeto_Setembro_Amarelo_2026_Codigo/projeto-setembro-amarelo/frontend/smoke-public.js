@@ -28,7 +28,6 @@ const monthSmoke = (() => {
 
 
   let frameManifest = null;
-  let frameFiles = null;
   function getFrameInfo() {
     frameManifest ||= fetch('/assets/smoke/manifest.json').then(response => {
       if (!response.ok) throw new Error('Animation unavailable');
@@ -37,84 +36,106 @@ const monthSmoke = (() => {
     return frameManifest;
   }
   async function openStream(info, duration, state) {
-    if (!info.stream) return null;
+    // These webviews can hand even muted inline video to a native player.
+    if (!info.stream || /TikTok|musical_ly|BytedanceWebview|aweme|\btrill\b/i.test(navigator.userAgent)) return null;
     const video = document.createElement('video');
     if (!video.canPlayType?.(info.stream.mime)) return null;
     video.muted = true;
     video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.disablePictureInPicture = true;
+    video.disableRemotePlayback = true;
     video.preload = 'auto';
     // Loading a new source restores playbackRate from defaultPlaybackRate.
     video.defaultPlaybackRate = info.duration / duration;
     video.playbackRate = info.duration / duration;
     let disposed = false;
+    const externalPlayback = () => video.webkitDisplayingFullscreen ||
+      (video.webkitPresentationMode && video.webkitPresentationMode !== 'inline') ||
+      document.fullscreenElement === video || document.pictureInPictureElement === video;
+    function onPresentation(event) {
+      if (disposed || active !== state) return;
+      if (event.type === 'webkitbeginfullscreen' || event.type === 'enterpictureinpicture' || externalPlayback()) {
+        state.useFrames();
+      }
+    }
+    const presentationEvents = ['webkitbeginfullscreen', 'webkitpresentationmodechanged', 'enterpictureinpicture'];
+    for (const event of presentationEvents) video.addEventListener(event, onPresentation);
+    document.addEventListener('fullscreenchange', onPresentation);
     function dispose() {
       if (disposed) return;
       disposed = true;
-      video.pause(); video.removeAttribute('src'); video.load();
+      for (const event of presentationEvents) video.removeEventListener(event, onPresentation);
+      document.removeEventListener('fullscreenchange', onPresentation);
+      video.pause();
+      if (video.webkitDisplayingFullscreen) video.webkitExitFullscreen?.();
+      if (video.webkitPresentationMode && video.webkitPresentationMode !== 'inline') video.webkitSetPresentationMode?.('inline');
+      if (document.fullscreenElement === video) document.exitFullscreen?.()?.catch(() => {});
+      if (document.pictureInPictureElement === video) document.exitPictureInPicture?.()?.catch(() => {});
+      video.removeAttribute('src'); video.load();
     }
     state.cancelLoad = dispose;
     video.addEventListener('waiting', () => {
-      if (active === state) state.canvas.style.animationPlayState = 'paused';
+      if (!disposed && active === state) state.canvas.style.animationPlayState = 'paused';
     });
     video.addEventListener('playing', () => {
-      if (active === state) state.canvas.style.animationPlayState = 'running';
+      if (!disposed && active === state) state.canvas.style.animationPlayState = 'running';
     });
-    video.addEventListener('ended', () => { if (active === state) stop(); });
-    video.addEventListener('error', () => { if (active === state && state.start !== null) stop(); });
+    video.addEventListener('ended', () => { if (!disposed && active === state) stop(); });
+    video.addEventListener('error', () => { if (!disposed && active === state && state.start !== null) stop(); });
     video.src = '/assets/smoke/' + info.stream.file;
     try { await video.play(); }
     catch (error) { dispose(); return null; }
     if (disposed || active !== state) { dispose(); return null; }
+    if (externalPlayback()) { dispose(); return null; }
     state.cancelLoad = null;
     return {...info, stream: true, dispose,
       elapsed: () => video.currentTime * duration / info.duration,
       get: () => video.readyState >= 2 ? {image: video, x: 0, y: 0, width: info.width * 2} : null};
   }
-  async function openFrames(info) {
-    // Buffer compressed images before starting the timer so a slow connection cannot
-    // drop frames or shorten the approved animation. Decode only nearby sheets.
-    frameFiles ||= (async () => {
-      const files = new Array(info.sheets.length);
-      let next = 0;
-      async function worker() {
-        while (next < files.length) {
-          const index = next++;
-          const response = await fetch('/assets/smoke/' + info.sheets[index], {cache: 'force-cache'});
-          if (!response.ok) throw new Error('Animation frame unavailable');
-          files[index] = await response.blob();
-        }
-      }
-      await Promise.all(Array.from({length: 6}, worker));
-      return files;
-    })().catch(error => { frameFiles = null; throw error; });
-    const files = await frameFiles;
+  async function openFrames(info, state) {
+    // Start with one sheet, then keep only a small window of decoded images.
+    // Direct image URLs let the browser cache requests without buffering the pack.
     const sheets = new Map();
     let disposed = false;
     function load(index) {
       if (index < 0 || index >= info.sheets.length || disposed) return Promise.resolve(null);
       if (sheets.has(index)) return sheets.get(index).promise;
       const image = new Image();
-      const entry = {image, ready: false, promise: null, url: URL.createObjectURL(files[index])};
+      const entry = {image, ready: false, promise: null, cancel: null};
+      sheets.set(index, entry);
       entry.promise = new Promise((resolve, reject) => {
+        entry.cancel = () => resolve(null);
         image.onload = () => { entry.ready = true; resolve(image); };
         image.onerror = () => reject(new Error('Animation frame unavailable'));
-        image.src = entry.url;
+        image.src = '/assets/smoke/' + info.sheets[index];
       });
-      sheets.set(index, entry);
       return entry.promise;
     }
+    function release(entry) {
+      entry.image.onload = entry.image.onerror = null;
+      entry.image.removeAttribute('src');
+      entry.cancel();
+    }
     function dispose() {
+      if (disposed) return;
       disposed = true;
-      for (const entry of sheets.values()) { entry.image.onload = entry.image.onerror = null; entry.image.removeAttribute('src'); URL.revokeObjectURL(entry.url); }
+      for (const entry of sheets.values()) release(entry);
       sheets.clear();
     }
-    try { await Promise.all([load(0), load(1), load(2)]); }
+    state.cancelLoad = dispose;
+    try { await load(0); }
     catch (error) { dispose(); throw error; }
+    if (state.cancelLoad === dispose) state.cancelLoad = null;
     return {...info, dispose, get(frame) {
+      if (disposed) return null;
       const index = Math.floor(frame / info.framesPerSheet), position = frame % info.framesPerSheet;
-      for (let ahead = 0; ahead < 8; ahead++) load(index + ahead).catch(() => {});
+      for (let ahead = 0; ahead < 4; ahead++) load(index + ahead).catch(() => {
+        if (!disposed && active === state) stop();
+      });
       for (const [key, entry] of sheets) {
-        if (key < index - 2 && entry.ready) { entry.image.removeAttribute('src'); URL.revokeObjectURL(entry.url); sheets.delete(key); }
+        if (key < index - 1) { release(entry); sheets.delete(key); }
       }
       const entry = sheets.get(index);
       return entry?.ready ? {image: entry.image, x: (position % info.columns) * info.width,
@@ -125,14 +146,13 @@ const monthSmoke = (() => {
   function stop() {
     if (!active) return;
     cancelAnimationFrame(active.frame);
-    clearTimeout(active.timeout);
     if (active.cancelLoad) active.cancelLoad();
     if (active.reader) active.reader.dispose();
     active.canvas.remove();
     active = null;
   }
 
-  async function play(colorLabel, month) {
+  async function play(colorLabel, month, framesOnly = false) {
     stop();
     if (reducedMotion.matches || document.hidden) return;
     const corners = Number(month) === 9;
@@ -154,16 +174,17 @@ const monthSmoke = (() => {
     const emitterContext = emitter ? emitter.getContext('2d') : null;
     if (!sourceContext || !tintContext || !whiteContext || (emitter && !emitterContext)) return;
     const sides = [colors[palette[0]], colors[palette[1] || palette[0]]];
-    const state = {canvas, reader: null, cancelLoad: null, frame: 0, timeout: 0, start: null, width: 0, height: 0};
+    const state = {canvas, reader: null, cancelLoad: null, frame: 0, start: null, width: 0, height: 0};
     active = state;
+    state.useFrames = () => { if (active === state) play(colorLabel, month, true); };
     // Load processed images only after activation; original material stays private.
     let reader;
     try {
       const info = await getFrameInfo();
       if (active !== state) return;
-      reader = await openStream(info, duration, state);
+      reader = framesOnly ? null : await openStream(info, duration, state);
       if (active !== state) { reader?.dispose(); return; }
-      reader ||= await openFrames(info);
+      reader ||= await openFrames(info, state);
     } catch (error) {
       if (active === state) stop();
       return;
@@ -186,11 +207,13 @@ const monthSmoke = (() => {
     const rowMix = Float32Array.from({length: frameHeight}, (_, y) => smooth((y / frameHeight - .44) / .12));
     state.start = performance.now();
     document.body.append(canvas);
-    let lastFrame = -1;
+    let lastFrame = -1, timeline = 0, lastTick = state.start, pendingElapsed = null;
     function draw(now) {
       if (active !== state) return;
       // A queued animation frame can precede the async image load by a few ms.
-      const elapsed = Math.max(0, reader.elapsed ? reader.elapsed() : (now - state.start) / 1000);
+      let elapsed = Math.max(0, reader.elapsed ? reader.elapsed() :
+        (pendingElapsed ?? timeline + Math.max(0, now - lastTick) / 1000));
+      lastTick = Math.max(lastTick, now);
       if (elapsed >= duration) { stop(); return; }
       const width = innerWidth, height = innerHeight;
       if (state.width !== width || state.height !== height) {
@@ -203,6 +226,12 @@ const monthSmoke = (() => {
       // Process only new frames, at native resolution on every screen.
       const frameIndex = Math.min(reader.frames - 1, Math.floor(elapsed * reader.duration / duration * reader.fps));
       const picture = reader.get(frameIndex);
+      if (reader.stream !== true) {
+        // Missing sheets pause both the image timeline and the CSS fade.
+        if (!picture) { pendingElapsed = elapsed; elapsed = timeline; }
+        else { timeline = elapsed; pendingElapsed = null; }
+        canvas.style.animationPlayState = picture ? 'running' : 'paused';
+      }
       if (frameIndex !== lastFrame && picture) {
         lastFrame = frameIndex;
         sourceContext.drawImage(picture.image, picture.x, picture.y, picture.width || frameWidth, frameHeight, 0, 0, sourceWidth, frameHeight);
@@ -313,8 +342,6 @@ const monthSmoke = (() => {
       }
       state.frame = requestAnimationFrame(draw);
     }
-    // Stream playback drives the clock, preserving all frames during buffering.
-    if (reader.stream !== true) state.timeout = setTimeout(stop, duration * 1000);
     state.frame = requestAnimationFrame(draw);
   }
 
